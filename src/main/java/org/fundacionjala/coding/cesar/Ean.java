@@ -18,13 +18,6 @@ public class Ean {
     }
 
     /**
-     * @param cadena1 Constructor with parameters.
-     */
-    public Ean(String cadena1) {
-        this.setCadena(cadena1);
-    }
-
-    /**
      *
      * @param cadena New chain value
      */
