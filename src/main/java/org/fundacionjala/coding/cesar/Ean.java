@@ -1,38 +1,58 @@
 package org.fundacionjala.coding.cesar;
-
-public class ean {
+/**
+ *
+ * @author admin-hp
+ */
+public class Ean {
     private String digitos = "";
-    private String cadena = "";
     private int numComprobacion = 0;
+    private static final int MPLT_IMPAR = 3;
+    private static final int MPLT_PAR = 1;
+    private static final int MPLT_MOD = 10;
 
-    public ean() {
+    /**
+     * Constructor without parameters.
+     */
+    public Ean() {
         this.setCadena("0000000000000");
     }
 
-    public ean(String cadena1) {
+    /**
+     * @param cadena1 Constructor with parameters.
+     */
+    public Ean(String cadena1) {
         this.setCadena(cadena1);
     }
 
+    /**
+     *
+     * @param cadena New chain value
+     */
+
     public void setCadena(String cadena) {
-        this.cadena = cadena;
         digitos = cadena.substring(0, cadena.length() - 1);
-        numComprobacion = Integer.valueOf(cadena.substring(cadena.length() - 1));
+        numComprobacion = Integer.parseInt(cadena.substring(cadena.length() - 1));
     }
+
+    /**
+     *
+     * @return Returning false or true value
+     */
 
     public boolean validar() {
 
         String[] aux = digitos.split("");
         int suma = 0;
         for (String i : aux) {
-            int num = Integer.valueOf(i);
+            int num = Integer.parseInt(i);
             if (num % 2 == 0) {
-                num = num * 1;
+                num = num * MPLT_PAR;
             } else {
-                num = num * 3;
+                num = num * MPLT_IMPAR;
             }
             suma = suma + num;
         }
-        int numcom = 10 - (suma % 10);
+        int numcom = MPLT_MOD - (suma % MPLT_MOD);
         boolean res;
         if (numcom == numComprobacion) {
             res = true;
