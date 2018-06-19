@@ -12,7 +12,7 @@ public class EanCodeTest {
     private EanCode kata;
 
     /**
-     *this is a constructor of class.
+     * this is a constructor of class.
      */
     public EanCodeTest() {
         kata = new EanCode();
@@ -25,6 +25,14 @@ public class EanCodeTest {
     public void testValidationEANisEAN() {
         assertTrue(kata.validationEAN("4003301018398"));
 
+    }
+
+    /**
+     * this is a test method for a number EAN true.
+     */
+    @Test
+    public void testValidEANValidationEANisEANValidNumber() {
+        assertTrue(kata.validationEAN("0149600000000"));
     }
 
     /**
