@@ -34,4 +34,13 @@ public class EanCodeTest {
     public void testValidationEANisntEAN() {
         assertFalse(kata.validationEAN("4003301018392"));
     }
+
+    /**
+     * this is a test method for a number EAN true.
+     */
+    @Test
+    public void testValidationEANisEANZero() {
+        assertTrue(kata.validationEAN("0149600000000"));
+    }
+
 }
