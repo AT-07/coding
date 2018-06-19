@@ -16,7 +16,6 @@ public class EanTest {
     @Before
     public void before() {
         val = new Ean();
-        System.out.println("before");
     }
 
     /**
@@ -24,7 +23,6 @@ public class EanTest {
      */
     @Test
     public void testValidarPass() {
-        System.out.println("pasa");
         boolean res;
         val.setCadena("4003301018398");
         res = val.validar();
@@ -36,7 +34,6 @@ public class EanTest {
      */
     @Test
     public void testValidarFailed() {
-        System.out.println("no pasa");
         boolean res;
         val.setCadena("4003301018392");
         res = val.validar();

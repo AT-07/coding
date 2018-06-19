@@ -56,10 +56,8 @@ public class Ean {
         boolean res;
         if (numcom == numComprobacion) {
             res = true;
-            System.out.println("ES VALIDO");
         } else {
             res = false;
-            System.out.println("ES INVALIDO");
         }
         return res;
     }
