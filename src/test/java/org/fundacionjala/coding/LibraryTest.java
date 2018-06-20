@@ -10,7 +10,7 @@ import static org.junit.Assert.assertTrue;
 public class LibraryTest {
 
     /**
-     * Verify some library method.
+     * prueba test library.
      */
     @Test
     public void testSomeLibraryMethod() {
