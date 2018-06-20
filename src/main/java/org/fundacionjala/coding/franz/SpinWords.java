@@ -35,8 +35,7 @@ public class SpinWords {
      * @return the word reverse
      */
     public String reverseWord(String word) {
-        String wordRev = word.length() > LIMIT_TAM ? new StringBuilder(word).reverse().toString()
+        return word.length() > LIMIT_TAM ? new StringBuilder(word).reverse().toString()
                 : new StringBuilder(word).toString();
-        return wordRev;
     }
 }
