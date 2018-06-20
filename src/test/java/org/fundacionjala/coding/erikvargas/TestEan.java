@@ -6,21 +6,21 @@ import static org.junit.Assert.assertFalse;
 import org.junit.Test;
 
 /**
- * this a class.
+ * this class for  validate code ean.
  */
 public class TestEan {
 
     private EanValidator test;
 
     /**
-     * this is a constructor.
+     * this is a builder.
      */
     public TestEan() {
         test = new EanValidator();
     }
 
     /**
-     * este test valida un codigo ean verdadero.
+     * this testcase validate a ean code is true.
      */
     @Test
     public void testValidateTrue1() {
@@ -30,7 +30,7 @@ public class TestEan {
     }
 
     /**
-     * test para un segundo caso para validar un codigo ean verdadero.
+     * test for a second case when an ean code is true.
      */
     @Test
     public void testValidateTrue2() {
@@ -40,7 +40,7 @@ public class TestEan {
     }
 
     /**
-     * test para codigo ean falso.
+     * this testcase validate a ean code is false.
      */
     @Test
     public void testValidateFalse1() {
@@ -50,7 +50,7 @@ public class TestEan {
     }
 
     /**
-     * test para codigo ean falso.
+     * test for a second case when an ean code is false.
      */
     @Test
     public void testValidateFalse2() {
