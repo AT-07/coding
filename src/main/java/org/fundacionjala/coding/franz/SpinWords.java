@@ -16,13 +16,7 @@ public class SpinWords {
 
         String[] words = sentence.split(" ");
         StringBuilder wordComplete = new StringBuilder();
-
-        if (words.length != 1) {
-            wordComplete.append(reverseWord(words[0])).append(" ");
-        } else {
-            wordComplete.append(reverseWord(words[0]));
-        }
-        for (int i = 1; i < words.length; i++) {
+        for (int i = 0; i < words.length; i++) {
             wordComplete.append(reverseWord(words[i])).append(" ").toString();
         }
         return wordComplete.toString().trim();

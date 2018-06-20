@@ -28,5 +28,6 @@ public class SpinWordsTest {
         assertEquals("Hey wollef sroirraw", spin.spinWords("Hey fellow warriors"));
         assertEquals("is a tes", spin.spinWords("is a tes"));
         assertEquals("ylsuoireS", spin.spinWords("Seriously"));
+
     }
 }
