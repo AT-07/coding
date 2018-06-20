@@ -1,29 +1,60 @@
 package org.fundacionjala.coding.denis;
 
+/**
+ * This is the main class of the European Article Number.
+ */
 public class Ean {
-    private int[] digitos;
+    private String digits;
+    private static final int SIZECONTROL = 13;
+    private static final int EANNUMBER = 10;
+    private static final int MULTIPLICATOR = 3;
+    private static final int MODULO = 2;
+
+
+    /**
+     * validation of the European article number.
+     *
+     * @return the validation of the European article number.
+     */
 
     public boolean kata() {
-        return digitos.length == 13 ? isEan() : false;
+        return getDigits().length() == SIZECONTROL && validation();
     }
 
-    public boolean isEan() {
+    /**
+     * executes the validation of the European article number.
+     *
+     * @return executes the validation of the European article number.
+     */
+    public boolean validation() {
         int sum = 0;
-        for (int i = 1; i < digitos.length; i++) {
-            sum += i % 2 == 0 ? digitos[i - 1] * 3 : digitos[i - 1] * 1;
+        int result;
+        int cheking;
+        for (int i = 1; i < getDigits().length(); i++) {
+            result = Character.getNumericValue(getDigits().charAt(i - 1));
+            sum += i % MODULO == 0 ? result * MULTIPLICATOR : result;
         }
         System.out.println(sum);
-        int ckekout = sum % 10 == 0 ? 0 : 10 - sum % 10;
-        return ckekout == digitos[digitos.length - 1];
+        cheking = sum % EANNUMBER == 0 ? 0 : EANNUMBER - sum % EANNUMBER;
+        return cheking == Character.getNumericValue(digits.charAt(digits.length() - 1));
     }
 
-    public int[] getDigitos() {
-        return digitos;
+    /**
+     * actual value of digits.
+     *
+     * @return actual value of digits.
+     */
+    public String getDigits() {
+        return digits;
     }
 
-    public void setDigitos(int[] digitos) {
-        this.digitos = digitos;
+    /**
+     * update the value of the digits.
+     *
+     * @param digits is the value of EAN.
+     */
+    public void setDigits(String digits) {
+        this.digits = digits;
     }
 
 }
-
