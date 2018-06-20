@@ -17,19 +17,9 @@ public class SpinWords {
         String[] words = sentence.split(" ");
         StringBuilder wordComplete = new StringBuilder();
         for (int i = 0; i < words.length; i++) {
-            wordComplete.append(reverseWord(words[i])).append(" ").toString();
+            wordComplete.append(words[i].length() > LIMIT_TAM ? new StringBuilder(words[i]).reverse().toString()
+                    : words[i]).append(" ").toString();
         }
         return wordComplete.toString().trim();
-    }
-
-    /**
-     * this method reverse a word.
-     *
-     * @param word is a word that need reverse
-     * @return the word reverse
-     */
-    public String reverseWord(String word) {
-        return word.length() > LIMIT_TAM ? new StringBuilder(word).reverse().toString()
-                : new StringBuilder(word).toString();
     }
 }
