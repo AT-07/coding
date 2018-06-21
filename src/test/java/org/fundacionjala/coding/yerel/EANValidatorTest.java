@@ -14,6 +14,7 @@ import static org.junit.Assert.assertTrue;
 public class EANValidatorTest {
 
     public static final int EXPRESULT = 72;
+    private final String CODIGO = "400330101839";
     private EANValidator eanValidator;
 
     /**
@@ -38,7 +39,7 @@ public class EANValidatorTest {
      */
     @Test
     public void sumNumbersCode() {
-        assertEquals(EXPRESULT, eanValidator.sumNumbersCode("400330101839"));
+        assertEquals(EXPRESULT, eanValidator.sumNumbersCode(CODIGO));
     }
 
     /**
@@ -46,7 +47,7 @@ public class EANValidatorTest {
      */
     @Test
     public void sumNumbersCodeDos() {
-        assertEquals(EXPRESULT, eanValidator.sumNumbersCode("400330101839"));
+        assertEquals(EXPRESULT, eanValidator.sumNumbersCode(CODIGO));
     }
 
     /**
@@ -54,6 +55,6 @@ public class EANValidatorTest {
      */
     @Test
     public void validatorDos() {
-        assertFalse(eanValidator.validator("400330101839"));
+        assertFalse(eanValidator.validator(CODIGO));
     }
 }
