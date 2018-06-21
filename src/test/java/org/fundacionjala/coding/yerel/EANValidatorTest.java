@@ -14,7 +14,7 @@ import static org.junit.Assert.assertTrue;
 public class EANValidatorTest {
 
     public static final int EXPRESULT = 72;
-    private final String CODIGO = "400330101839";
+    private static final String CODIGO = "400330101839";
     private EANValidator eanValidator;
 
     /**
