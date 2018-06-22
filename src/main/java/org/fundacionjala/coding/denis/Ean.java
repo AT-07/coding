@@ -27,15 +27,14 @@ public class Ean {
      * @return executes the validation of the European article number.
      */
     public boolean validation() {
-        int sum = 0;
+        int suma = 0;
         int result;
         int cheking;
         for (int i = 1; i < getDigits().length(); i++) {
             result = Character.getNumericValue(getDigits().charAt(i - 1));
-            sum += i % MODULO == 0 ? result * MULTIPLICATOR : result;
+            suma += i % MODULO == 0 ? result * MULTIPLICATOR : result;
         }
-        System.out.println(sum);
-        cheking = sum % EANNUMBER == 0 ? 0 : EANNUMBER - sum % EANNUMBER;
+        cheking = suma % EANNUMBER == 0 ? 0 : EANNUMBER - suma % EANNUMBER;
         return cheking == Character.getNumericValue(digits.charAt(digits.length() - 1));
     }
 
