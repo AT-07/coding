@@ -18,7 +18,7 @@ public class Ean {
      */
 
     public boolean kata() {
-        return getDigits().length() == SIZECONTROL && isEan();
+        return getDigits().length() == SIZECONTROL && validation();
     }
 
     /**
@@ -26,7 +26,7 @@ public class Ean {
      *
      * @return executes the validation of the European article number.
      */
-    public boolean isEan() {
+    public boolean validation() {
         int sum = 0;
         int result;
         for (int i = 1; i < getDigits().length(); i++) {
