@@ -16,7 +16,7 @@ public class EuropeanArticleNumber {
     public boolean esEAN(String cadena) {
         int[] numero = new int[cadena.length()];
         for (int i = 0; i < cadena.length(); i++) {
-            numero[i] = (Integer.parseInt(Character.toString(cadena.charAt(i))));
+            numero[i] = Integer.parseInt(Character.toString(cadena.charAt(i)));
         }
         return verificarEAN(numero);
     }
@@ -29,9 +29,11 @@ public class EuropeanArticleNumber {
      */
     public boolean verificarEAN(int[] secuencia) {
         int suma = 0;
+        int auxiliar = 1;
         for (int i = 0; i < secuencia.length - 1; i++) {
-            suma += (((i + 1) % 2) == 0) ? (secuencia[i] * IMPAR) : (secuencia[i] * 1);
+            suma += auxiliar % 2 == 0 ? secuencia[i] * IMPAR : secuencia[i] * 1;
+            auxiliar++;
         }
-        return ((MODULO - (suma % MODULO)) == secuencia[secuencia.length - 1]);
+        return MODULO - (suma % MODULO) == secuencia[secuencia.length - 1];
     }
 }
