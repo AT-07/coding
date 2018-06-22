@@ -1,27 +1,26 @@
-package TestEAN;
+package org.fundacionjala.coding.testean;
 
-import org.fundacionjala.coding.EAN.EAN;
+import org.fundacionjala.coding.ean.Ean;
+
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 /**
- * Esta es la clase Test que hace correr las pruebas de la clase EAN.
+ * Clase que hace correr las pruebas de la clase Ean.
  */
+public class TestEan {
 
-public class testEan {
-
-    private EAN test;
-
+    private Ean test;
 
     /**
      * Test para inicializar mi objeto.
      */
     @Before
     public void test() {
-        test = new EAN();
+        test = new Ean();
     }
 
     /**

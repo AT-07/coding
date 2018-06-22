@@ -1,12 +1,13 @@
-package org.fundacionjala.coding.EAN;
+package org.fundacionjala.coding.ean;
 
 /**
- * Esta clase ghfhf.
+ * Esta clase realiza determina si un numero cumple o no la condición EAN.
  */
-public class EAN {
+public class Ean {
     private static final int CONSTANTE_DECIMAL = 10;
     private static final int CONSTANTE_MULTIPLICACION = 3;
     private static final int CONSTANTE_ZERO = 0;
+
     /**
      * Metodo para determinar si cumple o no cumple la condicion.
      *
@@ -28,6 +29,6 @@ public class EAN {
         }
         resultado = posicionImpar + posicionPar * CONSTANTE_MULTIPLICACION;
         boolean res = resultado % CONSTANTE_DECIMAL == CONSTANTE_ZERO;
-        return (res || (comparator == (CONSTANTE_DECIMAL - (resultado % CONSTANTE_DECIMAL)))) ? true : false;
+        return res || comparator == CONSTANTE_DECIMAL - resultado % CONSTANTE_DECIMAL;
     }
 }
