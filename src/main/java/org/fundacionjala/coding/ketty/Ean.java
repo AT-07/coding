@@ -29,14 +29,8 @@ public class Ean {
         System.out.println(suma);
         int x = num.length() - 1;
         char ni = num.charAt(x);
-        if (comprovacion(suma) == Character.getNumericValue(ni)) {
-            System.out.println("true");
-            return true;
-        } else {
-            System.out.println("false");
-            return false;
-        }
-        //asi?
+        return comprovacion(suma) == Character.getNumericValue(ni);
+
     }
 
     /**
