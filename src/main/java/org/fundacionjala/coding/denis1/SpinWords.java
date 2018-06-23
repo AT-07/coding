@@ -1,5 +1,7 @@
 package org.fundacionjala.coding.denis1;
 
+import java.util.StringJoiner;
+
 /**
  * class SpinWords.
  */
@@ -14,23 +16,15 @@ public class SpinWords {
      */
     public String stopSpinWords(String sentence) {
 
-        String wordInvertido = "";
         String[] wordsParts = sentence.split(" ");
-        StringBuilder word = new StringBuilder();
+        StringJoiner word = new StringJoiner(" ");
 
-        for (int i = 0; i < wordsParts.length; i++) {
-            word.append(wordsParts[i]);
-            if (word.length() < ZISEWORD) {
-                wordInvertido += word.append(" ").toString();
-                word.delete(0, word.length());
-            } else {
-                wordInvertido += word.reverse().append(" ").toString();
-                word.delete(0, word.length());
-            }
+        for (String wordsPart : wordsParts) {
 
+            word.add(wordsPart.length() < ZISEWORD ? wordsPart : new StringBuilder(wordsPart).reverse());
         }
 
-        return wordInvertido.trim();
+        return word.toString();
 
     }
 }
