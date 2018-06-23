@@ -8,7 +8,7 @@ import java.util.StringJoiner;
  * this is a class of shorInner.
  */
 public class ShortInner {
-    public static final int THREE = 3;
+    private static final int THREE = 3;
 
     /**
      * this is a method that invert words inner.
@@ -20,8 +20,8 @@ public class ShortInner {
         String[] listWords = words.split(" ");
         StringJoiner join = new StringJoiner(" ");
         String[] listChars;
-        for (int i = 0; i < listWords.length; i++) {
-            listChars = listWords[i].split("");
+        for (String listWord : listWords) {
+            listChars = listWord.split("");
             if (listChars.length > THREE) {
                 Arrays.sort(listChars, 1, listChars.length - 1,
                         Collections.reverseOrder());
