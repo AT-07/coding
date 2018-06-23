@@ -5,16 +5,16 @@ package org.fundacionjala.coding.franz;
  */
 public class Persistence {
 
-    public static final int NUMBER_TEN = 10;
+    private static final int NUMBER_TEN = 10;
+
     /**
      * @param n is a number for evalua its persistence
      * @return the cant of persistence of param
      */
     public int persistence(long n) {
         int result = 0;
-        long multiple = 1;
-        while (String.valueOf(n).length() > 1) {
-            multiple = 1;
+        while (n > 9) {
+            long multiple = 1;
             while (n != 0) {
                 multiple *= n % NUMBER_TEN;
                 n = n / NUMBER_TEN;
