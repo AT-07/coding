@@ -20,8 +20,14 @@ public class SpinWords {
 
         for (int i = 0; i < wordsParts.length; i++) {
             word.append(wordsParts[i]);
-            wordInvertido += word.length() < ZISEWORD ? word.append(" ").toString() : word.reverse().append(" ").toString();
-            word.delete(0, word.length());
+            if (word.length() < ZISEWORD) {
+                wordInvertido += word.append(" ").toString();
+                word.delete(0, word.length());
+            } else {
+                wordInvertido += word.reverse().append(" ").toString();
+                word.delete(0, word.length());
+            }
+
         }
 
         return wordInvertido.trim();
