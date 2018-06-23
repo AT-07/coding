@@ -1,5 +1,7 @@
 package org.fundacionjala.coding.erik;
 
+import java.util.StringJoiner;
+
 /**
  * This class is responsible for spin words.
  *
@@ -17,15 +19,10 @@ public class SpinWord {
     public String spinWords(String sentence) {
 
         String[] word = sentence.split(" ");
-        String wordSpin = "";
-        for (int i = 0; i < word.length; i++) {
-            if (word[i].length() >= LONG_STRING) {
-                StringBuilder builder = new StringBuilder(word[i]);
-                wordSpin += builder.reverse().append(" ").toString();
-            } else {
-                wordSpin += word[i].concat(" ");
-            }
+        StringJoiner wordSpin = new StringJoiner(" ");
+        for (String aWord : word) {
+            wordSpin.add(aWord.length() >= LONG_STRING ? new StringBuilder(aWord).reverse() : aWord);
         }
-        return wordSpin.trim();
+        return wordSpin.toString();
     }
 }
