@@ -6,7 +6,6 @@ package org.fundacionjala.coding.Ana;
  * @author Ana Maria Mamani Zenteno.
  */
 public class Ean {
-
     private static final int ONE = 1;
     private static final int THREE = 3;
     private static final int DIVIDABLE = 10;

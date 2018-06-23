@@ -25,25 +25,23 @@ public class EanTest {
     }
 
     /**
-     * comprobando se es true.
+     * checking is true.
      */
     @Test
     public void testEanArticleNumberTrue() {
         boolean resul = ean.articleNumber("4003301018398");
         //  boolean resul = ean.articleNumber("0012345678905");
         assertEquals(true, resul);
-        System.out.print(resul);
 
     }
 
     /**
-     * comprobar si es false.
+     * checking is false.
      */
     @Test
     public void testEanArticleNumberFalse() {
         boolean resul = ean.articleNumber("4003301018392");
         assertEquals(false, resul);
-        System.out.print(resul);
 
     }
 
