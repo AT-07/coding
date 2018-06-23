@@ -34,5 +34,6 @@ public class Ean {
         }
         return sumValue == ultimateValue;
     }
+
 }
 

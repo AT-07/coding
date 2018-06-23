@@ -30,7 +30,6 @@ public class EanTest {
     public void testEanArticleNumberTrue() {
         boolean resul = ean.articleNumber("4003301018398");
         assertEquals(true, resul);
-
     }
 
     /**
@@ -40,7 +39,6 @@ public class EanTest {
     public void testEanArticleNumberFalse() {
         boolean resul = ean.articleNumber("4003301018392");
         assertEquals(false, resul);
-
     }
 }
 
