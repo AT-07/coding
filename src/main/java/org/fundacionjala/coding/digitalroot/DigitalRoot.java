@@ -8,28 +8,16 @@ public class DigitalRoot {
 
     /**
      * Metodo para realizar el calculo recursivo de los digitos.
+     *
      * @param numero numero entero.
      * @return result.
      */
     public int digitalRoot(int numero) {
-        int result = sum(numero);
-        if (result >= CONSTANTE_MULTIPLICACION) {
-            result = digitalRoot(result);
-        }
-        return result;
-    }
-
-    /**
-     * Metodo para realizar el calculo de los suma de digitos de un numero.
-     * @param numero numero entero.
-     * @return result.
-     */
-    public int sum(int numero) {
-        int result = 0;
+        int res = 0;
         while (numero > 0) {
-            result = result + numero % CONSTANTE_MULTIPLICACION;
+            res = res + numero % CONSTANTE_MULTIPLICACION;
             numero = numero / CONSTANTE_MULTIPLICACION;
         }
-        return result;
+        return res >= CONSTANTE_MULTIPLICACION ? digitalRoot(res) : res;
     }
 }
