@@ -38,4 +38,20 @@ public class TestEan {
     public void validateEanTestFalse() {
         assertFalse(test.validate("4003301018392"));
     }
+
+    /**
+     * Test para validar mi test False.
+     */
+    @Test
+    public void validateEanTest2True() {
+        assertTrue(test.validate("4023301018392"));
+    }
+
+    /**
+     * Test para validar mi test False.
+     */
+    @Test
+    public void validateEanTest2False() {
+        assertFalse(test.validate("4453301018392"));
+    }
 }
