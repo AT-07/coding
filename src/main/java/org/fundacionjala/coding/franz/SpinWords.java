@@ -16,9 +16,9 @@ public class SpinWords {
 
         String[] words = sentence.split(" ");
         StringBuilder wordComplete = new StringBuilder();
-        for (int i = 0; i < words.length; i++) {
-            wordComplete.append(words[i].length() > LIMIT_TAM ? new StringBuilder(words[i]).reverse().toString()
-                    : words[i]).append(" ").toString();
+        for (String word : words) {
+            wordComplete.append(word.length() > LIMIT_TAM ? new StringBuilder(word).reverse().toString()
+                    : word).append(" ").toString();
         }
         return wordComplete.toString().trim();
     }
