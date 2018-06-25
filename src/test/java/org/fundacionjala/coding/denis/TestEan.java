@@ -16,22 +16,27 @@ import static org.junit.Assert.assertNotEquals;
 
 public class TestEan {
     private Ean digits;
+    private String value;
+    private String valueFail;
 
     /**
-     * init.
+     * Init of digits.
      */
     @Before
     public void before() {
         digits = new Ean();
+        value = "4003301018398";
+        valueFail = "4003301018392";
     }
+
 
     /**
      * test for validation of eanKataTrue.
      */
     @Test
     public void testEuropeArticleNumberKataPass() {
-        digits.setDigits("4003301018398");
-        assertTrue(digits.validation());
+        digits.setDigits(value);
+        assertTrue(digits.kata());
     }
 
     /**
@@ -39,8 +44,8 @@ public class TestEan {
      */
     @Test
     public void testEuropeArticleNumberKataFaile() {
-        digits.setDigits("4003301018392");
-        assertFalse(digits.validation());
+        digits.setDigits(valueFail);
+        assertFalse(digits.kata());
     }
 
     /**
@@ -48,8 +53,8 @@ public class TestEan {
      */
     @Test
     public void testEuropeArticleNumberSetEanTrue() {
-        digits.setDigits("1203301014353");
-        assertEquals("1203301014353", digits.getDigits());
+        digits.setDigits(value);
+        assertEquals(value, digits.getDigits());
     }
 
     /**
@@ -57,8 +62,8 @@ public class TestEan {
      */
     @Test
     public void testEuropeArticleNumberSetEanFalse() {
-        digits.setDigits("1203301014353");
-        assertNotEquals("1203301014253", digits.getDigits());
+        digits.setDigits(valueFail);
+        assertNotEquals(value, digits.getDigits());
 
     }
 }
