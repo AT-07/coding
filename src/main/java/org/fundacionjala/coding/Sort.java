@@ -39,9 +39,7 @@ public class Sort {
 
         }
 
-        String resp = String.join(" ", resWords);
-
-        return resp;
+        return String.join(" ", resWords);
 
     }
 }
