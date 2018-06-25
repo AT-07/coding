@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.denis1;
+package org.fundacionjala.coding.denis;
 
 import org.junit.Before;
 import org.junit.Test;
