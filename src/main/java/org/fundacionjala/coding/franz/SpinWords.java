@@ -1,5 +1,7 @@
 package org.fundacionjala.coding.franz;
 
+import java.util.StringJoiner;
+
 /**
  * This is a class for Spin words.
  */
@@ -15,11 +17,10 @@ public class SpinWords {
     public String spinWords(String sentence) {
 
         String[] words = sentence.split(" ");
-        StringBuilder wordComplete = new StringBuilder();
+        StringJoiner wordComplete = new StringJoiner(" ");
         for (String word : words) {
-            wordComplete.append(word.length() > LIMIT_TAM ? new StringBuilder(word).reverse().toString()
-                    : word).append(" ").toString();
+            wordComplete.add(word.length() > LIMIT_TAM ? new StringBuilder(word).reverse() : word);
         }
-        return wordComplete.toString().trim();
+        return wordComplete.toString();
     }
 }
