@@ -5,6 +5,7 @@ package org.fundacionjala.coding.franz;
  */
 public class DigitalRoot {
     private static final int TEN = 10;
+    private static final int NINE = 9;
 
     /**
      * @param n is a number form digital root
@@ -12,7 +13,7 @@ public class DigitalRoot {
      */
     public int digitaRoot(int n) {
         int sum;
-        while (String.valueOf(n).length() > 1) {
+        while (n > NINE) {
             sum = 0;
             while (n != 0) {
                 sum += n % TEN;
