@@ -10,17 +10,15 @@ public class Persistence {
      * @return retorna el cual fue la persistencia del numero.
      */
     public int persistance(int num) {
-        String strnum = Integer.toString(num);
+        final int numero = 10;
         int cont = 0;
-            while (strnum.length() > 1) {
+            while (num > numero) {
                 int aux = 1;
-                String[] aux2 = strnum.split("");
-                for (String i : aux2) {
-                    int aux3 = Integer.parseInt(i);
-                    aux = aux * aux3;
+                for (String number : Integer.toString(num).split("")) {
+                    aux *= Integer.parseInt(number);
                 }
-                strnum = Integer.toString(aux);
-                cont = cont + 1;
+                num = aux;
+                cont++;
             }
         return cont;
     }
