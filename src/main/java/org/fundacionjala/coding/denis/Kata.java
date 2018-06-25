@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.StringJoiner;
 
 /**
- *
  * @author Denis. Class principal of Kata ineerContent.
  */
 public class Kata {
@@ -13,9 +12,7 @@ public class Kata {
     private static final int SIZE = 3;
 
     /**
-     *
-     * @param words
-     *            is the string with the method work.
+     * @param words is the string with the method work.
      * @return words validation.
      */
     public String sortTheInnerContent(String words) {
@@ -30,13 +27,11 @@ public class Kata {
     }
 
     /**
-     *
-     * @param wordPart
-     *            is the string with the method work.
+     * @param wordPart is the string with the method work.
      * @return word invest.
      */
     public String innerWord(String wordPart) {
-        char[] wordCut = { wordPart.charAt(POSZERO), wordPart.charAt(wordPart.length() - POSONE) };
+        char[] wordCut = {wordPart.charAt(POSZERO), wordPart.charAt(wordPart.length() - POSONE)};
         String newWord = wordPart.substring(POSONE, wordPart.length() - POSONE);
 
         char[] words = newWord.toCharArray();

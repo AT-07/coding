@@ -1,4 +1,5 @@
 package org.fundacionjala.coding.denis;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -6,10 +7,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 /**
- *
  * @author Denis
- *
  */
+
 /**
  * unit test for the class TestSpinWords.
  */
