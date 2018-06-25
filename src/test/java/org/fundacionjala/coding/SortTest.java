@@ -43,7 +43,7 @@ public class SortTest {
      * prueba con la cadena mas corta.
      */
     @Test
-    public void testSortTheInnerContentVariosc() {
+    public void testSortTheInnerContentVariosCorta() {
         assertEquals("wiat for me", so.sortTheInnerContent(prueba2));
     }
 
