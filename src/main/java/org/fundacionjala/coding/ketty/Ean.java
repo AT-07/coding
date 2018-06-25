@@ -5,28 +5,30 @@ package org.fundacionjala.coding.ketty;
  */
 public class Ean {
 
+
     /**
-     * El  CheckSum  valida si num es "EAN".
+     * El  CheckSum, valida si string numero es "EAN".
      *
-     * @param num es la variable  String.
-     * @return return un valor boolean true es "EAN" y return false no es "EAN".
+     * @param num es la es una cadena numerica.
+     * @return un valor boolean,  true si la cadena numerica es "EAN" y false cuando no es "EAN".
      */
     public boolean checkSum(String num) {
-        final int numeroMultiplicadorPar = 3;
+        final int numeroImpar = 1;
+        final int numeroPar = 3;
         int index = 1;
         char numeroChar = ' ';
         int suma = 0;
         for (int i = 0; i < num.length() - 1; i++) {
             numeroChar = num.charAt(i);
             if (index % 2 == 0) {
-                suma += Character.getNumericValue(numeroChar) * numeroMultiplicadorPar;
+                suma += Character.getNumericValue(numeroChar) * numeroPar;
                 index++;
             } else {
-                suma += Character.getNumericValue(numeroChar) * 1;
+                suma += Character.getNumericValue(numeroChar) * numeroImpar;
                 index++;
             }
         }
-        System.out.println(suma);
+
         int x = num.length() - 1;
         char ni = num.charAt(x);
         return comprovacion(suma) == Character.getNumericValue(ni);
