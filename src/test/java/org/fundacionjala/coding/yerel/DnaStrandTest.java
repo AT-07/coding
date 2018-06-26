@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
  * test DnaStrandTest.
  */
 public class DnaStrandTest {
-    DnaStrand dnaStrand;
+    private DnaStrand dnaStrand;
 
     /**
      * create a instance of DnaStrand.
@@ -26,7 +26,7 @@ public class DnaStrandTest {
     public void makeComplement() {
         String taacg = "TAACG";
         String attgc = "ATTGC";
-        assertEquals(taacg,dnaStrand.makeComplement(attgc));
+        assertEquals(taacg, dnaStrand.makeComplement(attgc));
     }
 
     /**
@@ -36,7 +36,7 @@ public class DnaStrandTest {
     public void makeComplementTwo() {
         String cata = "CATA";
         String gtat = "GTAT";
-        assertEquals(cata,dnaStrand.makeComplement(gtat));
+        assertEquals(cata, dnaStrand.makeComplement(gtat));
     }
 
 }

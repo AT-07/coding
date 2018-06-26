@@ -10,11 +10,11 @@ public class DnaStrand {
      * @param dna is a AND to convert.
      * @return ADN convert.
      */
-    public String makeComplement(String dna){
+    public String makeComplement(String dna) {
         String dnaCopy = dna;
-        dnaCopy = dna.replaceAll("A", "O").replaceAll("T","A")
-                .replaceAll("O","T").replaceAll("G","O")
-                .replaceAll("C", "G").replaceAll("O","C");
+        dnaCopy = dna.replaceAll("A", "O").replaceAll("T", "A")
+                .replaceAll("O", "T").replaceAll("G", "O")
+                .replaceAll("C", "G").replaceAll("O", "C");
         return dnaCopy;
     }
 }
