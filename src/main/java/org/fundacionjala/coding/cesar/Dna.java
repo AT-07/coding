@@ -1,4 +1,4 @@
-package org.fundacionjala.coding;
+package org.fundacionjala.coding.cesar;
 
 /**
  *
@@ -12,6 +12,7 @@ public class Dna {
      * @return retorna el dna que se remplazo pero sin afectar a la cadena principal.
      */
     public String makeComplemet(String dna) {
-        return dna.replace("A", "t").replace("T", "a").replace("C", "g").replace("G", "c").toUpperCase();
+        return dna.replace("A", "t").replace("T", "a")
+                .replace("C", "g").replace("G", "c").toUpperCase();
     }
 }

@@ -1,14 +1,9 @@
-package org.fundacionjala.coding;
+package org.fundacionjala.coding.cesar;
 
-/**
- *
- * @author admin-hp
- */
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-
 
 /**
  *
