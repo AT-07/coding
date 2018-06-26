@@ -1,5 +1,7 @@
 package org.fundacionjala.coding.yerel;
 
+import java.util.ArrayList;
+
 /**
  * this class convert word long is major five of sentence.
  */
@@ -7,7 +9,6 @@ public class StopSpinWords {
 
     private static final int LENGTWORD_COVERT = 4;
     private static final String SPACE = " ";
-    private static final int WORD_ULTIMATE = 1;
 
     /**
      * @param sentence is a word to invert.
@@ -15,21 +16,10 @@ public class StopSpinWords {
      */
     public String spinWords(String sentence) {
         String[] wordsSepare = sentence.split(SPACE);
-        StringBuilder joinWord = new StringBuilder();
-        for (int i = 0; i < wordsSepare.length; i++) {
-            joinWord.append(investWords(wordsSepare[i]));
-            joinWord.append(" ");
+        ArrayList<String> wordArray = new ArrayList<>();
+        for (String word: wordsSepare) {
+            wordArray.add(word.length() > LENGTWORD_COVERT ? new StringBuilder(word).reverse().toString() : word);
         }
-        return joinWord.toString().substring(0, joinWord.length() - WORD_ULTIMATE);
-    }
-
-    /**
-     * @param word one word the sentence.
-     * @return word invert or not it.
-     */
-    private StringBuilder investWords(String word) {
-        StringBuilder spinwords = new StringBuilder();
-        spinwords.append(word);
-        return spinwords.length() > LENGTWORD_COVERT ? spinwords.reverse() : spinwords;
+        return String.join(SPACE, wordArray);
     }
 }

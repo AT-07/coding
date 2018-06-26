@@ -1,5 +1,6 @@
 package org.fundacionjala.coding.yerel;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -9,12 +10,21 @@ import static org.junit.Assert.assertEquals;
  */
 public class StopSpinWordsTest {
 
+    private StopSpinWords stopSpinWords;
+
+    /**
+     * instance of StopSpinWords for use in Junit.
+     */
+    @Before
+    public void setUp() {
+        stopSpinWords = new StopSpinWords();
+    }
+
     /**
      * this test assert "Hey wollef sroirraw".
      */
     @Test
     public void spinWords() {
-        StopSpinWords stopSpinWords = new StopSpinWords();
         String words = stopSpinWords.spinWords("Hey fellow warriors");
         assertEquals("Hey wollef sroirraw", words);
     }
@@ -24,7 +34,6 @@ public class StopSpinWordsTest {
      */
     @Test
     public void spinWordswordTwo() {
-        StopSpinWords stopSpinWords = new StopSpinWords();
         String words = stopSpinWords.spinWords("This is a test");
         assertEquals("This is a test", words);
     }
@@ -34,7 +43,6 @@ public class StopSpinWordsTest {
      */
     @Test
     public void spinWordswordThree() {
-        StopSpinWords stopSpinWords = new StopSpinWords();
         String words = stopSpinWords.spinWords("This is another test");
         assertEquals("This is rehtona test", words);
     }
@@ -44,7 +52,6 @@ public class StopSpinWordsTest {
      */
     @Test
     public void spinWordswordFour() {
-        StopSpinWords stopSpinWords = new StopSpinWords();
         String words = stopSpinWords.spinWords("la casa es grande");
         assertEquals("la casa es ednarg", words);
     }
@@ -54,7 +61,6 @@ public class StopSpinWordsTest {
      */
     @Test
     public void spinWordswordFive() {
-        StopSpinWords stopSpinWords = new StopSpinWords();
         String words = stopSpinWords.spinWords("la casa");
         assertEquals("la casa", words);
     }
