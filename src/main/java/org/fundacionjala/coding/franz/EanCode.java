@@ -13,7 +13,7 @@ public class EanCode {
      * @param number is a number for validate
      * @return true if is a number EAN
      */
-    public boolean validationEAN(String number) {
+    boolean validationEAN(final String number) {
         int sum = 0;
         for (int i = 0; i < number.length() - 1; i++) {
             int numericValue = Character.getNumericValue(number.charAt(i));

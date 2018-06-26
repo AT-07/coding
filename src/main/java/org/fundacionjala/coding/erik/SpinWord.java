@@ -16,8 +16,7 @@ public class SpinWord {
      * @param sentence this is param set string.
      * @return string of spin words.
      */
-    public String spinWords(String sentence) {
-
+    String spinWords(final String sentence) {
         String[] word = sentence.split(" ");
         StringJoiner wordSpin = new StringJoiner(" ");
         for (String aWord : word) {

@@ -12,7 +12,7 @@ public class Ean {
      * @param numero un String.
      * @return true or false.
      */
-    public boolean validate(String numero) {
+    boolean validate(final String numero) {
         long nuevoNumero = Long.parseLong(numero);
         long comparator = nuevoNumero % CONSTANTE_DECIMAL;
         long resultado = 0;

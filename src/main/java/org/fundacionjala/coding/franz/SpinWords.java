@@ -14,8 +14,7 @@ public class SpinWords {
      * @param sentence is the words that use for excercise
      * @return words reverse if is a length major to 5 for word
      */
-    public String spinWords(String sentence) {
-
+    String spinWords(final String sentence) {
         String[] words = sentence.split(" ");
         StringJoiner wordComplete = new StringJoiner(" ");
         for (String word : words) {
