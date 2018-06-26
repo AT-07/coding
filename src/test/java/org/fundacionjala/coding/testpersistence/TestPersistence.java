@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 /**
  * TestPersistence class that helps to run all the test cases of the Persistence class.
@@ -51,12 +52,12 @@ public class TestPersistence {
     }
 
     /**
-     * Unit Test #4 qthat verifies the correctness of the persistence method with erroneous values.
+     * Unit Test #4 that verifies the correctness of the persistence method with erroneous values.
      */
     @Test
     public void numberPersistentTestErroneous() {
-        final int persistenceDigit = 999;
+        final int persistenceDigit = 34567;
         final int expectResult = 4;
-        assertEquals(expectResult, persistence.persistenceDigit(persistenceDigit));
+        assertNotEquals(expectResult, persistence.persistenceDigit(persistenceDigit));
     }
 }

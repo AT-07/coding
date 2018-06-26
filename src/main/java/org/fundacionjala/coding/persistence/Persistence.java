@@ -14,16 +14,16 @@ public class Persistence {
      * @return cont with is the result..
      */
     public int persistenceDigit(int number) {
-        int cont = 0;
+        int counter = 0;
         int result = 0;
-        while (number > CONSTANT_VERIFICATION) {
-            cont = 1;
+        if (number > CONSTANT_VERIFICATION) {
+            counter = 1;
             while (number > 0) {
                 result *= number % CONSTANT_MULTIPLICATION;
                 number = number / CONSTANT_MULTIPLICATION;
-                cont++;
+                counter++;
             }
         }
-        return cont;
+        return counter;
     }
 }
