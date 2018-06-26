@@ -4,67 +4,64 @@ import org.fundacionjala.coding.digitalroot.DigitalRoot;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 /**
- * Clase para hacer correr todos los Unit Test.
+ * Class to run all Unit Tests of the DigitalRoot class.
  */
 public class TestDigitalRoot {
 
     private DigitalRoot digitalRoot;
 
     /**
-     * Test para inicializar mi objeto.
+     * Test to initialize my object.
      */
     @Before
-    public void inicializacion() {
+    public void inicialization() {
         digitalRoot = new DigitalRoot();
     }
 
     /**
-     * Test#1 para probar la correctitud del metodo.
+     * Test#1 to test the correctness of the digitalRoot method.
      */
     @Test
-    public void digitalRootTest1True() {
-        final int numeroPrueba1 = 19847;
-        final int numeroPrueba2 = 2;
-
-        assertTrue(digitalRoot.digitalRoot(numeroPrueba1) == numeroPrueba2);
+    public void digitalRootTest1Correct() {
+        final int digitalNumber = 19847;
+        final int expectedResult = 2;
+        assertEquals(expectedResult, digitalRoot.digitalRoot(digitalNumber));
 
     }
 
     /**
-     * Test#1 para probar la correctitud del metodo.
+     * Test#2 to test the correctness of the digitalRoot method.
      */
     @Test
-    public void digitalRootTest2True() {
-        final int numeroPrueba1 = 124;
-        final int numeroPrueba2 = 7;
-
-        assertTrue(digitalRoot.digitalRoot(numeroPrueba1) == numeroPrueba2);
+    public void digitalRootTest2Correct() {
+        final int digitalNumber = 124;
+        final int expectedResult = 7;
+        assertEquals(expectedResult, digitalRoot.digitalRoot(digitalNumber));
 
     }
 
     /**
-     * Test#1 para probar la correctitud del metodo.
+     * Test#3 to test the correctness of the digitalRoot method.
      */
     @Test
-    public void digitalRootTest3True() {
-        final int numeroPrueba1 = 174;
-        final int numeroPrueba2 = 3;
-
-        assertTrue(digitalRoot.digitalRoot(numeroPrueba1) == numeroPrueba2);
+    public void digitalRootTest3Correct() {
+        final int digitalNumber = 174;
+        final int expectedResult = 3;
+        assertEquals(expectedResult, digitalRoot.digitalRoot(digitalNumber));
 
     }
 
     /**
-     * Test#2  negativo para probar la correctitud del metodo.
+     * Test#1 to test the correctness of the digitalRoot method with expected wrong results.
      */
     @Test
-    public void digitalRootTestFalse() {
-        final int numeroPrueba1 = 19847;
-        final int numeroPrueba3 = 3;
-        assertFalse(digitalRoot.digitalRoot(numeroPrueba1) == numeroPrueba3);
+    public void digitalRootTestIncorrect() {
+        final int digitalNumber = 13579;
+        final int expectedResult = 5;
+        assertNotEquals(expectedResult, digitalRoot.digitalRoot(digitalNumber));
     }
 }

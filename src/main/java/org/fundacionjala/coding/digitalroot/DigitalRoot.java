@@ -1,23 +1,23 @@
 package org.fundacionjala.coding.digitalroot;
 
 /**
- * Clase DigitalRoot que se encarga de calcular recursivamente el numero de sus digitos.
+ * Class DigitalRoot that is responsible for recursively calculate the number of your digits.
  */
 public class DigitalRoot {
     private static final int CONSTANTE_MULTIPLICACION = 10;
 
     /**
-     * Metodo para realizar el calculo recursivo de los digitos.
+     * Method to perform the recursive addition of the digits of a number.
      *
-     * @param numero numero entero.
-     * @return result.
+     * @param numero whole inserted as parameter.
+     * @return result which is the recursive sum of a given number.
      */
     public int digitalRoot(int numero) {
-        int res = 0;
+        int result = 0;
         while (numero > 0) {
-            res = res + numero % CONSTANTE_MULTIPLICACION;
+            result = result + numero % CONSTANTE_MULTIPLICACION;
             numero = numero / CONSTANTE_MULTIPLICACION;
         }
-        return res >= CONSTANTE_MULTIPLICACION ? digitalRoot(res) : res;
+        return result >= CONSTANTE_MULTIPLICACION ? digitalRoot(result) : result;
     }
 }
