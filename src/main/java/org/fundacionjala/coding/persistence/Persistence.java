@@ -15,11 +15,9 @@ public class Persistence {
      */
     public int persistenceDigit(int number) {
         int counter = 0;
-        int result = 0;
         if (number > CONSTANT_VERIFICATION) {
             counter = 1;
             while (number > 0) {
-                result *= number % CONSTANT_MULTIPLICATION;
                 number = number / CONSTANT_MULTIPLICATION;
                 counter++;
             }
