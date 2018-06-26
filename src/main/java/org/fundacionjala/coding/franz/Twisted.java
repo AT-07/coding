@@ -13,17 +13,17 @@ public class Twisted {
      */
     public Integer[] sortTwisted(Integer[] array) {
         return Arrays.stream(array)
-                .map(number -> {
-                    return new Integer(Integer.valueOf(number.toString()
+                .map(number ->
+                    Integer.valueOf(number.toString()
                             .replace('3', 't')
-                            .replace('7', '3').replace('t', '7')));
-                })
+                            .replace('7', '3').replace('t', '7'))
+                )
                 .sorted()
-                .map(number -> {
-                    return new Integer(Integer.valueOf(number.toString()
+                .map(number ->
+                    Integer.valueOf(number.toString()
                             .replace('3', 't')
-                            .replace('7', '3').replace('t', '7')));
-                })
+                            .replace('7', '3').replace('t', '7'))
+                )
                 .toArray(Integer[]::new);
     }
 }
