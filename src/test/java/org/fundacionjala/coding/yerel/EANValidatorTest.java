@@ -3,7 +3,6 @@ package org.fundacionjala.coding.yerel;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -13,8 +12,6 @@ import static org.junit.Assert.assertTrue;
  */
 public class EANValidatorTest {
 
-    public static final int EXPRESULT = 72;
-    private static final String CODIGO = "400330101839";
     private EANValidator eanValidator;
 
     /**
@@ -30,24 +27,7 @@ public class EANValidatorTest {
      */
     @Test
     public void validator() {
-        assertTrue(eanValidator.validator("4003301018398"));
-    }
-
-
-    /**
-     * this test verify 400330101839 add is true.
-     */
-    @Test
-    public void sumNumbersCode() {
-        assertEquals(EXPRESULT, eanValidator.sumNumbersCode(CODIGO));
-    }
-
-    /**
-     * this test 400330101839 is equals to 72.
-     */
-    @Test
-    public void sumNumbersCodeDos() {
-        assertEquals(EXPRESULT, eanValidator.sumNumbersCode(CODIGO));
+        assertTrue(eanValidator.validate("4003301018398"));
     }
 
     /**
@@ -55,6 +35,7 @@ public class EANValidatorTest {
      */
     @Test
     public void validatorDos() {
-        assertFalse(eanValidator.validator(CODIGO));
+        final String codigo = "400330101839";
+        assertFalse(eanValidator.validate(codigo));
     }
 }
