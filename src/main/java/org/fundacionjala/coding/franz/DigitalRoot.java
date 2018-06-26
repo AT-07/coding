@@ -17,7 +17,7 @@ public class DigitalRoot {
             sum = 0;
             while (n != 0) {
                 sum += n % TEN;
-                n = n / TEN;
+                n /= TEN;
             }
             n = sum;
         }
