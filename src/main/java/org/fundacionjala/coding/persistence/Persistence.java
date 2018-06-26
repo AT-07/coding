@@ -1,47 +1,29 @@
 package org.fundacionjala.coding.persistence;
 
 /**
- * Clase que se encarga de realizar calculos persistentes multiplicativos dado un numero de entrada.
+ * Class that is responsible for making multiplicative persistent calculations given an entry number.
  */
 public class Persistence {
-    public static final int CONSTANTE_MULTIPLICACION = 10;
-    public static final int CONSTANTE_VERIFICACION = 9;
-
+    public static final int CONSTANT_MULTIPLICATION = 10;
+    public static final int CONSTANT_VERIFICATION = 9;
 
     /**
-     * Metodo que realiza las multiplicaciones persistentes.
+     * Method that performs the conversions of the persistent number.
      *
-     * @param numero es un int.
-     * @return contador.
+     * @param number is the persistence digital.
+     * @return cont with is the result..
      */
-    public int persistence(int numero) {
-        int contador = 0;
-        int result = multiplication(numero);
-        if (numero > 0 && numero < CONSTANTE_MULTIPLICACION) {
-            return 0;
-        } else {
-            contador = 1;
-            while (result > CONSTANTE_VERIFICACION) {
-                contador++;
-                result = multiplication(result);
+    public int persistenceDigit(int number) {
+        int cont = 0;
+        int result = 0;
+        while (number > CONSTANT_VERIFICATION) {
+            cont = 1;
+            while (number > 0) {
+                result *= number % CONSTANT_MULTIPLICATION;
+                number = number / CONSTANT_MULTIPLICATION;
+                cont++;
             }
         }
-        return contador;
-    }
-
-    /**
-     * Metodo que se encarga de realizar la multiplicacion de todos sus digitos.
-     *
-     * @param numero es un int.
-     * @return result.
-     */
-    public int multiplication(int numero) {
-        int result = 1;
-        while (numero > 0) {
-            result *= numero % CONSTANTE_MULTIPLICACION;
-            numero = numero / CONSTANTE_MULTIPLICACION;
-        }
-        return result;
-
+        return cont;
     }
 }

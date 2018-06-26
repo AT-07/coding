@@ -4,79 +4,59 @@ import org.fundacionjala.coding.persistence.Persistence;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 /**
- * Clase TestPersistence que ayuda a correr todos los casos de prueba de la clase Persistence.
+ * TestPersistence class that helps to run all the test cases of the Persistence class.
  */
 public class TestPersistence {
     private Persistence persistence;
-    private static final int CONSTANTE1 = 39;
-    private static final int CONSTANTE2 = 3;
-    private static final int CONSTANTE3 = 999;
-    private static final int CONSTANTE4 = 4;
-    private static final int CONSTANTE5 = 1;
-    private static final int CONSTANTE7 = 27;
-
 
     /**
-     * Metodo que inicializa mi objeto persistence.
+     * Method that initializes my object persistence.
      */
     @Before
-    public void inicializacion() {
+    public void inicialization() {
         persistence = new Persistence();
     }
 
     /**
-     * Unit Test #1 que verifica la correctitud del metodo persistence.
+     * Unit Test #1 that verifies the correctness of the persistence method.
      */
     @Test
-    public void numberPersistentTest1True() {
-        assertTrue(persistence.persistence(CONSTANTE1) == CONSTANTE2);
+    public void numberPersistentTest1Correct() {
+        final int persistenceDigit = 39;
+        final int expectResult = 3;
+        assertEquals(expectResult, persistence.persistenceDigit(persistenceDigit));
+    }
+
+    /**
+     * Unit Test #2 that verifies the correctness of the persistence method.
+     */
+    @Test
+    public void numberPersistentTest2Correct() {
+        final int persistenceDigit = 999;
+        final int expectResult = 4;
+        assertEquals(expectResult, persistence.persistenceDigit(persistenceDigit));
 
     }
 
     /**
-     * Unit Test #2 que verifica la correctitud del metodo persistence.
+     * Unit Test #3 that verifies the correctness of the persistence method.
      */
     @Test
-    public void numberPersistentTest2True() {
-        assertTrue(persistence.persistence(CONSTANTE3) == CONSTANTE4);
-
+    public void numberPersistentTest3Correct() {
+        final int persistenceDigit = 1;
+        assertEquals(0, persistence.persistenceDigit(persistenceDigit));
     }
 
     /**
-     * Unit Test #3 que verifica la correctitud del metodo persistence.
+     * Unit Test #4 qthat verifies the correctness of the persistence method with erroneous values.
      */
     @Test
-    public void numberPersistentTest3True() {
-        assertTrue(persistence.persistence(CONSTANTE5) == 0);
-
-    }
-
-    /**
-     * Unit Test #4 que verifica la correctitud del metodo persistence con valores erroneos.
-     */
-    @Test
-    public void numberPersistentTestFalse() {
-        assertFalse(persistence.persistence(CONSTANTE3) == CONSTANTE2);
-    }
-
-    /**
-     * Unit Test #1 que verifica la correctitud del metodo multiplication.
-     */
-    @Test
-    public void multiplicationTest1True() {
-        assertTrue(persistence.multiplication(CONSTANTE1) == CONSTANTE7);
-
-    }
-
-    /**
-     * Unit Test #1 que verifica la correctitud del metodo multiplication.
-     */
-    @Test
-    public void multiplicationTest2False() {
-        assertFalse(persistence.multiplication(CONSTANTE1) == CONSTANTE2);
+    public void numberPersistentTestErroneous() {
+        final int persistenceDigit = 999;
+        final int expectResult = 4;
+        assertEquals(expectResult, persistence.persistenceDigit(persistenceDigit));
     }
 }
