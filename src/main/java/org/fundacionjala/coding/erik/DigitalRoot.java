@@ -14,8 +14,8 @@ public class DigitalRoot {
         while (number > DIVISOR) {
             int sum = 0;
             while (number != 0) {
-                sum = sum + (number % DIVISOR);
-                number = number / DIVISOR;
+                sum += number % DIVISOR;
+                number /= DIVISOR;
             }
             number = sum;
         }
