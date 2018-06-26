@@ -4,41 +4,50 @@ import org.fundacionjala.coding.spinwords.SpinWords;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 /**
- * Clase donde se ejecutaran todos los test de la clase SpinWords.
+ * Class where all the tests of the SpinWords class will be executed.
  */
 public class TestSpinWords {
 
     private SpinWords spinWord;
 
     /**
-     * Test para inicializar mi objeto.
+     * Test to initialize my object.
      */
     @Before
-    public void test() {
+    public void inicialization() {
         spinWord = new SpinWords();
     }
 
     /**
-     * Test para validar mi test True.
+     * Test to validate the correctness of the spinWords method.
      */
     @Test
-    public void spinWordsTestTrue() {
-        String cadena = "La principal mision de cada uno es aprender cada dia mas";
-        String cadenaModificada = spinWord.spinWords(cadena);
-        assertTrue(cadenaModificada.equalsIgnoreCase(spinWord.spinWords(cadena)));
-
+    public void spinWordsTest1Correct() {
+        final String cadenaValue = "La principal mision de cada uno es aprender cada dia mas";
+        String cadenaModified = spinWord.spinWords(cadenaValue);
+        assertEquals(cadenaModified, spinWord.spinWords(cadenaValue));
     }
 
     /**
-     * Test para validar mi test False.
+     * Test N°2 to validate the correctness of the spinWords method.
      */
     @Test
-    public void spinWordsTestFalse() {
-        String cadena = "La principal mision de cada uno es aprender cada dia mas";
-        assertFalse(cadena.equalsIgnoreCase(spinWord.spinWords(cadena)));
+    public void spinWordsTest2Correct() {
+        final String cadenaValue = "Las matemáticas son la música de la razón";
+        String cadenaModified = spinWord.spinWords(cadenaValue);
+        assertEquals(cadenaModified, spinWord.spinWords(cadenaValue));
+    }
+
+    /**
+     * Test to validate the correctness of the spinWords method.
+     */
+    @Test
+    public void spinWordsTestIncorrect() {
+        String cadenaValue = "Las musica debe traer alivio al alma y la mente";
+        assertNotEquals(cadenaValue, spinWord.spinWords(cadenaValue));
     }
 }
