@@ -1,6 +1,4 @@
-package org.fundacionjala.coding.testean;
-
-import org.fundacionjala.coding.ean.Ean;
+package org.fundacionjala.coding.william;
 
 import org.junit.Before;
 import org.junit.Test;

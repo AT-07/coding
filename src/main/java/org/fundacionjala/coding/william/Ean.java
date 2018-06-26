@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.ean;
+package org.fundacionjala.coding.william;
 
 /**
  * Esta clase realiza determina si un numero cumple o no la condición EAN.
