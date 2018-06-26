@@ -27,7 +27,7 @@ public class DnaTest {
     @Test
     public void testMakeComplemetCadena() {
         String prueba = "ATTGC";
-        assertEquals("TAACG", dna.makeComplemet(prueba));
+        assertEquals("TAACG", dna.makeComplement(prueba));
     }
 
     /**
@@ -36,7 +36,7 @@ public class DnaTest {
     @Test
     public void testMakeComplemetCadenaCorta() {
         String prueba = "GTAT";
-        assertEquals("CATA", dna.makeComplemet(prueba));
+        assertEquals("CATA", dna.makeComplement(prueba));
     }
 
 

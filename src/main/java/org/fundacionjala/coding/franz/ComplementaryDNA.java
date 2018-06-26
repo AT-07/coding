@@ -16,7 +16,7 @@ public class ComplementaryDNA {
      * @param dna is a Stirng that make complement
      * @return a String complement
      */
-    public String makeComplement(String dna) {
+    String makeComplement(final String dna) {
 
         return dna.replaceAll(A, SPACE).replaceAll(T, A).replaceAll(SPACE, T)
                 .replaceAll(C, SPACE).replaceAll(G, C).replaceAll(SPACE, G);
