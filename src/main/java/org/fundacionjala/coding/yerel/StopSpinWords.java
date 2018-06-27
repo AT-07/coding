@@ -14,7 +14,7 @@ public class StopSpinWords {
      * @param sentence is a word to invert.
      * @return word invert.
      */
-    public String spinWords(String sentence) {
+    public String spinWords(final String sentence) {
         String[] wordsSepare = sentence.split(SPACE);
         ArrayList<String> wordArray = new ArrayList<>();
         for (String word: wordsSepare) {
