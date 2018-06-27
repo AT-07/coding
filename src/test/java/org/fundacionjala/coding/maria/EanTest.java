@@ -30,6 +30,7 @@ public class EanTest {
     public void testEanArticleNumberTrue() {
         boolean result = ean.articleNumber("4003301018398");
         assertEquals(true, result);
+        System.out.print(result);
     }
 
     /**

@@ -19,9 +19,8 @@ public class Ean {
     public boolean articleNumber(String number) {
         int sumValue = 0;
         int ultimateValue = Integer.parseInt(number.substring(number.length() - 1));
-
         for (int n = 0; n < number.length() - 1; n++) {
-            if (n % 2 == 0) {
+           if (n % 2 == 0) {
                 sumValue += Character.getNumericValue(number.charAt(n)) * ONE;
             } else {
                 sumValue += Character.getNumericValue(number.charAt(n)) * THREE;
