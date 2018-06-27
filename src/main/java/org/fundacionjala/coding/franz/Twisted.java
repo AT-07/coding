@@ -15,7 +15,7 @@ public class Twisted {
      * @param array numers that sort in twisted
      * @return arrays number sorted
      */
-    public Integer[] sortTwisted(Integer[] array) {
+    public Integer[] sortTwisted(final Integer[] array) {
         return Arrays.stream(array)
                 .map(number -> Integer.valueOf(number.toString()
                         .replace(THREE, FLAG).replace(SEVEN, THREE).replace(FLAG, SEVEN))
