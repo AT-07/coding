@@ -1,36 +1,21 @@
 package org.fundacionjala.coding.daniel;
 
 /**
- * Clase que sumar digito or digito hasta obtener un valor entre 0 - 9.
+ * Class that add up to the digits of sequence of number until be minor than 10.
  */
 public class SumDigitsDigitalRoot {
     private static final int NUMEROMAYOR = 10;
 
     /**
-     * metodo que sumara los digito cada ves que sea mayor igual a 10.
+     * Method that separate the numbers and add up.
      *
-     * @param numeroEntero numero mayor o igual a 0.
-     * @return devuelve un entero.
+     * @param numero understands positive natural numbers.
+     * @return one number.
      */
-    public int sumarSecuenciaDigito(int numeroEntero) {
-        while (numeroEntero >= NUMEROMAYOR) {
-            numeroEntero = sumarNumero(numeroEntero);
+    public int sumarNumero(int numero) {
+        while (numero >= NUMEROMAYOR) {
+            numero = numero % NUMEROMAYOR + sumarNumero(numero / NUMEROMAYOR);
         }
-        return numeroEntero;
+        return numero;
     }
-
-    /**
-     * metodo que separa los numeros y sumarlos.
-     *
-     * @param sumar numero a separar.
-     * @return un numero entero.
-     */
-    public int sumarNumero(int sumar) {
-        if (sumar >= NUMEROMAYOR) {
-            return sumar % NUMEROMAYOR + sumarNumero(sumar / NUMEROMAYOR);
-        } else {
-            return sumar;
-        }
-    }
-
 }

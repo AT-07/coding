@@ -6,19 +6,13 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Pruebas para verificar el funcionamieto de sumar digitos.
+ * Tests to verify the operation of adding digits.
  */
-public abstract class TestSumDigitsDigitalRoot {
+public class TestSumDigitsDigitalRoot {
     private SumDigitsDigitalRoot sumaDigito;
 
-    private static final int PRUEBA1 = 9;
-    private static final int PRUEBA2 = 6;
-    private static final int PRUEBA3 = 942;
-    private static final int PRUEBA4 = 24;
-    private static final int PRUEBA5 = 132189;
-
     /**
-     * inicializaremos nuestro constructos sumaDigito.
+     * Initialize constructor.
      */
     @Before
     public void setUp() {
@@ -26,39 +20,47 @@ public abstract class TestSumDigitsDigitalRoot {
     }
 
     /**
-     * test que verificara la sumatoria de un digito hasta tener un solo digito.
+     * Test that will verify when the input parameter is a digit .
      */
     @Test
     public void testSumatoriaDeUnDigitos() {
-        int sumaEsperada = sumaDigito.sumarSecuenciaDigito(PRUEBA1);
-        assertEquals(PRUEBA1, sumaEsperada);
+        final int expectedResult = 9;
+        final int digitalResult = 9;
+        int sumaEsperada = sumaDigito.sumarNumero(digitalResult);
+        assertEquals(expectedResult, sumaEsperada);
     }
 
     /**
-     * test que verificara la sumatoria de dos digito hasta tener un solo digito.
+     * Test that will verify when the input parameter has two digits.
      */
     @Test
-    public void testSumatoriaDeDosDigitos() {
-        int sumaEsperada = sumaDigito.sumarSecuenciaDigito(PRUEBA3);
-        assertEquals(PRUEBA2, sumaEsperada);
+    public void testSumatoriaUnDigito() {
+        final int rxpectedResult = 1;
+        final int digitalResult = 55;
+        int sumaEsperada = sumaDigito.sumarNumero(digitalResult);
+        assertEquals(rxpectedResult, sumaEsperada);
     }
 
     /**
-     * test que verificara la sumatoria de tres digito hasta tener un solo digito.
+     * Test that will verify when the input parameter has three digits.
      */
     @Test
-    public void testSumatoriaDeTresDigitos() {
-        int sumaEsperada = sumaDigito.sumarSecuenciaDigito(PRUEBA5);
-        assertEquals(PRUEBA2, sumaEsperada);
+    public void testSumatoriaTresDigitos() {
+        final int expectedResult = 6;
+        final int digitalResult = 942;
+        int actualResult = sumaDigito.sumarNumero(digitalResult);
+        assertEquals(expectedResult, actualResult);
     }
 
     /**
-     * test que verificara la sumatoria de seis digito.
+     * Test that will verify when the input parameter has n digits.
      */
     @Test
-    public void testSumatoria() {
-        int sumaEsperada = sumaDigito.sumarNumero(PRUEBA5);
-        assertEquals(PRUEBA4, sumaEsperada);
+    public void testSumatoriaNDigitos() {
+        final int expectedResult = 6;
+        final int digitalResult = 132189;
+        int sumaEsperada = sumaDigito.sumarNumero(digitalResult);
+        System.out.println(sumaEsperada);
+        assertEquals(expectedResult, sumaEsperada);
     }
-
 }
