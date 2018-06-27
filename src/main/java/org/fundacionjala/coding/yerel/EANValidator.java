@@ -11,7 +11,7 @@ public class EANValidator {
      * @param code it is a number code calculate.
      * @return true or false if number code is a checksum.
      */
-    public boolean validate(String code) {
+    public boolean validate(final String code) {
         int add = 0;
         int ultimoDigito = Integer.parseInt(code.substring(code.length() - 1));
         String[] arrayDigit = code.split("");
