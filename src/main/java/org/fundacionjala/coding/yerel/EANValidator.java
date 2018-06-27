@@ -4,9 +4,8 @@ package org.fundacionjala.coding.yerel;
  * this a class EANValidator.
  */
 public class EANValidator {
-    public static final int MODULE = 10;
-    public static final int MULTIPLICATION = 3;
-
+    private static final int MODULE = 10;
+    private static final int MULTIPLICATION = 3;
 
     /**
      * @param code it is a number code calculate.
