@@ -11,6 +11,9 @@ import static org.junit.Assert.assertEquals;
 public class WordOrderTest {
     WordOrder wordOrder;
 
+    /**
+     * this method initialize instance of class.
+     */
     @Before
     public void setUp() {
         wordOrder = new WordOrder();
