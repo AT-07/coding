@@ -27,11 +27,7 @@ public class Ean {
                 sumValue += Character.getNumericValue(number.charAt(n)) * THREE;
             }
         }
-        if (sumValue % DIVIDABLE == 0) {
-            sumValue = 0;
-        } else {
-            sumValue = DIVIDABLE - (sumValue % DIVIDABLE);
-        }
+        sumValue = sumValue % DIVIDABLE == 0 ? 0 : DIVIDABLE - (sumValue % DIVIDABLE);
         return sumValue == ultimateValue;
     }
 

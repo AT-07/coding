@@ -28,8 +28,8 @@ public class EanTest {
      */
     @Test
     public void testEanArticleNumberTrue() {
-        boolean resul = ean.articleNumber("4003301018398");
-        assertEquals(true, resul);
+        boolean result = ean.articleNumber("4003301018398");
+        assertEquals(true, result);
     }
 
     /**
@@ -37,8 +37,17 @@ public class EanTest {
      */
     @Test
     public void testEanArticleNumberFalse() {
-        boolean resul = ean.articleNumber("4003301018392");
-        assertEquals(false, resul);
+        boolean result = ean.articleNumber("4003301018392");
+        assertEquals(false, result);
+    }
+
+    /**
+     * checking is Zero.
+     */
+    @Test
+    public void testEanArticleNumberZero() {
+        boolean result = ean.articleNumber("9783827317100");
+        assertEquals(true, result);
     }
 }
 
