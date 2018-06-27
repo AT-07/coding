@@ -12,6 +12,7 @@ public class EanValidator {
 
     /**
      * this method validates ean code.
+     *
      * @param eanCode this is param set string.
      * @return true or false
      */
@@ -19,10 +20,12 @@ public class EanValidator {
 
         int intEan;
         int sum = 0;
-        for (int i = 0; i < eanCode.length(); i++) {
+        int last = Character.getNumericValue(eanCode.charAt(eanCode.length() - 1));
+        for (int i = 0; i < eanCode.length() - 1; i++) {
             intEan = Character.getNumericValue(eanCode.charAt(i));
             sum += i % 2 != 0 ? intEan * MULTIPLICADOR_PAR : intEan;
         }
-        return sum % DIVISOR == 0;
+        int comp = sum % DIVISOR == 0 ? 0 : DIVISOR - (sum % DIVISOR);
+        return comp == last;
     }
 }
