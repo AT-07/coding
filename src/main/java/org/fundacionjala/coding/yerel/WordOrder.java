@@ -1,6 +1,9 @@
 package org.fundacionjala.coding.yerel;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * this class inner content desending.
@@ -9,39 +12,20 @@ public class WordOrder {
 
     private static final int INDEX_ONE = 1;
     private static final String SPACE = " ";
-    private static final int INDEX_ZERO = 0;
+    private static final String INDEX_EMPTY = "";
 
     /**
      * @param sentence a inner content.
      * @return content inner desendig.
      */
     public String innerContent(String sentence) {
-        StringBuilder words;
-        StringBuilder newWord = new StringBuilder();
-        String cutWord;
-        String[] cutSentence = sentence.split(SPACE);
-        for (int i = INDEX_ZERO; i < cutSentence.length; i++) {
-            words = new StringBuilder(cutSentence[i]);
-            cutWord = desedingOrder(words.substring(INDEX_ONE, words.length() - INDEX_ONE));
-            words = words.delete(1, words.length() - INDEX_ONE);
-            words = words.insert(INDEX_ONE, cutWord);
-            newWord.append(words);
-            newWord.append(SPACE);
+        List<String> list = new ArrayList<>();
+        String[] wordReverte;
+        for (String word: sentence.split(SPACE)) {
+            wordReverte = word.split(INDEX_EMPTY);
+            Arrays.sort(wordReverte, INDEX_ONE, wordReverte.length - INDEX_ONE, Collections.reverseOrder());
+            list.add(String.join(INDEX_EMPTY, wordReverte));
         }
-        return newWord.toString().substring(INDEX_ZERO, newWord.length() - INDEX_ONE);
-    }
-
-    /**
-     * @param word is a convert descending.
-     * @return desending word.
-     */
-    public String desedingOrder(String word) {
-        StringBuilder wordDesending = new StringBuilder();
-        char[] arrChar = word.toCharArray();
-        Arrays.sort(arrChar);
-        for (int i = arrChar.length - INDEX_ONE; i >= INDEX_ZERO; i--) {
-            wordDesending.append(arrChar[i]);
-        }
-        return wordDesending.toString();
+        return String.join(SPACE, list);
     }
 }

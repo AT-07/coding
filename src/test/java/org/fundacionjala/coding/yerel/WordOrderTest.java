@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
  * this a test for class WordOrder.
  */
 public class WordOrderTest {
-    WordOrder wordOrder;
+    private WordOrder wordOrder;
 
     /**
      * this method initialize instance of class.
@@ -29,25 +29,6 @@ public class WordOrderTest {
     }
 
     /**
-     * test a order descending "onten".
-     */
-    @Test
-    public void desedingOrder() {
-        String sentence = wordOrder.desedingOrder("onten");
-        assertEquals("tonne", sentence);
-    }
-
-    /**
-     * test a order descending "escendin".
-     */
-    @Test
-    public void desedingOrderWordTwo() {
-        WordOrder wordOrder = new WordOrder();
-        String sentence = wordOrder.desedingOrder("escendin");
-        assertEquals("snnieedc", sentence);
-    }
-
-    /**
      * test to inner content descending "sort the inner content in descending order".
      */
     @Test
@@ -55,5 +36,4 @@ public class WordOrderTest {
         String sentence = wordOrder.innerContent("sort the inner content in descending order");
         assertEquals("srot the inner ctonnet in dsnnieedcg oredr", sentence);
     }
-
 }
