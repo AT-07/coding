@@ -16,7 +16,7 @@ public class Ean {
      * @param number numero esperodo.
      * @return devuelve un valor boolean.
      */
-    public boolean articleNumber(String number) {
+    public boolean articleNumber(final String number) {
         int sumValue = 0;
         int ultimateValue = Integer.parseInt(number.substring(number.length() - 1));
         for (int n = 0; n < number.length() - 1; n++) {
