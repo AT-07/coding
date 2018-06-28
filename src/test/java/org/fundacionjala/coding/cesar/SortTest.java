@@ -1,5 +1,4 @@
-package org.fundacionjala.coding;
-
+package org.fundacionjala.coding.cesar;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -15,10 +14,6 @@ public class SortTest {
      * hola.
      */
     private Sort so;
-    private String prueba1;
-    private String prueba2;
-    private String prueba3;
-
 
     /**
      * declaron las variables para entren por el metodo de invertir.
@@ -26,9 +21,7 @@ public class SortTest {
     @Before
     public void before() {
         so = new Sort();
-        prueba1 = "sort the inner content in descending order";
-        prueba2 = "wait for me";
-        prueba3 = "this kata is easy";
+
     }
 
     /**
@@ -36,6 +29,7 @@ public class SortTest {
      */
     @Test
     public void testSortTheInnerContentVariosC() {
+        final String prueba1 = "sort the inner content in descending order";
         assertEquals("srot the inner ctonnet in dsnnieedcg oredr", so.sortTheInnerContent(prueba1));
     }
 
@@ -44,6 +38,7 @@ public class SortTest {
      */
     @Test
     public void testSortTheInnerContentVariosCorta() {
+        final String prueba2 = "wait for me";
         assertEquals("wiat for me", so.sortTheInnerContent(prueba2));
     }
 
@@ -52,6 +47,17 @@ public class SortTest {
      */
     @Test
     public void testSortTheInnerContentVariosCorto() {
+        final String prueba3 = "this kata is easy";
         assertEquals("tihs ktaa is esay", so.sortTheInnerContent(prueba3));
+    }
+
+    /**
+     *
+     * test with a short chain.
+     */
+    @Test
+    public void testSortTheInnerContentVaalueShort() {
+        final String prueba4 = "I am";
+        assertEquals("I am", so.sortTheInnerContent(prueba4));
     }
 }
