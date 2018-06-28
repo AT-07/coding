@@ -12,7 +12,7 @@ public class Spinner {
      * @param totalText string that will be introduced.
      * @return string en reverse.
      */
-    public String spinWords(String totalText) {
+    public String spinWords(final String totalText) {
 
         String[] resWords = new String[totalText.split(" ").length];
 
