@@ -18,7 +18,7 @@ public class WordOrder {
      * @param sentence a inner content.
      * @return content inner desendig.
      */
-    public String innerContent(String sentence) {
+    public String innerContent(final String sentence) {
         List<String> list = new ArrayList<>();
         String[] wordReverte;
         for (String word: sentence.split(SPACE)) {
