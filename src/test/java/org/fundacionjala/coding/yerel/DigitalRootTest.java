@@ -9,12 +9,6 @@ import static org.junit.Assert.assertEquals;
  * test of DigitalRootTest.
  */
 public class DigitalRootTest {
-    private static final int NUMBER_SEVEN = 7;
-    private static final int NUMBER_SIX = 6;
-    private static final int NUMBER_TWO = 2;
-    private static final int NUMBER_16 = 16;
-    private static final int NUMBER_942 = 942;
-    private static final int NUMBER_493193 = 493193;
     private DigitalRoot digitalRoot;
 
     /**
@@ -30,7 +24,9 @@ public class DigitalRootTest {
      */
     @Test
     public void addDigit() {
-        assertEquals(NUMBER_SEVEN, digitalRoot.addDigit(NUMBER_16));
+        final int expectedResult = 7;
+        final int actualresult = 16;
+        assertEquals(expectedResult, digitalRoot.addDigit(actualresult));
     }
 
     /**
@@ -38,7 +34,9 @@ public class DigitalRootTest {
      */
     @Test
     public void addDigitNumberTwo() {
-        assertEquals(NUMBER_SIX, digitalRoot.addDigit(NUMBER_942));
+        final int expectedResult = 6;
+        final int actualresult = 942;
+        assertEquals(expectedResult, digitalRoot.addDigit(actualresult));
     }
 
     /**
@@ -46,6 +44,8 @@ public class DigitalRootTest {
      */
     @Test
     public void addDigitNumberThree() {
-        assertEquals(NUMBER_TWO, digitalRoot.addDigit(NUMBER_493193));
+        final int expectedResult = 2;
+        final int actualresult = 493193;
+        assertEquals(expectedResult, digitalRoot.addDigit(actualresult));
     }
 }
