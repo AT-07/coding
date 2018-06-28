@@ -1,38 +1,29 @@
 package org.fundacionjala.coding.daniel;
 
 /**
- * clase que multiplica todos los digitos de un numero entero.
+ * Class that multiplies all the digits of a whole number.
  */
 public class PersistentBugger {
     private static final int MODULO = 10;
 
     /**
-     * Metodo que calcula cuantas veces se multiplica un numero.
      *
-     * @param numeroEntero numero natural positivo.
-     * @return cantidad de veces multiplicadas.
+     * Method that calculates how many times a number is multiplied.
+     *
+     * @param numeroEntero positive natural number.
+     * @return number of times multiplied.
      */
     public int cantidadMultiplicada(int numeroEntero) {
         int cantidad = 0;
         while (numeroEntero >= MODULO) {
+            int multiplicacion = 1;
+            while (numeroEntero != 0) {
+                multiplicacion *= numeroEntero % MODULO;
+                numeroEntero = numeroEntero / MODULO;
+            }
             cantidad++;
-            numeroEntero = multiplicarNumero(numeroEntero);
+            numeroEntero = multiplicacion;
         }
         return cantidad;
     }
-
-    /**
-     * metodo que separa los numeros y los multiplica.
-     *
-     * @param multiplicar numero a separar.
-     * @return un numero entero.
-     */
-    public int multiplicarNumero(int multiplicar) {
-        if (multiplicar >= MODULO) {
-            return multiplicar % MODULO * multiplicarNumero(multiplicar / MODULO);
-        } else {
-            return multiplicar;
-        }
-    }
-
 }
