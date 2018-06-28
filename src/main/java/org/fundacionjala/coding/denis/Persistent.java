@@ -16,7 +16,7 @@ public class Persistent {
 
     /**
      * @param data verify the amount operation.
-     * @return amount operation.
+     * @return amount operation check.
      */
     public int check(long data) {
         final int dataDiv = 10;
