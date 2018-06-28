@@ -11,10 +11,8 @@ public class DnaStrand {
      * @return ADN convert.
      */
     public String makeComplement(String dna) {
-        String dnaCopy = dna;
-        dnaCopy = dna.replaceAll("A", "O").replaceAll("T", "A")
+        return dna.replaceAll("A", "O").replaceAll("T", "A")
                 .replaceAll("O", "T").replaceAll("G", "O")
                 .replaceAll("C", "G").replaceAll("O", "C");
-        return dnaCopy;
     }
 }
