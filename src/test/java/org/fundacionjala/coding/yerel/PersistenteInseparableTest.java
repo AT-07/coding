@@ -10,13 +10,6 @@ import static org.junit.Assert.assertEquals;
  */
 public class PersistenteInseparableTest {
 
-    private static final int TESTNUMBER_999 = 999;
-    private static final int TESTNUMBER_39 = 39;
-    private static final int TESTNUMBER_4 = 4;
-    private static final int TESTEXPECTED_3 = 3;
-    private static final int TESTEXPECTED_4 = 4;
-    private static final int TESTEXPECTED_0 = 0;
-
     private PersistenteInseparable persistenteInseparable;
 
     /**
@@ -32,7 +25,9 @@ public class PersistenteInseparableTest {
      */
     @Test
     public void persistence() {
-        assertEquals(TESTEXPECTED_4, persistenteInseparable.persistence(TESTNUMBER_999));
+        final int actualResult  = 999;
+        final int expectedResult = 4;
+        assertEquals(expectedResult, persistenteInseparable.persistence(actualResult));
     }
 
     /**
@@ -40,7 +35,9 @@ public class PersistenteInseparableTest {
      */
     @Test
     public void persistenceTwo() {
-        assertEquals(TESTEXPECTED_3, persistenteInseparable.persistence(TESTNUMBER_39));
+        final int actualResult  = 39;
+        final int expectedResult = 3;
+        assertEquals(expectedResult, persistenteInseparable.persistence(actualResult));
     }
 
     /**
@@ -48,6 +45,8 @@ public class PersistenteInseparableTest {
      */
     @Test
     public void persistenceThree() {
-        assertEquals(TESTEXPECTED_0, persistenteInseparable.persistence(TESTNUMBER_4));
+        final int actualResult  = 4;
+        final int expectedResult = 0;
+        assertEquals(expectedResult, persistenteInseparable.persistence(actualResult));
     }
 }
