@@ -10,9 +10,7 @@ import static org.junit.Assert.assertEquals;
  * @author admin-hp
  */
 public class SortTest {
-    /**
-     * hola.
-     */
+
     private Sort so;
 
     /**
