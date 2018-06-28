@@ -8,14 +8,14 @@ import static org.junit.Assert.assertTrue;
 /**
  * this class for  validate code ean.
  */
-public class EanTest {
+public class EanValidatorTest {
 
     private EanValidator test;
 
     /**
      * this is a builder.
      */
-    public EanTest() {
+    public EanValidatorTest() {
         test = new EanValidator();
     }
 
@@ -57,6 +57,14 @@ public class EanTest {
         String codeEan = "400330101839";
         boolean result = test.validate(codeEan);
         assertFalse(result);
+    }
+
+    /**
+     * this is a test method for a number EAN true.
+     */
+    @Test
+    public void testValidationEANisEANZero() {
+        assertTrue(test.validate("0149600000000"));
     }
 
 }
