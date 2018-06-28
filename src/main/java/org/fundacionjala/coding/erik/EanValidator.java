@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.erikvargas;
+package org.fundacionjala.coding.erik;
 
 /**
  * This method is responsible for validating in ean code.
@@ -16,16 +16,14 @@ public class EanValidator {
      * @param eanCode this is param set string.
      * @return true or false
      */
-    public boolean validate(String eanCode) {
-
-        int intEan;
+    boolean validate(final String eanCode) {
         int sum = 0;
-        int last = Character.getNumericValue(eanCode.charAt(eanCode.length() - 1));
         for (int i = 0; i < eanCode.length() - 1; i++) {
-            intEan = Character.getNumericValue(eanCode.charAt(i));
+            int intEan = Character.getNumericValue(eanCode.charAt(i));
             sum += i % 2 != 0 ? intEan * MULTIPLICADOR_PAR : intEan;
         }
         int comp = sum % DIVISOR == 0 ? 0 : DIVISOR - (sum % DIVISOR);
+        int last = Character.getNumericValue(eanCode.charAt(eanCode.length() - 1));
         return comp == last;
     }
 }
