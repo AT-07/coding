@@ -16,7 +16,11 @@ public class ShortInner {
      * @param words is the words to invert
      * @return return words inner inverted
      */
+<<<<<<< Updated upstream
     String sortTheInnerContent(final String words) {
+=======
+    public String sortTheInnerContent(String words) {
+>>>>>>> Stashed changes
         String[] listWords = words.split(" ");
         StringJoiner join = new StringJoiner(" ");
         String[] listChars;
