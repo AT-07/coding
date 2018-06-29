@@ -9,6 +9,7 @@ public class Twisted {
     private static final char THREE = '3';
     private static final char FLAG = 't';
     private static final char SEVEN = '7';
+
     /**
      * this method os a sort twisted.
      *
@@ -17,10 +18,11 @@ public class Twisted {
      */
     public Integer[] sortTwisted(final Integer[] array) {
         return Arrays.stream(array)
-                .map(number -> Integer.valueOf(number.toString()
-                        .replace(THREE, FLAG).replace(SEVEN, THREE).replace(FLAG, SEVEN))
-                ).sorted().map(number -> Integer.valueOf(number.toString()
-                        .replace(THREE, FLAG).replace(SEVEN, THREE).replace(FLAG, SEVEN))
-                ).toArray(Integer[]::new);
+                .map(number -> number.toString().replace(THREE, FLAG).replace(SEVEN, THREE).replace(FLAG, SEVEN))
+                .map(Integer::parseInt)
+                .sorted()
+                .map(number -> number.toString().replace(THREE, FLAG).replace(SEVEN, THREE).replace(FLAG, SEVEN))
+                .map(Integer::parseInt)
+                .toArray(Integer[]::new);
     }
 }
