@@ -27,8 +27,8 @@ public class TestDnaComplement {
      */
     @Test
     public void dnaComplementTest1Correct() {
-        final String expectedResult = "AGTCAGTAG";
-        final String actualResult = complement.dnaComplement("TCAGTCATC");
+        final String expectedResult = "AGTCAGTAGT";
+        final String actualResult = complement.dnaComplement("TCAGTCATCA");
         assertEquals(expectedResult, actualResult);
     }
 
@@ -37,8 +37,8 @@ public class TestDnaComplement {
      */
     @Test
     public void dnaComplementTest2Correct() {
-        final String expectedResult = "GCTAGCAATCA";
-        final String actualResult = complement.dnaComplement("CGATCGTTAGT");
+        final String expectedResult = "GCTAGCAATCAA";
+        final String actualResult = complement.dnaComplement("CGATCGTTAGTT");
         assertEquals(expectedResult, actualResult);
     }
 
@@ -47,8 +47,8 @@ public class TestDnaComplement {
      */
     @Test
     public void dnaComplementTest3Incorrect() {
-        final String expectedResult = "TCGACTGCTA";
-        final String actualResult = complement.dnaComplement("CTACGTACGT");
+        final String expectedResult = "TCGACTGCTCA";
+        final String actualResult = complement.dnaComplement("CTACGTACGCT");
         assertNotEquals(expectedResult, actualResult);
     }
 }
