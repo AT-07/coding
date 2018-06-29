@@ -17,7 +17,7 @@ public class Persistence {
         while (num >= DIVISOR) {
             int multiplication = 1;
             while (num != 0) {
-                multiplication = multiplication * (num % DIVISOR);
+                multiplication *= num % DIVISOR;
                 num = num / DIVISOR;
             }
             cont++;
