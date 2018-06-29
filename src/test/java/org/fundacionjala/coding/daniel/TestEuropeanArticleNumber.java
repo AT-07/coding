@@ -5,22 +5,21 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 /**
- * Pruebas para la clase testEuropeanArticleNumber.
+ * Verification that EAN is a 13-digits barcode consisting of 12-digits.
+ * is true or false.
  */
 public class TestEuropeanArticleNumber {
     private EuropeanArticleNumber ean;
-    private static final int[] CADENAUNO = {4, 0, 0, 3, 3, 0, 1, 0, 1, 8, 3, 9, 8};
-    private static final int[] CADENADOS = {4, 0, 0, 3, 3, 0, 1, 0, 1, 8, 3, 9, 2};
 
     /**
-     * Constructor de nuestra clase.
+     * Constructor of our class.
      */
     public TestEuropeanArticleNumber() {
         ean = new EuropeanArticleNumber();
     }
 
     /**
-     * prueba para verificar si es verdadero EuropeanArticleNumber.
+     * Verification that by sending a string "4003301018398" we return true.
      */
     @Test
     public void testEsEANCadenaVerdadero() {
@@ -29,7 +28,7 @@ public class TestEuropeanArticleNumber {
     }
 
     /**
-     * prueba para verificar si es falso EuropeanArticleNumber.
+     * Verification that by sending a string "4003301018392" we return false.
      */
     @Test
     public void testEsEANCadenaFalso() {
@@ -38,20 +37,11 @@ public class TestEuropeanArticleNumber {
     }
 
     /**
-     * prueba para verificar si el arreglo verificarEAN es verdadero.
+     * Verification that by sending a string "4003301018398" we return true.
      */
     @Test
-    public void testVerificarEANArregloVerdadero() {
-        boolean resultado = ean.verificarEAN(CADENAUNO);
-        assertEquals(true, resultado);
-    }
-
-    /**
-     * prueba para verificar si el arreglo verificarEAN es falso.
-     */
-    @Test
-    public void testVerificarEANArregloFalso() {
-        boolean resultado = ean.verificarEAN(CADENADOS);
+    public void testEsEANCadenaModuloCero() {
+        boolean resultado = ean.esEAN("4000301010100");
         assertEquals(false, resultado);
     }
 }
