@@ -11,14 +11,14 @@ public class Persistence {
      * Method that performs the conversions of the persistent number.
      *
      * @param number is the persistence digital.
-     * @return cont with is the result..
+     * @return cont with is the result.
      */
     public int persistenceDigit(int number) {
         int counter = 0;
         if (number > CONSTANT_VERIFICATION) {
             counter = 1;
             while (number > 0) {
-                number = number / CONSTANT_MULTIPLICATION;
+                number /= CONSTANT_MULTIPLICATION;
                 counter++;
             }
         }
