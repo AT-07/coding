@@ -26,13 +26,13 @@ public class DnaComplement {
     /**
      * DnaComplement method that returns the complement of a DNA string.
      *
-     * @param newString is a String that receives as a parameter a string of DNA characters
+     * @param string is a String that receives as a parameter a string of DNA characters
      * @return returns the complement of the DNA string.
      */
-    public String dnaComplement(final String newString) {
+    public String dnaComplement(final String string) {
         StringBuilder complement = new StringBuilder();
-        for (int i = 0; i < newString.length(); i++) {
-            complement.append(MAPS.get(newString.charAt(i)));
+        for (int i = 0; i < string.length(); i++) {
+            complement.append(MAPS.get(string.charAt(i)));
         }
         return complement.toString();
     }
