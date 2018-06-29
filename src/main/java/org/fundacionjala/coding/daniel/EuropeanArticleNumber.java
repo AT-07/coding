@@ -3,10 +3,10 @@ package org.fundacionjala.coding.daniel;
 /**
  * Clase European Article Number.
  * EAN is a 13-digits barcode consisting of 12-digits data followed by a single-digit checksum .
- * The digits the odd position has to be multiplied with "1".
- * The digits the even position has to be multiplied with "3".
+ * The digits the odd position has to be multiplied with 1.
+ * The digits the even position has to be multiplied with 3.
  * If this sum is dividable by 10, the checksum is 0. Otherwise the checksum has.
- * the following formula: sum = 10 - (sum mod 10).
+ * the following formula: sum = 10 - sum mod 10.
  */
 public class EuropeanArticleNumber {
     private static final int MODULO = 10;
@@ -17,7 +17,7 @@ public class EuropeanArticleNumber {
      * @param cadena String input parameter.
      * @return true or false.
      */
-    public boolean esEAN(String cadena) {
+    public boolean esEAN(final String cadena) {
         int checkSuma = 0;
         int numeroCadena;
         final int impar = 3;
