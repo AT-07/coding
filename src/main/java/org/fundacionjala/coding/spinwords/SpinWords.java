@@ -15,7 +15,7 @@ public class SpinWords {
      * @param stringNew is a String.
      * @return result.
      */
-    public String spinWords(String stringNew) {
+    public String spinWords(final String stringNew) {
         String[] words = stringNew.split("\\s");
         StringJoiner spinJoiner = new StringJoiner(" ");
         for (String temporary : words) {
