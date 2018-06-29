@@ -26,10 +26,10 @@ public class DnaComplement {
     /**
      * DnaComplement method that returns the complement of a DNA string.
      *
-     * @param cadena is a string that receives as a parameter a pattern of DNA characters
+     * @param cadena is a String that receives as a parameter a string of DNA characters
      * @return returns the complement of the DNA string.
      */
-    public String dnaComplement(String cadena) {
+    public String dnaComplement(final String cadena) {
         StringBuilder complement = new StringBuilder();
         for (int i = 0; i < cadena.length(); i++) {
             complement.append(MAPS.get(cadena.charAt(i)));

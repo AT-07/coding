@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 /**
- * Class where we will run the Unit Test of the DnaComplement class.
+ * Class where we will run the Unit Tests of the DnaComplement class.
  */
 public class TestDnaComplement {
 
@@ -23,7 +23,7 @@ public class TestDnaComplement {
     }
 
     /**
-     * Test n ° 1 where we validate the correctness of the dnaComplement method.
+     * Test n° 1 where we validate the correctness of the dnaComplement method.
      */
     @Test
     public void dnaComplementTest1Correct() {
@@ -33,7 +33,7 @@ public class TestDnaComplement {
     }
 
     /**
-     * Test n ° 2 where we validate the correctness of the dnaComplement method.
+     * Test n° 2 where we validate the correctness of the dnaComplement method.
      */
     @Test
     public void dnaComplementTest2Correct() {
@@ -43,7 +43,7 @@ public class TestDnaComplement {
     }
 
     /**
-     * TestIncorrect n ° 1 where we validate the correctness of the dnaComplement method.
+     * TestIncorrect n° 1 where we validate the correctness of the dnaComplement method.
      */
     @Test
     public void dnaComplementTest3Incorrect() {
