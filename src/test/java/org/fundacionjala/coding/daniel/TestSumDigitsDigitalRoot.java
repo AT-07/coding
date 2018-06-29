@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Tests to verify the operation of adding digits.
+ * Tests to verify the sum of digits until having a single digit number.
  */
 public class TestSumDigitsDigitalRoot {
     private SumDigitsDigitalRoot sumaDigito;
@@ -26,8 +26,8 @@ public class TestSumDigitsDigitalRoot {
     public void testSumatoriaDeUnDigitos() {
         final int expectedResult = 9;
         final int digitalResult = 9;
-        int sumaEsperada = sumaDigito.sumarNumero(digitalResult);
-        assertEquals(expectedResult, sumaEsperada);
+        int sumaObtenida = sumaDigito.sumarNumero(digitalResult);
+        assertEquals(expectedResult, sumaObtenida);
     }
 
     /**
@@ -37,8 +37,8 @@ public class TestSumDigitsDigitalRoot {
     public void testSumatoriaUnDigito() {
         final int rxpectedResult = 1;
         final int digitalResult = 55;
-        int sumaEsperada = sumaDigito.sumarNumero(digitalResult);
-        assertEquals(rxpectedResult, sumaEsperada);
+        int sumaObtenida = sumaDigito.sumarNumero(digitalResult);
+        assertEquals(rxpectedResult, sumaObtenida);
     }
 
     /**
@@ -48,8 +48,8 @@ public class TestSumDigitsDigitalRoot {
     public void testSumatoriaTresDigitos() {
         final int expectedResult = 6;
         final int digitalResult = 942;
-        int actualResult = sumaDigito.sumarNumero(digitalResult);
-        assertEquals(expectedResult, actualResult);
+        int sumaObtenida = sumaDigito.sumarNumero(digitalResult);
+        assertEquals(expectedResult, sumaObtenida);
     }
 
     /**
@@ -59,8 +59,7 @@ public class TestSumDigitsDigitalRoot {
     public void testSumatoriaNDigitos() {
         final int expectedResult = 6;
         final int digitalResult = 132189;
-        int sumaEsperada = sumaDigito.sumarNumero(digitalResult);
-        System.out.println(sumaEsperada);
-        assertEquals(expectedResult, sumaEsperada);
+        int sumaObtenida = sumaDigito.sumarNumero(digitalResult);
+        assertEquals(expectedResult, sumaObtenida);
     }
 }
