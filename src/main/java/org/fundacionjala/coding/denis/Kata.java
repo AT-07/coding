@@ -1,6 +1,7 @@
 package org.fundacionjala.coding.denis;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.StringJoiner;
 
 /**
@@ -31,19 +32,14 @@ public class Kata {
      * @return word invest.
      */
     public String innerWord(String wordPart) {
-        char[] wordCut = {wordPart.charAt(POSZERO), wordPart.charAt(wordPart.length() - POSONE)};
-        String newWord = wordPart.substring(POSONE, wordPart.length() - POSONE);
 
-        char[] words = newWord.toCharArray();
-        Arrays.sort(words);
-        StringBuilder wordRes = new StringBuilder();
-        for (char c : words) {
-            wordRes.append(c);
-        }
-        wordRes.reverse();
-        wordRes.insert(POSZERO, wordCut[POSZERO]);
-        wordRes.insert(wordPart.length() - POSONE, wordCut[POSONE]);
-        return wordRes.toString();
+        char head = wordPart.charAt(POSZERO);
+        char head1 = wordPart.charAt(wordPart.length() - POSONE);
+        String newWord = wordPart.substring(POSONE, wordPart.length() - POSONE);
+        String[] words = newWord.split("");
+        Arrays.sort(words, Collections.reverseOrder());
+        return new StringBuilder().append(head).append(String
+                .join("", words)).append(head1).toString();
     }
 
 }

@@ -16,12 +16,6 @@ import static org.junit.Assert.assertNotEquals;
 
 public class TestKata {
     private Kata words;
-    private String value;
-    private String res;
-    private String value1;
-    private String res1;
-    private String valueFail;
-    private String resFail;
 
     /**
      * Init of variables.
@@ -29,12 +23,6 @@ public class TestKata {
     @Before
     public void before() {
         words = new Kata();
-        value = "sort the inner content in descending order";
-        res = "srot the inner ctonnet in dsnnieedcg oredr";
-        value1 = "wait for me";
-        res1 = "wiat for me";
-        valueFail = "this kata is easy";
-        resFail = "this ktaa is esay";
     }
 
     /**
@@ -43,8 +31,12 @@ public class TestKata {
 
     @Test
     public void testKataSortTheInnerContentPass() {
-        assertEquals(res, words.sortTheInnerContent(value));
-        assertEquals(res1, words.sortTheInnerContent(value1));
+        final String data = "sort the inner content in descending order";
+        final String spectetResult = "srot the inner ctonnet in dsnnieedcg oredr";
+        final String data1 = "wait for me";
+        final String spectetResult1 = "wiat for me";
+        assertEquals(spectetResult, words.sortTheInnerContent(data));
+        assertEquals(spectetResult1, words.sortTheInnerContent(data1));
     }
 
     /**
@@ -53,7 +45,9 @@ public class TestKata {
 
     @Test
     public void testKataSortTheInnerContentFail() {
-        assertNotEquals(resFail, false, words.sortTheInnerContent(valueFail));
+        final String data = "this kata is easy";
+        final String spectetResult = "this ktaa is esay";
+        assertNotEquals(spectetResult, false, words.sortTheInnerContent(data));
 
     }
 
