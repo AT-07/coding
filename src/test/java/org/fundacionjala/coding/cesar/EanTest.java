@@ -1,6 +1,6 @@
 package org.fundacionjala.coding.cesar;
+import org.junit.Assert;
 import org.junit.Before;
-import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 /**
@@ -8,35 +8,31 @@ import org.junit.Test;
  * @author admin-hp
  */
 public class EanTest {
-    private Ean val;
+    private Ean ean;
 
     /**
-     * Starting the before annotation.
+     * Initialitation from Before.
      */
     @Before
     public void before() {
-        val = new Ean();
+        ean = new Ean();
     }
 
     /**
-     * test for Validar pass.
+     * String True.
      */
     @Test
-    public void testValidarPass() {
-        boolean res;
-        val.setCadena("4003301018398");
-        res = val.validar();
-        assertEquals(true, res);
+    public void testValidarVerdadero() {
+        final String entrada = "4003301018398";
+        Assert.assertTrue(ean.validar(entrada));
     }
 
     /**
-     * test for Validar failed.
+     * String False.
      */
     @Test
-    public void testValidarFailed() {
-        boolean res;
-        val.setCadena("4003301018392");
-        res = val.validar();
-        assertEquals(false, res);
+    public void testValidarFalse() {
+        final String entrada = "4003301018392";
+        Assert.assertFalse(ean.validar(entrada));
     }
 }

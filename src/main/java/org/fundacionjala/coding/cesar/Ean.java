@@ -4,36 +4,20 @@ package org.fundacionjala.coding.cesar;
  * @author admin-hp
  */
 public class Ean {
-    private String digitos = "";
     private int numComprobacion = 0;
     private static final int MPLT_IMPAR = 3;
     private static final int MPLT_PAR = 1;
     private static final int MPLT_MOD = 10;
 
     /**
-     * Constructor without parameters.
-     */
-    public Ean() {
-        this.setCadena("0000000000000");
-    }
-
-    /**
      *
-     * @param cadena New chain value
+     * @param cadena Variable to be processed.
+     * @return Falso o true process value.
      */
-
-    public void setCadena(String cadena) {
-        digitos = cadena.substring(0, cadena.length() - 1);
+    public boolean validar(final String cadena) {
+        int numcom;
+        String digitos = cadena.substring(0, cadena.length() - 1);
         numComprobacion = Integer.parseInt(cadena.substring(cadena.length() - 1));
-    }
-
-    /**
-     *
-     * @return Returning false or true value
-     */
-
-    public boolean validar() {
-
         String[] aux = digitos.split("");
         int suma = 0;
         for (String i : aux) {
@@ -45,13 +29,7 @@ public class Ean {
             }
             suma = suma + num;
         }
-        int numcom = MPLT_MOD - (suma % MPLT_MOD);
-        boolean res;
-        if (numcom == numComprobacion) {
-            res = true;
-        } else {
-            res = false;
-        }
-        return res;
+        numcom = MPLT_MOD - (suma % MPLT_MOD);
+        return numcom == numComprobacion;
     }
 }
