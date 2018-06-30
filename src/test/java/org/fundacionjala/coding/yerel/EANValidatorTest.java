@@ -38,4 +38,13 @@ public class EANValidatorTest {
         final String codigo = "400330101839";
         assertFalse(eanValidator.validate(codigo));
     }
+
+    /**
+     * this test verify true 0149600000000.
+     */
+    @Test
+    public void validatorEanZero() {
+        final String codigo = "0149600000000";
+        assertTrue(eanValidator.validate(codigo));
+    }
 }
