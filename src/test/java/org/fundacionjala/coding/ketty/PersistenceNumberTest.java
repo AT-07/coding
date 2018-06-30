@@ -6,8 +6,6 @@ import org.junit.Test;
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
-//import static org.junit.Assert.*;
-
 /**
  * this is a class the test if is persistence number.
  */

@@ -5,15 +5,16 @@ package org.fundacionjala.coding.ketty;
  */
 
 public class PersistenceNumber {
-      static final int NUMBER_DIV_MOD = 10;
-      static final int LIMIT_NUMBER = 9;
+    static final int NUMBER_DIV_MOD = 10;
+    static final int LIMIT_NUMBER = 9;
 
     /**
      * @param n is verify if number persistence.
      * @return cont or 0 because is cant digict.
      */
     public int persistence(int n) {
-        int time = 1, cont = 1;
+        int time = 1;
+        int cont = 1;
         if (contDigict(n) != 1) {
             while (n > 0) {
                 time = n % NUMBER_DIV_MOD * time;
