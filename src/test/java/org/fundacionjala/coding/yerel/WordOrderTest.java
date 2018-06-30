@@ -37,6 +37,9 @@ public class WordOrderTest {
         assertEquals("srot the inner ctonnet in dsnnieedcg oredr", sentence);
     }
 
+    /**
+     * test to inner content descending "I am".
+     */
     @Test
     public void innerContentSentenceThree() {
         String sentence = wordOrder.innerContent("I am");

@@ -24,7 +24,8 @@ public class WordOrder {
         String[] wordReverte;
         for (String word: sentence.split(SPACE)) {
             wordReverte = word.split(INDEX_EMPTY);
-            Arrays.sort(wordReverte, (wordReverte.length > INDEX_ONE) ? INDEX_ONE : INDEX_ZERO, wordReverte.length - INDEX_ONE, Collections.reverseOrder());
+            Arrays.sort(wordReverte, wordReverte.length > INDEX_ONE ? INDEX_ONE : INDEX_ZERO,
+                    wordReverte.length - INDEX_ONE, Collections.reverseOrder());
             list.add(String.join(INDEX_EMPTY, wordReverte));
         }
         return String.join(SPACE, list);
