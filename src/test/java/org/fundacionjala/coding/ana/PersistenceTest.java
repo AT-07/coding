@@ -19,13 +19,12 @@ public class PersistenceTest {
     private static final int EXPECTED4 = 4;
     private static final int VALUE0 = 0;
     private static final int EXPECTED0 = 0;
+
     /**
      * call tha class Persistence.
-     *
-     * @throws Exception after.
      */
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         persistence = new Persistence();
     }
 
@@ -36,7 +35,6 @@ public class PersistenceTest {
     public void testPersistenceCantPersistenceComparato() {
         int result = persistence.cantPersistence(VALUE39);
         assertEquals(EXPECTED3, result);
-        System.out.print(result);
     }
 
     /**
