@@ -3,6 +3,7 @@ package org.fundacionjala.coding.cesar;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 /**
  *
@@ -16,29 +17,25 @@ public class Sort {
      * @return Retorna en string que ya fue modificado.
      */
 
-    public String sortTheInnerContent(String totalText) {
+    public String sortTheInnerContent(final String totalText) {
 
         final int menor = 3;
 
-        ArrayList<String> resWords = new ArrayList<>();
+        List resWords = new ArrayList<>();
 
         for (String i : totalText.split(" ")) {
 
             if (i.length() >= menor) {
 
-                String pre = i.substring(0, 1);
-
-                String end = i.substring(i.length() - 1, i.length());
-
                 String body = i.substring(1, i.length() - 1);
-
                 String[] body2 = body.split("");
-
                 Arrays.sort(body2, Collections.reverseOrder(String.CASE_INSENSITIVE_ORDER));
-
                 body = String.join("", body2);
-
-                resWords.add(pre + body + end);
+                StringBuilder sb = new StringBuilder();
+                sb.append(i.substring(0, 1));
+                sb.append(body);
+                sb.append(i.substring(i.length() - 1, i.length()));
+                resWords.add(sb.toString());
 
             } else {
                 resWords.add(i);
