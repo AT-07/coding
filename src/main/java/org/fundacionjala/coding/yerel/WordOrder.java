@@ -11,6 +11,7 @@ import java.util.List;
 public class WordOrder {
 
     private static final int INDEX_ONE = 1;
+    private static final int INDEX_ZERO = 0;
     private static final String SPACE = " ";
     private static final String INDEX_EMPTY = "";
 
@@ -23,7 +24,7 @@ public class WordOrder {
         String[] wordReverte;
         for (String word: sentence.split(SPACE)) {
             wordReverte = word.split(INDEX_EMPTY);
-            Arrays.sort(wordReverte, INDEX_ONE, wordReverte.length - INDEX_ONE, Collections.reverseOrder());
+            Arrays.sort(wordReverte, (wordReverte.length > INDEX_ONE) ? INDEX_ONE : INDEX_ZERO, wordReverte.length - INDEX_ONE, Collections.reverseOrder());
             list.add(String.join(INDEX_EMPTY, wordReverte));
         }
         return String.join(SPACE, list);
