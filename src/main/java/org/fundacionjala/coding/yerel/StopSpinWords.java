@@ -1,6 +1,7 @@
 package org.fundacionjala.coding.yerel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * this class convert word long is major five of sentence.
@@ -16,7 +17,7 @@ public class StopSpinWords {
      */
     public String spinWords(final String sentence) {
         String[] wordsSepare = sentence.split(SPACE);
-        ArrayList<String> wordArray = new ArrayList<>();
+        List<String> wordArray = new ArrayList<>();
         for (String word: wordsSepare) {
             wordArray.add(word.length() > LENGTWORD_COVERT ? new StringBuilder(word).reverse().toString() : word);
         }
