@@ -13,14 +13,13 @@ public class PersistenteInseparable {
      */
     public int persistence(int number) {
         int countTime = 0;
-        int multNumber = 1;
         while (number > NUMBER_TEEN) {
+            int multNumber = 1;
             while (number != NUMBER_ZERO) {
                 multNumber *= number % NUMBER_TEEN;
                 number /= NUMBER_TEEN;
             }
             number = multNumber;
-            multNumber = 1;
             countTime++;
         }
         return countTime;
