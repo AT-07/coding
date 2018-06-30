@@ -6,35 +6,20 @@ package org.fundacionjala.coding.cesar;
  */
 public class Spinner {
     private static final int COM = 4;
+    private static String delimiterWhiteSpace = " ";
 
     /**
-     *
      * @param totalText string that will be introduced.
      * @return string en reverse.
      */
     public String spinWords(final String totalText) {
 
-        String[] resWords = new String[totalText.split(" ").length];
-
-        int tam = 0;
-
-        for (String i : totalText.split(" ")) {
-
-            int lenCaracs = i.split("").length;
-
-            String aux = i;
-
-            if (lenCaracs > COM) {
-
-                aux = new StringBuffer(i).reverse().toString();
-
+        String[] resWords = totalText.split(delimiterWhiteSpace);
+        for (int i = 0; i < resWords.length; i++) {
+            if (resWords[i].length() > COM) {
+                resWords[i] = new StringBuffer(resWords[i]).reverse().toString();
             }
-
-            resWords[tam] = aux;
-
-            tam = tam + 1;
-
         }
-        return String.join(" ", resWords);
+        return String.join(delimiterWhiteSpace, resWords);
     }
 }
