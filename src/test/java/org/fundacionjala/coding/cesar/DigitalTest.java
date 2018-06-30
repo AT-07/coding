@@ -50,8 +50,4 @@ public class DigitalTest {
         final int valuesexpext = 6;
         assertEquals(valuesexpext, di.root(valueinput));
     }
-
-
-
-
 }
