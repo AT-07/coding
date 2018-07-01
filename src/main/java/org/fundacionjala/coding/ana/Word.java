@@ -18,8 +18,8 @@ public class Word {
         String wordInvert = "";
 
         for (String separatedWord : words.split(" ")) {
-            StringBuilder dato = new StringBuilder(separatedWord);
-            wordInvert += separatedWord.length() >= NUMBER ? dato.reverse().toString() + " " : separatedWord + " ";
+            StringBuilder wordInto = new StringBuilder(separatedWord);
+            wordInvert += separatedWord.length() >= NUMBER ? wordInto.reverse().toString() + " " : separatedWord + " ";
         }
         return wordInvert.trim();
     }

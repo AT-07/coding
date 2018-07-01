@@ -25,16 +25,15 @@ public class TestWord {
      * test for invert the word.
      */
     @Test
-    public void tesTestWordInvertirCadenaCompareto() {
+    public void tesTestWordInvertWordCompareto() {
         assertEquals("hey wollef sroirraw", invertWord.stringWords("hey fellow warriors"));
-        System.out.println(invertWord.stringWords("hey fellow warriors"));
     }
 
     /**
      * test for no invert the word.
      */
     @Test
-    public void tesTestWordInvertirCadenaNoInvert() {
+    public void tesTestWordNoInvertWord() {
         assertEquals("this is a test", invertWord.stringWords("this is a test"));
     }
 
@@ -42,7 +41,7 @@ public class TestWord {
      * test for into empty.
      */
     @Test
-    public void tesTestWordInvertirCadenaEmpty() {
+    public void tesTestWordInvertWordEmpty() {
         assertEquals("", invertWord.stringWords(""));
     }
 
