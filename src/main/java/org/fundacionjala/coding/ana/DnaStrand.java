@@ -14,7 +14,7 @@ public class DnaStrand {
      * @param adn string of into.
      * @return  a string.
      */
-    public String makeComplement(String adn) {
+    public String makeComplement(final String adn) {
         StringBuilder getComplement = new StringBuilder();
         HashMap<Character, Character> complementDna = new HashMap<>();
         complementDna.put('C', 'G');

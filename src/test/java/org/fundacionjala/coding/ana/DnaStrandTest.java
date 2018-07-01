@@ -14,7 +14,7 @@ public class DnaStrandTest {
     private DnaStrand dnaStrand;
 
     /**
-     * call of the class.
+     * call of the class DNA.
      */
     @Before
     public void setUp() {
