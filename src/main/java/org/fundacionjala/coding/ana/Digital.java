@@ -9,7 +9,7 @@ public class Digital {
     private static final int CONSTANT = 10;
 
     /**
-     * method for the sum of one digit.
+     * method for the sum of one digit only result.
      *
      * @param number that receive.
      * @return give back a int.

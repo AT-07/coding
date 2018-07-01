@@ -7,7 +7,7 @@ import static org.junit.Assert.assertFalse;
 import org.junit.Before;
 import org.junit.Test;
 /**
- * number digital root of sum.
+ * number digital root of sum for see only result.
  *
  * @author Ana Maria Mamani Zenteno.
  */
