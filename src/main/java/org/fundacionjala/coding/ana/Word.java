@@ -19,7 +19,7 @@ public class Word {
 
         for (String separatedWord : words.split(" ")) {
             StringBuilder wordInto = new StringBuilder(separatedWord);
-            wordInvert += separatedWord.length() >= NUMBER ? wordInto.reverse().toString() + " " : separatedWord + " ";
+            wordInvert += separatedWord.length() >= NUMBER ? wordInto.reverse().toString() + " " : wordInto.append(" ");
         }
         return wordInvert.trim();
     }
