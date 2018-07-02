@@ -1,6 +1,5 @@
-package org.fundacionjala.coding.testpersistence;
+package org.fundacionjala.coding.william;
 
-import org.fundacionjala.coding.persistence.Persistence;
 import org.junit.Before;
 import org.junit.Test;
 
