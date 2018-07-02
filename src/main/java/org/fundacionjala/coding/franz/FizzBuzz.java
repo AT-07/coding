@@ -30,16 +30,17 @@ public class FizzBuzz {
      * @return fizz, buzz or fizzbuzz depent of case
      */
     public String assingFizzBuzz(int number) {
+        String num = String.valueOf(number);
         if (number % THREE == ZERO && number % FIVE == ZERO) {
             return "FizzBuzz";
         }
-        if (number % FIVE == ZERO || String.valueOf(number).contains("5")) {
+        if (number % FIVE == ZERO || num.contains("5")) {
             return "Buzz";
         }
-        if (number % THREE == ZERO || String.valueOf(number).contains("3")) {
+        if (number % THREE == ZERO || num.contains("3")) {
             return "Fizz";
         }
-        return String.valueOf(number);
+        return num;
     }
 }
 
