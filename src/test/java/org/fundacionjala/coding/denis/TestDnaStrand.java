@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * class principal of test.
  */
-class TestDnaStrand {
+public class TestDnaStrand {
     private DnaStrand dnaWord;
 
     /**
