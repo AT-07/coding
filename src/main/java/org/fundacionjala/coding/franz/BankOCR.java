@@ -37,7 +37,7 @@ public class BankOCR {
      * @param thirLine   of account
      * @return number of accunt
      */
-    public String accountNumbers(String firstLine, String secondLine, String thirLine) {
+    public String accountNumbers(final String firstLine, final String secondLine, final String thirLine) {
         StringBuilder builder = new StringBuilder();
         builder.append(firstLine.substring(ZERO, THREE))
                 .append(secondLine.substring(ZERO, THREE))
@@ -56,7 +56,7 @@ public class BankOCR {
      * @param account for validate.
      * @return true if account is valid.
      */
-    public boolean isValidAccount(String account) {
+    public boolean isValidAccount(final String account) {
 
         numberMulti = TEN;
         int checksum = Arrays.stream(account.split(""))
@@ -71,7 +71,7 @@ public class BankOCR {
      * @param number is a number.
      * @return return multiply.
      */
-    public int reduce(int number) {
+    public int reduce(final int number) {
         numberMulti -= 1;
         return number * numberMulti;
     }
@@ -82,7 +82,7 @@ public class BankOCR {
      * @param account is account.
      * @return result of account.
      */
-    public String showResults(String account) {
+    public String showResults(final String account) {
         if (account.contains("?")) {
             return String.format("%s ILL", account);
         }
