@@ -40,10 +40,7 @@ public class TestPersistent {
     public void testPersistentPersistentFail() {
         final int dataValue = 11;
         final int espectetResult = 6;
-        final int dataValue1 = 10;
-        final int espectetResult1 = 5;
         assertNotEquals(espectetResult, data.persistent(dataValue));
-        assertNotEquals(espectetResult1, data.persistent(dataValue1));
     }
 
 }

@@ -18,17 +18,16 @@ public class Persistent {
      * @param data verify the amount operation.
      * @return amount operation check.
      */
-    public int check(long data) {
+    private int check(long data) {
         final int dataDiv = 10;
         int actualResult = 0;
-        int producto = 1;
         while (data > NUMCHECK) {
+            int producto = 1;
             while (data != 0) {
                 producto *= data % dataDiv;
                 data /= dataDiv;
             }
             data = producto;
-            producto = 1;
             actualResult++;
 
         }
