@@ -1,9 +1,7 @@
 package org.fundacionjala.coding.denis;
 
-
 import org.junit.Before;
 import org.junit.Test;
-
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
@@ -26,6 +24,15 @@ public class TestEan {
 
     }
 
+    /**
+     * test for eanVerify of eanKataTrue.
+     */
+    @Test
+    public void testEanKataEmptyPass() {
+        final String empty = "";
+        digits.setDigits(empty);
+        assertFalse(digits.eanKata());
+    }
 
     /**
      * test for eanVerify of eanKataTrue.
