@@ -8,7 +8,6 @@ public class Persistence {
 
     /**
      * This is a method for number persistence.
-     *
      * @param num is the number persistent.
      * @return the number of multiplications.
      */
