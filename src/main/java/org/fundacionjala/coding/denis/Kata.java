@@ -33,13 +33,13 @@ public class Kata {
      */
     public String innerWord(String wordPart) {
 
-        char head = wordPart.charAt(POSZERO);
-        char head1 = wordPart.charAt(wordPart.length() - POSONE);
+        String head = String.valueOf(wordPart.charAt(POSZERO));
+        String head1 = String.valueOf(wordPart.charAt(wordPart.length() - POSONE));
         String newWord = wordPart.substring(POSONE, wordPart.length() - POSONE);
         String[] words = newWord.split("");
         Arrays.sort(words, Collections.reverseOrder());
-        return new StringBuilder().append(head).append(String
-                .join("", words)).append(head1).toString();
+        return new StringJoiner("").add(head).add(String
+                .join("", words)).add(head1).toString();
     }
 
 }
