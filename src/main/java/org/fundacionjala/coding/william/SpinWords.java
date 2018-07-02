@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.spinwords;
+package org.fundacionjala.coding.william;
 
 import java.util.StringJoiner;
 

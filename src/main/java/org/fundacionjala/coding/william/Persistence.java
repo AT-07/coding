@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.persistence;
+package org.fundacionjala.coding.william;
 
 /**
  * Class that is responsible for making multiplicative persistent calculations given an entry number.

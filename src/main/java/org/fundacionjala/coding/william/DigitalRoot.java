@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.digitalroot;
+package org.fundacionjala.coding.william;
 
 /**
  * Class DigitalRoot that is responsible for recursively calculate the number of your digits.

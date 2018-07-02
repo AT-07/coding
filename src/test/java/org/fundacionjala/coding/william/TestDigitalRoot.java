@@ -1,6 +1,5 @@
-package org.fundacionjala.coding.testdigitalroot;
+package org.fundacionjala.coding.william;
 
-import org.fundacionjala.coding.digitalroot.DigitalRoot;
 import org.junit.Before;
 import org.junit.Test;
 
