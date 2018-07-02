@@ -14,6 +14,7 @@ public class FizzBuzzTest {
     private static final int LIMIT_FIFTEEN = 15;
     private static final int LIMIT_FIVE = 5;
     private static final int LIMIT_THREE = 3;
+    private static final int FIFTYONE = 51;
 
     /**
      * this method initial in each test unit.
@@ -48,4 +49,11 @@ public class FizzBuzzTest {
         assertEquals("1 2 Fizz", fizz.fizzBuzz(LIMIT_THREE));
     }
 
+    /**
+     * this is a test of method assngFizzBuzz.
+     */
+    @Test
+    public void testassingFizzBuzzFiftyOne() {
+        assertEquals("Buzz", fizz.assingFizzBuzz(FIFTYONE));
+    }
 }
