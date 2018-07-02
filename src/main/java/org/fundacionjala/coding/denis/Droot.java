@@ -18,16 +18,15 @@ public class Droot {
      * @param data is the number of the work.
      * @return sum time execute.
      */
-    public int check(int data) {
+    private int check(int data) {
         final int dataDiv = 10;
-        int sum = 0;
         while (data > NUMCHECK) {
+            int sum = 0;
             while (data != 0) {
                 sum += data % dataDiv;
                 data /= dataDiv;
             }
             data = sum;
-            sum = 0;
         }
         return data;
     }
