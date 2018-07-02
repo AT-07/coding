@@ -26,7 +26,7 @@ public class TestWord {
      */
     @Test
     public void tesTestWordInvertWordCompareto() {
-        assertEquals("hey wollef sroirraw saloh", invertWord.stringWords("hey fellow warriors holas"));
+        assertEquals("hey wollef sroirraw", invertWord.stringWords("hey fellow warriors"));
     }
 
     /**

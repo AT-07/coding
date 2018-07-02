@@ -16,10 +16,9 @@ public class Word {
      */
     public String stringWords(String words) {
         String wordInvert = "";
-
         for (String separatedWord : words.split(" ")) {
-            StringBuilder wordInto = new StringBuilder(separatedWord);
-            wordInvert += separatedWord.length() >= NUMBER ? wordInto.reverse().toString() + " " : wordInto.append(" ");
+            StringBuilder word = new StringBuilder(separatedWord);
+            wordInvert += word.length() >= NUMBER ? word.reverse().append(" ").toString() : word.append(" ").toString();
         }
         return wordInvert.trim();
     }
