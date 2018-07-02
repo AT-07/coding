@@ -45,8 +45,6 @@ public class SpinWordsTest {
     public void testGetSprintWordFailed() {
 
         assertFalse(PHASE_FALSE.equals(spinWord.getSpinWord(PHRASE_N)));
-
-
     }
 
 }
