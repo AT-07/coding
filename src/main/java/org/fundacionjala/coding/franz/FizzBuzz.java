@@ -19,7 +19,7 @@ public class FizzBuzz {
     public String fizzBuzz(int limit) {
         StringJoiner joiner = new StringJoiner(" ");
         for (int i = 1; i <= limit; i++) {
-            joiner.add(isFizzBuzz(i));
+            joiner.add(assingFizzBuzz(i));
         }
         return joiner.toString();
     }
@@ -29,14 +29,14 @@ public class FizzBuzz {
      * @param number for check
      * @return fizz, buzz or fizzbuzz depent of case
      */
-    public String isFizzBuzz(int number) {
+    public String assingFizzBuzz(int number) {
         if (number % THREE == ZERO && number % FIVE == ZERO) {
             return "FizzBuzz";
         }
-        if (number % FIVE == ZERO || String.valueOf(number).toString().contains("5")) {
+        if (number % FIVE == ZERO || String.valueOf(number).contains("5")) {
             return "Buzz";
         }
-        if (number % THREE == ZERO || String.valueOf(number).toString().contains("3")) {
+        if (number % THREE == ZERO || String.valueOf(number).contains("3")) {
             return "Fizz";
         }
         return String.valueOf(number);

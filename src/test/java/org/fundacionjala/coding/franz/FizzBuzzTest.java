@@ -47,4 +47,5 @@ public class FizzBuzzTest {
     public void testFizzBuzzLimitThree() {
         assertEquals("1 2 Fizz", fizz.fizzBuzz(LIMIT_THREE));
     }
+
 }
