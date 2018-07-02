@@ -6,13 +6,13 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Clase de test de invertir cadena.
+ * Test for invert String.
  */
 public class TestSGMySdrow {
     private StopGninnipsMySdrow stopGMS;
 
     /**
-     * declaracion del constructor que sera de tipo StopGninnipsMySdrow.
+     * Declaration contructor StopGninnipsMySdrow.
      */
     @Before
     public void setUp() {
@@ -20,7 +20,7 @@ public class TestSGMySdrow {
     }
 
     /**
-     * test para verificar que una cadena de tamanio 10 se invierta.
+     * Test given a String with a single word, whit size greater than 5.
      */
     @Test
     public void testInvertirCadenaTamanio10() {
@@ -29,7 +29,7 @@ public class TestSGMySdrow {
     }
 
     /**
-     * test que verificara  una cadena de tamanio 4 no se invierte.
+     * Test given a String with a single word, whit size minor than 5.
      */
     @Test
     public void testInvertirCadenaTamanio4() {
@@ -38,7 +38,7 @@ public class TestSGMySdrow {
     }
 
     /**
-     * test para verificar una cadena vacia no ase nada.
+     * Test given a String empty.
      */
     @Test
     public void testInvertirCadenaTamanioVacio() {
@@ -47,11 +47,21 @@ public class TestSGMySdrow {
     }
 
     /**
-     * test que verificara varias palabras que lo invierte los de tamanio mayores e igual a 5.
+     * Test given a String with several word, whit sizes minor and greather than 5.
      */
     @Test
     public void testInvertirCadena() {
+        String cadenass = "Son test sesac sotelpmoc que neneitnoc sellated";
         String resultadoEsperado = stopGMS.invertirCadenaCompleta("Son test cases completos que contienen detalles");
-        assertEquals("Son test sesac sotelpmoc que neneitnoc sellated", resultadoEsperado);
+        assertEquals(resultadoEsperado, cadenass);
+    }
+
+    /**
+     * Pruebe una Cadena con varias palabras, con tamaños menores than 5.
+     */
+    @Test
+    public void testInvertirCadenaTamanio() {
+        String resultadoEsperado = stopGMS.invertirCadenaCompleta("This is a test");
+        assertEquals("This is a test", resultadoEsperado);
     }
 }
