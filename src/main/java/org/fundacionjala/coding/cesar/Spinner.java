@@ -5,7 +5,6 @@ package org.fundacionjala.coding.cesar;
  * @author admin-hp
  */
 public class Spinner {
-    private static final int COM = 4;
     private static String delimiterWhiteSpace = " ";
 
     /**
@@ -13,10 +12,10 @@ public class Spinner {
      * @return string en reverse.
      */
     public String spinWords(final String totalText) {
-
+        final int constante = 4;
         String[] resWords = totalText.split(delimiterWhiteSpace);
         for (int i = 0; i < resWords.length; i++) {
-            if (resWords[i].length() > COM) {
+            if (resWords[i].length() > constante) {
                 resWords[i] = new StringBuffer(resWords[i]).reverse().toString();
             }
         }
