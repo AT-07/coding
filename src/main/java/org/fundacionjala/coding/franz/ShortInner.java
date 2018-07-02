@@ -16,7 +16,9 @@ public class ShortInner {
      * @param words is the words to invert
      * @return return words inner inverted
      */
+
     String sortTheInnerContent(final String words) {
+
         String[] listWords = words.split(" ");
         StringJoiner join = new StringJoiner(" ");
         String[] listChars;
