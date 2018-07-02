@@ -31,15 +31,13 @@ public class Kata {
      * @param wordPart is the string with the method work.
      * @return word invest.
      */
-    public String innerWord(final String wordPart) {
-
-        String head = String.valueOf(wordPart.charAt(POSZERO));
-        String head1 = String.valueOf(wordPart.charAt(wordPart.length() - POSONE));
-        String newWord = wordPart.substring(POSONE, wordPart.length() - POSONE);
-        final String[] words = newWord.split("");
+    private String innerWord(final String wordPart) {
+        final String[] words = wordPart.substring(POSONE, wordPart.length() - POSONE)
+                .split("");
         Arrays.sort(words, Collections.reverseOrder());
-        return new StringJoiner("").add(head).add(String
-                .join("", words)).add(head1).toString();
+        return String.valueOf(wordPart.charAt(POSZERO))
+                .concat(String.join("", words))
+                .concat(String.valueOf(wordPart.charAt(wordPart.length() - POSONE)));
     }
 
 }
