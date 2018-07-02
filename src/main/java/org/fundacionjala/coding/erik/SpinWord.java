@@ -17,6 +17,7 @@ public class SpinWord {
      * @return string of spin words.
      */
     String spinWords(final String sentence) {
+
         String[] word = sentence.split(" ");
         StringJoiner wordSpin = new StringJoiner(" ");
         for (String aWord : word) {
