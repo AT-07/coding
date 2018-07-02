@@ -12,6 +12,7 @@ import static org.junit.Assert.assertFalse;
  */
 public class BankOCRTest {
     private BankOCR bankNumber;
+    private static final String LINE_COMMON = " _  _  _  _  _  _  _  _  _ ";
 
     /**
      * this is a method before test.
@@ -26,7 +27,7 @@ public class BankOCRTest {
      */
     @Test
     public void tesyAccountNumbersNine() {
-        String lineOne = " _  _  _  _  _  _  _  _  _ ";
+        String lineOne = LINE_COMMON;
         String lineTwo = "|_||_||_||_||_||_||_||_||_|";
         String lineThr = " _| _| _| _| _| _| _| _| _|";
         assertEquals("999999999", bankNumber.accountNumbers(lineOne, lineTwo, lineThr));
@@ -37,7 +38,7 @@ public class BankOCRTest {
      */
     @Test
     public void testAccountNumbersSeven() {
-        String lineOne = " _  _  _  _  _  _  _  _  _ ";
+        String lineOne = LINE_COMMON;
         String lineTwo = "  |  |  |  |  |  |  |  |  |";
         String lineThr = "  |  |  |  |  |  |  |  |  |";
         assertEquals("777777777", bankNumber.accountNumbers(lineOne, lineTwo, lineThr));
@@ -48,7 +49,7 @@ public class BankOCRTest {
      */
     @Test
     public void testAccountNumbersEigth() {
-        String lineOne = " _  _  _  _  _  _  _  _  _ ";
+        String lineOne = LINE_COMMON;
         String lineTwo = "|_||_||_||_||_||_||_||_||_|";
         String lineThr = "|_||_||_||_||_||_||_||_||_|";
         assertEquals("888888888", bankNumber.accountNumbers(lineOne, lineTwo, lineThr));
@@ -70,7 +71,7 @@ public class BankOCRTest {
      */
     @Test
     public void testAccountNumbersZero() {
-        String lineOne = " _  _  _  _  _  _  _  _  _ ";
+        String lineOne = LINE_COMMON;
         String lineTwo = "| || || || || || || || || |";
         String lineThr = "|_||_||_||_||_||_||_||_||_|";
         assertEquals("000000000", bankNumber.accountNumbers(lineOne, lineTwo, lineThr));

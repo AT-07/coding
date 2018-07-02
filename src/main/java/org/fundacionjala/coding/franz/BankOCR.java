@@ -57,9 +57,10 @@ public class BankOCR {
      * @return true if account is valid.
      */
     public boolean isValidAccount(String account) {
+
         numberMulti = TEN;
         int checksum = Arrays.stream(account.split(""))
-                .mapToInt(Integer::parseInt).map(i -> reduce(i)).sum();
+                .mapToInt(Integer::parseInt).map(this::reduce).sum();
 
         return checksum % ELEVEN == 0;
     }
