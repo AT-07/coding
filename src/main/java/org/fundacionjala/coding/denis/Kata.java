@@ -16,7 +16,7 @@ public class Kata {
      * @param words is the string with the method work.
      * @return words validation.
      */
-    public String sortTheInnerContent(String words) {
+    public String sortTheInnerContent(final String words) {
         String[] wordsPart = words.split(" ");
         StringJoiner wordsRes = new StringJoiner(" ");
 
