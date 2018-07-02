@@ -12,10 +12,6 @@ import static org.junit.Assert.assertNotEquals;
 
 public class TestSpinWords {
     private SpinWords spin;
-    private String value;
-    private String value1;
-    private String valueFail;
-    private String valueFail1;
 
     /**
      * Init of variables.
@@ -23,10 +19,8 @@ public class TestSpinWords {
     @Before
     public void before() {
         spin = new SpinWords();
-        value = "Welcome";
-        value1 = "Hey fellow warriors";
-        valueFail = "Hey fellow warriors";
-        valueFail1 = "hi";
+
+
     }
 
 
@@ -36,6 +30,8 @@ public class TestSpinWords {
 
     @Test
     public void testSpinWordsSpinWordsPass() {
+        final String value = "Welcome";
+        final String value1 = "Hey fellow warriors";
         assertEquals("emocleW", spin.stopSpinWords(value));
         assertEquals("Hey wollef sroirraw", spin.stopSpinWords(value1));
     }
@@ -46,6 +42,8 @@ public class TestSpinWords {
 
     @Test
     public void testSpinWordsSpinWordsFails() {
+        final String valueFail = "Hey fellow warriors";
+        final String valueFail1 = "hi";
         assertNotEquals("Hey wolle sroirraw", spin.stopSpinWords(valueFail));
         assertNotEquals("ih", spin.stopSpinWords(valueFail1));
     }

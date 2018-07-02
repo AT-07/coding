@@ -20,11 +20,8 @@ public class SpinWords {
         StringJoiner word = new StringJoiner(" ");
 
         for (String wordsPart : wordsParts) {
-
             word.add(wordsPart.length() < ZISEWORD ? wordsPart : new StringBuilder(wordsPart).reverse());
         }
-
         return word.toString();
-
     }
 }
