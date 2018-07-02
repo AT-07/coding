@@ -3,7 +3,8 @@ package org.fundacionjala.coding.ana;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * goods have an International Article Number.
@@ -28,9 +29,7 @@ public class EanTest {
      */
     @Test
     public void testEanArticleNumberTrue() {
-        boolean result = ean.articleNumber("4003301018398");
-        assertEquals(true, result);
-        System.out.print(result);
+        assertTrue(ean.articleNumber("4003301018398"));
     }
 
     /**
@@ -38,8 +37,7 @@ public class EanTest {
      */
     @Test
     public void testEanArticleNumberFalse() {
-        boolean result = ean.articleNumber("4003301018392");
-        assertEquals(false, result);
+        assertFalse(ean.articleNumber("4003301018392"));
     }
 
     /**
@@ -47,8 +45,7 @@ public class EanTest {
      */
     @Test
     public void testEanArticleNumberZero() {
-        boolean result = ean.articleNumber("9783827317100");
-        assertEquals(true, result);
+        assertTrue(ean.articleNumber("9783827317100"));
     }
 }
 
