@@ -1,6 +1,8 @@
 package org.fundacionjala.coding.cesar;
 
 import java.util.Arrays;
+import java.util.stream.IntStream;
+
 /**
  *
  * @author admin-hp
@@ -13,14 +15,11 @@ public class Twisted {
      * @return Array replace.
      */
     public int[] sortTwisted(final int[] numeros) {
-        String aux = Arrays.toString(numeros).replace("[", "").replace("]", "").replace(" ", "")
-                .replace("3", "x").replace("7", "y").replace("x", "7").replace("y", "3").toUpperCase();
-        String[] stringArray = aux.split(",");
-        Arrays.sort(stringArray);
-        aux = Arrays.toString(stringArray).replace("[", "").replace("]", "").replace(" ", "")
-                .replace("3", "x").replace("7", "y").replace("x", "7").replace("y", "3").toUpperCase();
-        stringArray = aux.split(",");
-        return Arrays.asList(stringArray).stream().mapToInt(Integer::parseInt).toArray();
+        return IntStream.of(numeros)
+                .map(e -> Integer.parseInt(String.valueOf(e).replace("3", "x").replace("7", "3").replace("x", "7")))
+                .sorted()
+                .map(e -> Integer.parseInt(String.valueOf(e).replace("3", "x").replace("7", "3").replace("x", "7")))
+                .toArray();
     }
 
 }
