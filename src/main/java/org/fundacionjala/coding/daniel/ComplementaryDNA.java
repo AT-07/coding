@@ -12,7 +12,7 @@ public class ComplementaryDNA {
      * @param cadenaADN sequence DNA ATCG.
      * @return cadena opuesta TAGC.
      */
-    public String secuenciaDNA(String cadenaADN) {
+    public String secuenciaDNA(final String cadenaADN) {
         return cadenaADN.replace("T", "a").replace("A", "t").replace("C", "g").replace("G", "c").toUpperCase();
     }
 }
