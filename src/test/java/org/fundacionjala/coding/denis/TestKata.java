@@ -45,8 +45,8 @@ public class TestKata {
 
     @Test
     public void testKataSortTheInnerContentFail() {
-        final String data = "this kata is easy";
-        final String spectetResult = "this ktaa is esay";
+        final String data = "this kata is easya";
+        final String spectetResult = "this ktaa is esaya";
         assertNotEquals(spectetResult, false, words.sortTheInnerContent(data));
 
     }
