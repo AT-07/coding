@@ -12,21 +12,21 @@ public class Ean {
 
 
     /**
-     * validation of the European article number.
+     * eanVerify of the European article number.
      *
-     * @return the validation of the European article number.
+     * @return the eanVerify of the European article number.
      */
 
-    public boolean kata() {
-        return getDigits().length() == SIZECONTROL && validation();
+    public boolean eanKata() {
+        return getDigits().length() == SIZECONTROL && eanVerify();
     }
 
     /**
-     * executes the validation of the European article number.
+     * executes the eanVerify of the European article number.
      *
-     * @return executes the validation of the European article number.
+     * @return executes the eanVerify of the European article number.
      */
-    public boolean validation() {
+    public boolean eanVerify() {
         int suma = 0;
         int result;
         int cheking;

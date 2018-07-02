@@ -16,8 +16,6 @@ import static org.junit.Assert.assertNotEquals;
 
 public class TestEan {
     private Ean digits;
-    private String value;
-    private String valueFail;
 
     /**
      * Init of digits.
@@ -25,43 +23,47 @@ public class TestEan {
     @Before
     public void before() {
         digits = new Ean();
-        value = "4003301018398";
-        valueFail = "4003301018392";
+
     }
 
 
     /**
-     * test for validation of eanKataTrue.
+     * test for eanVerify of eanKataTrue.
      */
     @Test
-    public void testEuropeArticleNumberKataPass() {
+    public void testEanKataPass() {
+        final String value = "4003301018398";
         digits.setDigits(value);
-        assertTrue(digits.kata());
+        assertTrue(digits.eanKata());
     }
 
     /**
-     * test for validation of eanKataFalse.
+     * test for eanVerify of eanKataFalse.
      */
     @Test
-    public void testEuropeArticleNumberKataFaile() {
+    public void testEanKataFail() {
+        final String valueFail = "4003301018392";
         digits.setDigits(valueFail);
-        assertFalse(digits.kata());
+        assertFalse(digits.eanKata());
     }
 
     /**
-     * test for validation of eanSetEanTrue.
+     * test for eanVerify of eanSetEanTrue.
      */
     @Test
-    public void testEuropeArticleNumberSetEanTrue() {
+    public void testEanSetEanPass() {
+        final String value = "4003301018398";
         digits.setDigits(value);
         assertEquals(value, digits.getDigits());
     }
 
     /**
-     * test for validation of eanSetEanFalse.
+     * test for eanVerify of eanSetEanFalse.
      */
     @Test
-    public void testEuropeArticleNumberSetEanFalse() {
+    public void testEanSetEanFail() {
+        final String value = "4003301018398";
+        final String valueFail = "4003301018392";
         digits.setDigits(valueFail);
         assertNotEquals(value, digits.getDigits());
 
