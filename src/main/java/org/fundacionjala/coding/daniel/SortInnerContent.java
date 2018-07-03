@@ -17,14 +17,17 @@ public class SortInnerContent {
      * @param cadena word or phrase.
      * @return descending orderly string.
      */
-    public String innerContent(String cadena) {
+    public String innerContent(final String cadena) {
         String[] separarCadena = cadena.split(" ");
         StringJoiner orden = new StringJoiner(" ");
         String[] contenedor;
         for (int i = 0; i < separarCadena.length; i++) {
             contenedor = separarCadena[i].split("");
-            Arrays.sort(contenedor, 1, contenedor.length - 1, Collections.reverseOrder());
+            if (separarCadena[i].length() > 2) {
+                Arrays.sort(contenedor, 1, contenedor.length - 1, Collections.reverseOrder());
+            }
             orden.add(String.join("", contenedor));
+
         }
         return orden.toString();
     }

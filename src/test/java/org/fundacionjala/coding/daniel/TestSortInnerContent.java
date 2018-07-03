@@ -52,8 +52,8 @@ public class TestSortInnerContent {
      */
     @Test
     public void testInvDescPalabrasPequenia() {
-        String invDesc = inner.innerContent("who is the mon");
-        assertEquals("who is the mon", invDesc);
+        String invDesc = inner.innerContent("the mon is big");
+        assertEquals("the mon is big", invDesc);
     }
 
     /**
