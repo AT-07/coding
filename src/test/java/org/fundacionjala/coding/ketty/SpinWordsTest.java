@@ -3,8 +3,8 @@ package org.fundacionjala.coding.ketty;
 import org.junit.Before;
 import org.junit.Test;
 
-import static junit.framework.TestCase.assertTrue;
-import static org.junit.Assert.assertFalse;
+import static junit.framework.TestCase.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 /**
  * class SpinWordsTest it is test verify.
@@ -30,8 +30,7 @@ public class SpinWordsTest {
         final String phraseN = "hey fellow warriors";
         final String phraseCorrectly = "hey wollef sroirraw";
 
-
-        assertTrue(phraseCorrectly.equals(spinWord.getSpinWord(phraseN)));
+        assertEquals(phraseCorrectly, spinWord.getSpinWord(phraseN));
 
 
     }
@@ -45,8 +44,8 @@ public class SpinWordsTest {
         final String phraseN = "hey fellow warriors";
 
         final String phaseFalse = "hey wollef warriors";
+        assertNotEquals(phaseFalse, spinWord.getSpinWord(phraseN));
 
-        assertFalse(phaseFalse.equals(spinWord.getSpinWord(phraseN)));
     }
 
 }

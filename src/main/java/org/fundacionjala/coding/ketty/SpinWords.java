@@ -1,5 +1,7 @@
 package org.fundacionjala.coding.ketty;
 
+import java.util.StringJoiner;
+
 /**
  * this is class verify if a string is a SPIN WORD.
  */
@@ -13,19 +15,12 @@ public class SpinWords {
      * @return a string.
      */
 
-    public String getSpinWord(String phrase) {
-        StringBuilder newPhrase = new StringBuilder();
+    public String getSpinWord(final String phrase) {
+        StringJoiner newPhrase = new StringJoiner(" ");
         String[] word = phrase.split(" ");
-
         for (String wordPart : word) {
-            if (wordPart.length() < LIMIT_LETTER) {
-                newPhrase.append(" " + wordPart);
+            newPhrase.add(wordPart.length() < LIMIT_LETTER ? wordPart : new StringBuilder(wordPart).reverse());
 
-            } else {
-
-                StringBuilder reverse = new StringBuilder(wordPart);
-                newPhrase.append(" " + reverse.reverse().toString());
-            }
         }
         return newPhrase.toString().trim();
     }
