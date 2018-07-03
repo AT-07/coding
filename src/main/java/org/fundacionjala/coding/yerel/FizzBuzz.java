@@ -26,7 +26,7 @@ public class FizzBuzz {
         if (number % NUMBER_THREE == NUMBER_ZERO || numberString.contains("3")) {
             return "Fizz";
         }
-        return String.valueOf(number);
+        return numberString;
     }
 
     /**
