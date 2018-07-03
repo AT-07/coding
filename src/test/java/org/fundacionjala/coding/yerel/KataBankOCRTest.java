@@ -109,7 +109,8 @@ public class KataBankOCRTest {
      */
     @Test
     public void checksumValidateTwo() {
-        assertTrue(kataBankOCR.checksumValidate("457508000"));
+        String account = "457508000";
+        assertTrue(kataBankOCR.checksumValidate(account));
     }
 
     /**
@@ -117,7 +118,9 @@ public class KataBankOCRTest {
      */
     @Test
     public void seeResultOne() {
-        assertEquals("457508000", kataBankOCR.seeResult("457508000"));
+        String expecteResult = "457508000";
+        String account = "457508000";
+        assertEquals(expecteResult, kataBankOCR.seeResult(account));
     }
 
     /**
