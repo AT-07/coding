@@ -1,5 +1,7 @@
 package org.fundacionjala.coding.ana;
 
+import java.util.StringJoiner;
+
 /**
  * word invert when the word is major that 5.
  *
@@ -14,13 +16,12 @@ public class Word {
      * @param words enter the value "this is another test".
      * @return a string.
      */
-    public String stringWords(String words) {
-        String wordInvert = "";
+    public String stringWords(final String words) {
+        StringJoiner word = new StringJoiner(" ");
         for (String separatedWord : words.split(" ")) {
-            StringBuilder word = new StringBuilder(separatedWord);
-            wordInvert += word.length() >= NUMBER ? word.reverse().append(" ").toString() : word.append(" ").toString();
+            word.add(separatedWord.length() >= NUMBER ? new StringBuilder(separatedWord).reverse() : separatedWord);
         }
-        return wordInvert.trim();
+        return word.toString();
     }
 
 }
