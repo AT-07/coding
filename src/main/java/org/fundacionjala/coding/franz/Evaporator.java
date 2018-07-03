@@ -9,12 +9,12 @@ public class Evaporator {
     /**
      * this method.
      *
-     * @param content      cant
-     * @param evapDay cant of evaporate
-     * @param threshold    limit porcent
+     * @param content   cant
+     * @param evapDay   cant of evaporate
+     * @param threshold limit porcent
      * @return days that evaporate
      */
-    public int evaporator(double content,double evapDay,double threshold) {
+    public int evaporator(double content, double evapDay, double threshold) {
         double limit = content * (threshold / HUNDRED);
         int days = 0;
         double reduce;
