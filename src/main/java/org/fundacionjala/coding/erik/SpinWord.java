@@ -16,12 +16,9 @@ public class SpinWord {
      * @param sentence this is param set string.
      * @return string of spin words.
      */
-<<<<<<< Updated upstream
-    String spinWords(final String sentence) {
-=======
-    public String spinWords(String sentence) {
 
->>>>>>> Stashed changes
+    String spinWords(final String sentence) {
+
         String[] word = sentence.split(" ");
         StringJoiner wordSpin = new StringJoiner(" ");
         for (String aWord : word) {
