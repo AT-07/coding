@@ -33,6 +33,7 @@ public class FizzBuzzTest {
         final int thirteen = 13;
         final int fourteen = 14;
         final int fifteen = 15;
+        final int numberFive = 151;
         list.add(one);
         list.add(two);
         list.add(three);
@@ -48,6 +49,7 @@ public class FizzBuzzTest {
         list.add(thirteen);
         list.add(fourteen);
         list.add(fifteen);
+        list.add(numberFive);
 
         List<String> listExpeted = new ArrayList<>();
         listExpeted.add("1");
@@ -65,6 +67,7 @@ public class FizzBuzzTest {
         listExpeted.add("Fizz");
         listExpeted.add("14");
         listExpeted.add("FizzBuzz");
+        listExpeted.add("Buzz");
 
         assertEquals(listExpeted, fizzBuzz.multiplesForNumberOther(list));
     }
