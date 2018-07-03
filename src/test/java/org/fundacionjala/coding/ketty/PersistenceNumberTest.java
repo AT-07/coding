@@ -11,8 +11,6 @@ import static org.junit.Assert.assertNotEquals;
  */
 
 public class PersistenceNumberTest {
-    static final int NUMBER_VERIFIC = 999;
-    static final int NUMBER_1 = 4;
 
     private PersistenceNumber persistent;
 
@@ -31,8 +29,9 @@ public class PersistenceNumberTest {
 
     @Test
     public void testPersistencePass() {
+        final int numberVerify = 999;
         final int expected = 4;
-        assertEquals(expected, persistent.persistence(NUMBER_VERIFIC));
+        assertEquals(expected, persistent.persistence(numberVerify));
     }
 
     /**
@@ -40,30 +39,11 @@ public class PersistenceNumberTest {
      */
     @Test
     public void testPersistenceFailed() {
+        final int numberVerify = 999;
         final int expected = 2;
-        assertNotEquals(expected, persistent.persistence(NUMBER_VERIFIC));
+        assertNotEquals(expected, persistent.persistence(numberVerify));
     }
 
-    /**
-     * this is method test verify that the number "999" digit is correct.
-     */
-    @Test
-    public void testContDigictPass() {
-        final int expected = 3;
-        assertEquals(expected, persistent.contDigict(NUMBER_VERIFIC));
-
-    }
-
-    /**
-     * this is method test verify if the number "999" digit is correct.
-     */
-
-    @Test
-    public void testContDigictFailed() {
-        final int expected = 2;
-        assertNotEquals(expected, persistent.contDigict(NUMBER_VERIFIC));
-
-    }
 
     /**
      * this is method test valid that is  number "4"  persistence.
@@ -71,8 +51,9 @@ public class PersistenceNumberTest {
 
     @Test
     public void testPersistencePass1() {
+        final int number1 = 4;
         final int expected = 0;
-        assertEquals(expected, persistent.persistence(NUMBER_1));
+        assertEquals(expected, persistent.persistence(number1));
     }
 
     /**
@@ -81,31 +62,9 @@ public class PersistenceNumberTest {
 
     @Test
     public void testPersistenceFailed1() {
+        final int number1 = 4;
         final int expected = 2;
-        assertNotEquals(expected, persistent.persistence(NUMBER_1));
-    }
-
-    /**
-     * it is test verify that is cant digit number 4 is correct.
-     */
-
-    @Test
-    public void testContDigictPass1() {
-        final int expected = 1;
-        assertEquals(expected, persistent.contDigict(NUMBER_1));
-
-    }
-
-    /**
-     * it is test verify if tha cant digit number 4 is correct.
-     */
-
-    @Test
-    public void testContDigictFailed1() {
-        final int expected = 8;
-
-        assertNotEquals(expected, persistent.contDigict(NUMBER_1));
-
+        assertNotEquals(expected, persistent.persistence(number1));
     }
 
 
