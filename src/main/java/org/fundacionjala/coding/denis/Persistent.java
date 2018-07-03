@@ -10,15 +10,7 @@ public class Persistent {
      * @param data is data value for at work.
      * @return the amount the repeat the operation.
      */
-    public int persistent(long data) {
-        return data < NUMCHECK ? 0 : check(data);
-    }
-
-    /**
-     * @param data verify the amount operation.
-     * @return amount operation check.
-     */
-    private int check(long data) {
+    public int persistent(int data) {
         final int dataDiv = 10;
         int actualResult = 0;
         while (data > NUMCHECK) {
@@ -32,6 +24,5 @@ public class Persistent {
 
         }
         return actualResult;
-
     }
 }
