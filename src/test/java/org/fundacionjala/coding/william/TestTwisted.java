@@ -46,8 +46,8 @@ public class TestTwisted {
      */
     @Test
     public void sortTwistedTestIncorrect() {
-        final int[] arrayValue = {14, 13, 15};
-        final int[] expectedResultIncorrect = {13, 14, 15};
+        final int[] arrayValue = {15, 13, 16};
+        final int[] expectedResultIncorrect = {13, 15, 16};
         assertNotEquals(expectedResultIncorrect, twisted.sortTwisted(arrayValue));
     }
 }

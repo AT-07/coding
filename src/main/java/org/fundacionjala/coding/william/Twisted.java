@@ -1,6 +1,6 @@
 package org.fundacionjala.coding.william;
 
-import java.util.Arrays;
+import java.util.stream.IntStream;
 
 /**
  * Class Twisted which exchanges the values of 3 and 7.
@@ -14,15 +14,12 @@ public class Twisted {
      * @return arrays of numbers enteros.
      */
     public int[] sortTwisted(final int[] arrayNumbers) {
-        String auxiliary = Arrays.toString(arrayNumbers).replace("[", "").replace("]", "")
-                .replace(" ", "").replace("3", "W").replace("7", "3")
-                .replace("W", "7");
-        String[] stringArray = auxiliary.split(",");
-        Arrays.sort(stringArray);
-        auxiliary = Arrays.toString(stringArray).replace("[", "").replace("]", "")
-                .replace(" ", "").replace("3", "W").replace("7", "3")
-                .replace("W", "7");
-        stringArray = auxiliary.split(",");
-        return Arrays.asList(stringArray).stream().mapToInt(Integer::parseInt).toArray();
+        return IntStream.of(arrayNumbers)
+                .map(e -> Integer.parseInt(String.valueOf(e).replace("3", "x")
+                        .replace("7", "3").replace("x", "7")))
+                .sorted()
+                .map(e -> Integer.parseInt(String.valueOf(e).replace("3", "x")
+                        .replace("7", "3").replace("x", "7")))
+                .toArray();
     }
 }
