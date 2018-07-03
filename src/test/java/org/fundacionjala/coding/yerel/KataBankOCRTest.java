@@ -118,8 +118,7 @@ public class KataBankOCRTest {
      */
     @Test
     public void seeResultOne() {
-        String expecteResult = "457508000";
-        assertEquals(expecteResult, kataBankOCR.seeResult(ACCOUNT));
+        assertEquals(ACCOUNT, kataBankOCR.seeResult(ACCOUNT));
     }
 
     /**
