@@ -6,6 +6,7 @@ import static org.junit.Assert.assertFalse;
 
 import org.junit.Before;
 import org.junit.Test;
+
 /**
  * number digital root of sum for see only result.
  *
@@ -13,19 +14,13 @@ import org.junit.Test;
  */
 public class DigitalTest {
     private Digital digital;
-    private static final int VALUE16 = 16;
-    private static final int EXPECTED7 = 7;
-    private static final int VALUE5 = 5;
-    private static final int EXPECTED5 = 5;
-    private static final int VALUE493193 = 493193;
-    private static final int EXPECTED2 = 2;
-    private static final int EXPECTED3 = 3;
+
 
     /**
      * call to tha class Digital.
      */
     @Before
-    public void setUp()  {
+    public void setUp() {
         digital = new Digital();
     }
 
@@ -34,7 +29,9 @@ public class DigitalTest {
      */
     @Test
     public void testDigitalDigitalRoot() {
-        assertEquals(EXPECTED7, digital.digitalRoot(VALUE16));
+        final int value16 = 16;
+        final int expected7 = 7;
+        assertEquals(expected7, digital.digitalRoot(value16));
     }
 
     /**
@@ -42,7 +39,9 @@ public class DigitalTest {
      */
     @Test
     public void testDigitalDigitalRootOneDigital() {
-        assertEquals(EXPECTED5, digital.digitalRoot(VALUE5));
+        final int value5 = 5;
+        final int expected5 = 5;
+        assertEquals(expected5, digital.digitalRoot(value5));
     }
 
     /**
@@ -50,7 +49,10 @@ public class DigitalTest {
      */
     @Test
     public void testDigitalDigitalRootOneDigitalValor() {
-        assertEquals(EXPECTED2, digital.digitalRoot(VALUE493193));
+        final int value493193 = 493193;
+        final int expected2 = 2;
+
+        assertEquals(expected2, digital.digitalRoot(value493193));
     }
 
     /**
@@ -58,6 +60,8 @@ public class DigitalTest {
      */
     @Test
     public void testDigitalDigitalRootFalse() {
-        assertFalse(EXPECTED3 == digital.digitalRoot(VALUE493193));
+        final int value493193 = 493193;
+        final int expected3 = 3;
+        assertFalse(expected3 == digital.digitalRoot(value493193));
     }
 }
