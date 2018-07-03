@@ -21,9 +21,7 @@ public class Droot {
                 }
                 n = sum;
             }
-            return n;
-        } else {
-            return n;
         }
+        return n;
     }
 }
