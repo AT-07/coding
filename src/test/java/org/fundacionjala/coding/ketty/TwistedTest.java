@@ -30,8 +30,11 @@ public class TwistedTest {
      */
     @Test
     public void twistedTestPass() {
+
+
         final int[] actualResult = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         final int[] expectedResult2 = {1, 2, 7, 4, 5, 6, 3, 8, 9};
+
         assertArrayEquals(expectedResult2, sw.twisted(actualResult));
     }
 
@@ -40,6 +43,8 @@ public class TwistedTest {
      */
     @Test
     public void twistedTestFailed() {
+
+
         final int[] actualResult = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         final int[] expectedResult2 = {1, 2, 7, 4, 5, 6, 7, 8, 9};
         assertFalse(expectedResult2.equals(sw.twisted(actualResult)));

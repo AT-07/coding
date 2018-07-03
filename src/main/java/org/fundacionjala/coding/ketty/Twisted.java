@@ -18,6 +18,8 @@ public class Twisted {
      */
 
     public int[] twisted(final int[] arrayInteger) {
+
+
         final Map<Integer, Integer> mapTwisted = new HashMap<>();
         final int numberThree = 3;
         final int numberSeven = 7;
