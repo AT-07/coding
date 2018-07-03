@@ -17,7 +17,6 @@ public class Count {
         List<String> lst = Arrays.asList(cadena.split(""));
         int upper = Collections.frequency(lst, chr.toLowerCase());
         int lower = Collections.frequency(lst, chr.toUpperCase());
-        int cont = upper + lower;
-        return cont;
+        return upper + lower;
     }
 }
