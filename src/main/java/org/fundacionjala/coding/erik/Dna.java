@@ -9,7 +9,7 @@ public class Dna {
      * @param dna is a string.
      * @return complement dna.
      */
-    public String makeComplement(String dna) {
+    public String makeComplement(final String dna) {
         return dna.replace('T', ' ').replace('A', 'T')
                 .replace(' ', 'A').replace('C', ' ').replace('G', 'C').replace(' ', 'G');
     }
