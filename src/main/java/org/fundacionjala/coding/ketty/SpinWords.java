@@ -28,6 +28,5 @@ public class SpinWords {
             }
         }
         return newPhrase.toString().trim();
-
     }
 }

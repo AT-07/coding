@@ -9,7 +9,6 @@ import static org.junit.Assert.assertFalse;
 /**
  * class SpinWordsTest it is test verify.
  */
-
 public class SpinWordsTest {
     private SpinWords spinWord;
 
