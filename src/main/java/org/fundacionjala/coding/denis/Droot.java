@@ -11,23 +11,19 @@ public class Droot {
      * @return sum time execute.
      */
     public int digitalRoot(int n) {
-        return n < NUMCHECK ? n : check(n);
-    }
-
-    /**
-     * @param data is the number of the work.
-     * @return sum time execute.
-     */
-    private int check(int data) {
-        final int dataDiv = 10;
-        while (data > NUMCHECK) {
-            int sum = 0;
-            while (data != 0) {
-                sum += data % dataDiv;
-                data /= dataDiv;
+        if (n > NUMCHECK) {
+            final int dataDiv = 10;
+            while (n > NUMCHECK) {
+                int sum = 0;
+                while (n != 0) {
+                    sum += n % dataDiv;
+                    n /= dataDiv;
+                }
+                n = sum;
             }
-            data = sum;
+            return n;
+        } else {
+            return n;
         }
-        return data;
     }
 }
