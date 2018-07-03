@@ -63,15 +63,22 @@ public class KataBankOCR {
      * @param number number in String.
      * @return String concat with value err o ill.
      */
-    public String checksumValidation(final String number) {
+    public String seeResult(final String number) {
         if (number.contains("?")) {
             return String.join(" ", number, "ILL");
         }
+        return checksumValidate(number) ? number : String.join(" ", number, "ERR");
+    }
+
+    /**
+     * @param number is a number account.
+     * @return boolean is checksumValidate true or false.
+     */
+    public boolean checksumValidate(final String number) {
         int sum = 0;
         for (int i = 0; i < number.length(); i++) {
             sum += Integer.parseInt(String.valueOf(number.charAt(i))) * (number.length() - i);
         }
-        return sum % NUMBER_ELEVEN == NUMBER_ZERO
-                ? number : String.join(" ", number, "ERR");
+        return sum % NUMBER_ELEVEN == NUMBER_ZERO;
     }
 }

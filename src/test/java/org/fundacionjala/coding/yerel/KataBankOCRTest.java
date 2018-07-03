@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * test case for KataBanck.
@@ -50,8 +52,8 @@ public class KataBankOCRTest {
     @Test
     public void accountNumberThree() {
         String number = "    _  _     _  _  _  _  _ \n"
-                + "  | _| _||_||_ |_   ||_||_|\n"
-                + "  ||_  _|  | _||_|  ||_| _|\n";
+                      + "  | _| _||_||_ |_   ||_||_|\n"
+                      + "  ||_  _|  | _||_|  ||_| _|\n";
         assertEquals("123456789", kataBankOCR.accountNumber(number));
     }
 
@@ -98,23 +100,39 @@ public class KataBankOCRTest {
      *
      */
     @Test
-    public void checksumValidation() {
-        assertEquals("664371495 ERR", kataBankOCR.checksumValidation("664371495"));
+    public void checksumValidate() {
+        assertFalse(kataBankOCR.checksumValidate("664371495"));
     }
 
     /**
      * test case validate checksum 86110??36.
      */
     @Test
-    public void checksumValidationTwo() {
-        assertEquals("86110??36 ILL", kataBankOCR.checksumValidation("86110??36"));
+    public void checksumValidateTwo() {
+        assertTrue(kataBankOCR.checksumValidate("457508000"));
     }
 
     /**
      * test case validate checksum 457508000.
      */
     @Test
-    public void checksumValidationThree() {
-        assertEquals("457508000", kataBankOCR.checksumValidation("457508000"));
+    public void seeResultOne() {
+        assertEquals("457508000", kataBankOCR.seeResult("457508000"));
+    }
+
+    /**
+     * test case validate checksum 86110??36.
+     */
+    @Test
+    public void seeResultTwo() {
+        assertEquals("86110??36 ILL", kataBankOCR.seeResult("86110??36"));
+    }
+
+    /**
+     * test case validate checksum 86110??36.
+     */
+    @Test
+    public void seeResultThree() {
+        assertEquals("664371495 ERR", kataBankOCR.seeResult("664371495"));
     }
 }
