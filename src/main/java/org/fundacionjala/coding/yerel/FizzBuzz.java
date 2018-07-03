@@ -16,13 +16,14 @@ public class FizzBuzz {
      * @return Fizz o Fuzz values.
      */
     public String multiplesForNumber(final int number) {
+        String numberString = String.valueOf(number);
         if (number % NUMBER_FIVE == NUMBER_ZERO && number % NUMBER_THREE == NUMBER_ZERO) {
             return "FizzBuzz";
         }
-        if (number % NUMBER_FIVE == NUMBER_ZERO || String.valueOf(number).contains("5")) {
+        if (number % NUMBER_FIVE == NUMBER_ZERO || numberString.contains("5")) {
             return "Buzz";
         }
-        if (number % NUMBER_THREE == NUMBER_ZERO || String.valueOf(number).contains("3")) {
+        if (number % NUMBER_THREE == NUMBER_ZERO || numberString.contains("3")) {
             return "Fizz";
         }
         return String.valueOf(number);
