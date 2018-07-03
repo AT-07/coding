@@ -4,56 +4,30 @@ package org.fundacionjala.coding.denis;
  * This is the main class of the European Article Number.
  */
 public class Ean {
-    private String digits;
+
     private static final int SIZECONTROL = 13;
     private static final int EANNUMBER = 10;
     private static final int MULTIPLICATOR = 3;
     private static final int MODULO = 2;
 
-
     /**
-     * eanVerify of the European article number.
-     *
+     * @param digits eanVerify of the European article number.
      * @return the eanVerify of the European article number.
      */
 
-    public boolean eanKata() {
-        return getDigits().length() == SIZECONTROL && eanVerify();
-    }
-
-    /**
-     * executes the eanVerify of the European article number.
-     *
-     * @return executes the eanVerify of the European article number.
-     */
-    public boolean eanVerify() {
-        int suma = 0;
-        int result;
-        int cheking;
-        for (int i = 1; i < getDigits().length(); i++) {
-            result = Character.getNumericValue(getDigits().charAt(i - 1));
-            suma += i % MODULO == 0 ? result * MULTIPLICATOR : result;
+    public boolean eanKata(final String digits) {
+        if (digits.length() == SIZECONTROL) {
+            int suma = 0;
+            int result;
+            for (int i = 1; i < digits.length(); i++) {
+                result = Character.getNumericValue(digits.charAt(i - 1));
+                suma += i % MODULO == 0 ? result * MULTIPLICATOR : result;
+            }
+            int checking = suma % EANNUMBER == 0 ? 0 : EANNUMBER - suma % EANNUMBER;
+            return checking == Character.
+                    getNumericValue(digits.charAt(digits.length() - 1));
+        } else {
+            return false;
         }
-        cheking = suma % EANNUMBER == 0 ? 0 : EANNUMBER - suma % EANNUMBER;
-        return cheking == Character.getNumericValue(digits.charAt(digits.length() - 1));
     }
-
-    /**
-     * actual value of digits.
-     *
-     * @return actual value of digits.
-     */
-    public String getDigits() {
-        return digits;
-    }
-
-    /**
-     * update the value of the digits.
-     *
-     * @param digits is the value of EAN.
-     */
-    public void setDigits(String digits) {
-        this.digits = digits;
-    }
-
 }
