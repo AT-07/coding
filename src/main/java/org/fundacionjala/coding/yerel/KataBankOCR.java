@@ -11,10 +11,22 @@ import java.util.List;
 public class KataBankOCR {
     private static final int NUMBER_TWENTYSEVEN = 27;
     private static final int NUMBER_ZERO = 0;
-    private static final int NUMBER_TEEN = 10;
     private static final int NUMBER_ELEVEN = 11;
     private static final int NUMBER_THREE = 3;
-    private static final String INTEROGATION = "?";
+    private static final HashMap<String, String> MAP = new HashMap<>();
+
+    static {
+        MAP.put(" _ | ||_|", "0");
+        MAP.put("     |  |", "1");
+        MAP.put(" _  _||_ ", "2");
+        MAP.put(" _  _| _|", "3");
+        MAP.put("   |_|  |", "4");
+        MAP.put(" _ |_  _|", "5");
+        MAP.put(" _ |_ |_|", "6");
+        MAP.put(" _   |  |", "7");
+        MAP.put(" _ |_||_|", "8");
+        MAP.put(" _ |_| _|", "9");
+    }
 
     /**
      * @param number number pipes and underscores String.
@@ -40,21 +52,9 @@ public class KataBankOCR {
      * @return number String.
      */
     public String convertNumber(final List<StringBuilder> number) {
-        HashMap<String, String> map = new HashMap<>();
         StringBuilder numberString = new StringBuilder();
-        map.put(" _ | ||_|", "0");
-        map.put("     |  |", "1");
-        map.put(" _  _||_ ", "2");
-        map.put(" _  _| _|", "3");
-        map.put("   |_|  |", "4");
-        map.put(" _ |_  _|", "5");
-        map.put(" _ |_ |_|", "6");
-        map.put(" _   |  |", "7");
-        map.put(" _ |_||_|", "8");
-        map.put(" _ |_| _|", "9");
         for (StringBuilder list: number) {
-            numberString.append(map.get(
-                    list.toString()) == null ? INTEROGATION : map.get(list.toString()));
+            numberString.append(MAP.get(list.toString()) == null ? "?" : MAP.get(list.toString()));
         }
         return numberString.toString();
     }
@@ -64,20 +64,14 @@ public class KataBankOCR {
      * @return String concat with value err o ill.
      */
     public String checksumValidation(final String number) {
-        String copyNumber = String.valueOf(number);
-        try {
-            int sum = 0;
-            int cont = 1;
-            int numberConver = Integer.parseInt(number);
-            while (numberConver > NUMBER_ZERO) {
-                sum += (numberConver % NUMBER_TEEN) * cont;
-                cont++;
-                numberConver /= NUMBER_TEEN;
-            }
-            return sum % NUMBER_ELEVEN == NUMBER_ZERO
-                    ? copyNumber : String.join(" ", copyNumber, "ERR");
-        } catch (NumberFormatException excepcion) {
+        if (number.contains("?")) {
             return String.join(" ", number, "ILL");
         }
+        int sum = 0;
+        for (int i = 0; i < number.length(); i++) {
+            sum += Integer.parseInt(String.valueOf(number.charAt(i))) * (number.length() - i);
+        }
+        return sum % NUMBER_ELEVEN == NUMBER_ZERO
+                ? number : String.join(" ", number, "ERR");
     }
 }
