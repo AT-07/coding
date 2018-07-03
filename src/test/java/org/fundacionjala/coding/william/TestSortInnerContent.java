@@ -47,8 +47,8 @@ public class TestSortInnerContent {
     @Test
     public void sortInnerContentTest3Correct() {
         final String actualValue = "I am";
-        final String expectedResultIncorrect = "I am";
-        assertEquals(expectedResultIncorrect, sort.sortInnerContent(actualValue));
+        final String expectedResultCorrect = "I am";
+        assertEquals(expectedResultCorrect, sort.sortInnerContent(actualValue));
     }
 
 
