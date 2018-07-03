@@ -11,39 +11,33 @@ import java.util.List;
  */
 
 public class Sort {
+    private static final int LIMIT = 3;
+
     /**
-     *
      * @param totalText cadena que ingresa para que sea ordenado.
-     * @return Retorna en string que ya fue modificado.
+     * @return return en string que ya fue modificado.
      */
 
-    public String sortTheInnerContent(final String totalText) {
-
-        final int menor = 3;
-
-        List resWords = new ArrayList<>();
-
-        for (String i : totalText.split(" ")) {
-
-            if (i.length() >= menor) {
-
-                String body = i.substring(1, i.length() - 1);
-                String[] body2 = body.split("");
-                Arrays.sort(body2, Collections.reverseOrder(String.CASE_INSENSITIVE_ORDER));
-                body = String.join("", body2);
-                StringBuilder sb = new StringBuilder();
-                sb.append(i.substring(0, 1));
-                sb.append(body);
-                sb.append(i.substring(i.length() - 1, i.length()));
-                resWords.add(sb.toString());
-
-            } else {
-                resWords.add(i);
-            }
-
+    String sortTheInnerContent(final String totalText) {
+        List<String> resWords = new ArrayList<>();
+        for (String word : totalText.split(" ")) {
+            resWords.add(word.length() >= LIMIT ? innerContent(word) : word);
         }
-
         return String.join(" ", resWords);
+    }
 
+    /**
+     *
+     * @param word ingresa valor array desordenado.
+     * @return retorna en array ordenado.
+     */
+    private String innerContent(final String word) {
+        String[] innerContent = word.substring(1, word.length() - 1).split("");
+        Arrays.sort(innerContent, Collections.reverseOrder(String.CASE_INSENSITIVE_ORDER));
+        StringBuilder sb = new StringBuilder();
+        sb.append(word, 0, 1);
+        sb.append(String.join("", innerContent));
+        sb.append(word, word.length() - 1, word.length());
+        return sb.toString();
     }
 }
