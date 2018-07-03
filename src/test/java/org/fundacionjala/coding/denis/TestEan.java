@@ -41,11 +41,22 @@ public class TestEan {
     }
 
     /**
+     * test for eanVerify of EanKataZero.
+     */
+    @Test
+    public void testEanKataZeroPass() {
+        final String value = "9783827317100";
+        assertTrue(digits.eanKata(value));
+    }
+
+    /**
      * test for eanVerify of eanKataFalse.
      */
     @Test
     public void testEanKataFail() {
         final String valueFail = "4003301018392";
+        final String valueFail1 = "40033010";
         assertFalse(digits.eanKata(valueFail));
+        assertFalse(digits.eanKata(valueFail1));
     }
 }

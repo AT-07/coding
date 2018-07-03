@@ -16,18 +16,16 @@ public class Ean {
      */
 
     public boolean eanKata(final String digits) {
-        if (digits.length() == SIZECONTROL) {
-            int suma = 0;
-            int result;
-            for (int i = 1; i < digits.length(); i++) {
-                result = Character.getNumericValue(digits.charAt(i - 1));
-                suma += i % MODULO == 0 ? result * MULTIPLICATOR : result;
-            }
-            int checking = suma % EANNUMBER == 0 ? 0 : EANNUMBER - suma % EANNUMBER;
-            return checking == Character.
-                    getNumericValue(digits.charAt(digits.length() - 1));
-        } else {
+        if (digits.length() != SIZECONTROL) {
             return false;
         }
+        int sum = 0;
+        for (int i = 1; i < digits.length(); i++) {
+            int result = Character.getNumericValue(digits.charAt(i - 1));
+            sum += i % MODULO == 0 ? result * MULTIPLICATOR : result;
+        }
+        int checking = sum % EANNUMBER == 0 ? 0 : EANNUMBER - sum % EANNUMBER;
+        return checking == Character.getNumericValue(digits.charAt(digits.length() - 1));
     }
 }
+
