@@ -23,7 +23,9 @@ public class SortInnerContent {
         StringJoiner result = new StringJoiner(" ");
         for (int i = 0; i < arrayWords.length; i++) {
             arrayLetters = arrayWords[i].split("");
-            Arrays.sort(arrayLetters, NUMBER, arrayLetters.length - NUMBER, Collections.reverseOrder());
+            if (arrayLetters.length>3){
+                Arrays.sort(arrayLetters, NUMBER, arrayLetters.length - NUMBER, Collections.reverseOrder());
+            }
             result.add(String.join("", arrayLetters));
         }
         return result.toString();

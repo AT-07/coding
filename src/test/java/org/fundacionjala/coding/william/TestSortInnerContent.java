@@ -42,22 +42,20 @@ public class TestSortInnerContent {
     }
 
     /**
-     * Method that verifies the correctness of my ordering method.
-     */
-    @Test
-    public void sortInnerContentTest3Correct() {
-        final String actualValue = "Coding is very funny";
-        final String expectedResult = "Conidg is vrey funny";
-        assertEquals(expectedResult, sort.sortInnerContent(actualValue));
-    }
-
-    /**
      * Method that verifies the correctness of my ordering method with an erroneous expected result.
      */
     @Test
+    public void sortInnerContentTest3Correct() {
+        final String actualValue = "I am";
+        final String expectedResultIncorrect = "I am";
+        assertEquals(expectedResultIncorrect, sort.sortInnerContent(actualValue));
+    }
+
+
+    @Test
     public void sortInnerContentTestIncorrect() {
-        final String actualValue = "Inglaterra esta ganando";
-        final String expectedResultIncorrect = "Inglaterra esta ganando";
+        final String actualValue = "Hi friend";
+        final String expectedResultIncorrect = "Hi friend";
         assertNotEquals(expectedResultIncorrect, sort.sortInnerContent(actualValue));
     }
 }
