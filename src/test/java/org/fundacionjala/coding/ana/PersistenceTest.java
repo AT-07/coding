@@ -12,13 +12,6 @@ import org.junit.Test;
  */
 public class PersistenceTest {
     private Persistence persistence;
-    private static final int VALUE39 = 39;
-    private static final int EXPECTED3 = 3;
-    private static final int VALUE4 = 4;
-    private static final int VALUE999 = 999;
-    private static final int EXPECTED4 = 4;
-    private static final int VALUE0 = 0;
-    private static final int EXPECTED0 = 0;
 
     /**
      * call tha class Persistence.
@@ -33,8 +26,10 @@ public class PersistenceTest {
      */
     @Test
     public void testPersistenceCantPersistenceComparato() {
-        int result = persistence.cantPersistence(VALUE39);
-        assertEquals(EXPECTED3, result);
+        final int value = 39;
+        final int expected = 3;
+        int result = persistence.cantPersistence(value);
+        assertEquals(expected, result);
     }
 
     /**
@@ -42,8 +37,10 @@ public class PersistenceTest {
      */
     @Test
     public void testPersistenceCantPersistenceOneDigit() {
-        int result = persistence.cantPersistence(VALUE4);
-        assertEquals(EXPECTED0, result);
+        final int value = 4;
+        final int expected = 0;
+        int result = persistence.cantPersistence(value);
+        assertEquals(expected, result);
     }
 
     /**
@@ -51,8 +48,10 @@ public class PersistenceTest {
      */
     @Test
     public void testPersistenceCantPersistence() {
-        int result = persistence.cantPersistence(VALUE999);
-        assertEquals(EXPECTED4, result);
+        final int value = 999;
+        final int expected = 4;
+        int result = persistence.cantPersistence(value);
+        assertEquals(expected, result);
     }
 
     /**
@@ -60,7 +59,9 @@ public class PersistenceTest {
      */
     @Test
     public void testPersistenceCantPersistenceZero() {
-        int result = persistence.cantPersistence(VALUE0);
-        assertEquals(EXPECTED0, result);
+        final int value = 0;
+        final int expected = 0;
+        int result = persistence.cantPersistence(value);
+        assertEquals(expected, result);
     }
 }
