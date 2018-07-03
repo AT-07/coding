@@ -22,14 +22,10 @@ public class Ean {
         int suma = 0;
         for (String i : aux) {
             int num = Integer.parseInt(i);
-            if (num % 2 == 0) {
-                num = num * MPLT_PAR;
-            } else {
-                num = num * MPLT_IMPAR;
-            }
+            num = num % 2 == 0 ? num * MPLT_PAR : num * MPLT_IMPAR;
             suma = suma + num;
         }
-        numcom = MPLT_MOD - (suma % MPLT_MOD);
+        numcom =  suma %  MPLT_MOD  ==  0  ?  0  :  MPLT_MOD  - suma %  MPLT_MOD;
         return numcom == numComprobacion;
     }
 }
