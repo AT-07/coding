@@ -11,17 +11,17 @@ public class Droot {
      * @return sum time execute.
      */
     public int digitalRoot(int n) {
-        if (n > NUMCHECK) {
-            final int dataDiv = 10;
-            while (n > NUMCHECK) {
-                int sum = 0;
-                while (n != 0) {
-                    sum += n % dataDiv;
-                    n /= dataDiv;
-                }
-                n = sum;
+
+        final int dataDiv = 10;
+        while (n > NUMCHECK) {
+            int sum = 0;
+            while (n != 0) {
+                sum += n % dataDiv;
+                n /= dataDiv;
             }
+            n = sum;
         }
+
         return n;
     }
 }
