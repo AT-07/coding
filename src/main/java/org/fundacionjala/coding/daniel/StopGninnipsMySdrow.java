@@ -7,6 +7,7 @@ import java.util.StringJoiner;
  * but with inverted the letters that haved a size larget than or equal to 5.
  */
 public class StopGninnipsMySdrow {
+    private static final int LIMITE = 5;
 
     /**
      * Method that compare the  word by word.
@@ -16,10 +17,9 @@ public class StopGninnipsMySdrow {
      * @return the entire chain inverted.
      */
     public String invertirCadenaCompleta(final String cadena) {
-        final int cinco = 5;
         StringJoiner contenedor = new StringJoiner(" ");
         for (String frase : cadena.split(" ")) {
-            contenedor.add(frase.length() >= cinco ? new StringBuilder(frase).reverse() : frase);
+            contenedor.add(frase.length() >= LIMITE ? new StringBuilder(frase).reverse() : frase);
         }
         return contenedor.toString();
     }
