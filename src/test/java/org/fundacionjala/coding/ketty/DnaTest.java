@@ -33,7 +33,6 @@ public class DnaTest {
         final String expectedResult = "TAAGC";
 
         assertEquals(expectedResult, adn.dna(letters));
-
     }
 
     /**

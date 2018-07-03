@@ -15,4 +15,3 @@ public class Dna {
         return phrase.replace('T', 'a').replace('A', 't').replace('C', 'g').replace('G', 'c').toUpperCase();
     }
 }
-
