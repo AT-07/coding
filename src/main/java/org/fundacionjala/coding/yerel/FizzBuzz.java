@@ -1,7 +1,6 @@
 package org.fundacionjala.coding.yerel;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -16,7 +15,7 @@ public class FizzBuzz {
      * @param number to find String FizzBuzz.
      * @return Fizz o Fuzz values.
      */
-    public String multiplesForNumber(int number) {
+    public String multiplesForNumber(final int number) {
         if (number % NUMBER_FIVE == NUMBER_ZERO && number % NUMBER_THREE == NUMBER_ZERO) {
             return "FizzBuzz";
         }
@@ -33,11 +32,10 @@ public class FizzBuzz {
      * @param number list to find FiZZ and Fuzz.
      * @return list Fizz Fuzz.
      */
-    public List<String> multiplesForNumberOther(List<Integer> number) {
+    public List<String> multiplesForNumberOther(final List<Integer> number) {
         List<String> listNumberFizzBuzz = new ArrayList<>();
-        Iterator<Integer> iterateNumberArray = number.iterator();
-        while (iterateNumberArray.hasNext()) {
-            listNumberFizzBuzz.add(multiplesForNumber(iterateNumberArray.next()));
+        for (Integer numberOnly: number) {
+            listNumberFizzBuzz.add(multiplesForNumber(numberOnly));
         }
         return listNumberFizzBuzz;
     }
