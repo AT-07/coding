@@ -12,9 +12,7 @@ import static org.junit.Assert.assertFalse;
 
 public class SpinWordsTest {
     private SpinWords spinWord;
-    private static final String PHRASE_N = "hey fellow warriors";
-    private static final String PHRASE_CORRECTLY = "hey wollef sroirraw";
-    private static final String PHASE_FALSE = "hey wollef warriors";
+
 
     /**
      * this is method execute firth.
@@ -30,9 +28,11 @@ public class SpinWordsTest {
      */
     @Test
     public void testGetSprintWordPass() {
+        final String phraseN = "hey fellow warriors";
+        final String phraseCorrectly = "hey wollef sroirraw";
 
 
-        assertTrue(PHRASE_CORRECTLY.equals(spinWord.getSpinWord(PHRASE_N)));
+        assertTrue(phraseCorrectly.equals(spinWord.getSpinWord(phraseN)));
 
 
     }
@@ -43,8 +43,11 @@ public class SpinWordsTest {
 
     @Test
     public void testGetSprintWordFailed() {
+        final String phraseN = "hey fellow warriors";
 
-        assertFalse(PHASE_FALSE.equals(spinWord.getSpinWord(PHRASE_N)));
+        final String phaseFalse = "hey wollef warriors";
+
+        assertFalse(phaseFalse.equals(spinWord.getSpinWord(phraseN)));
     }
 
 }

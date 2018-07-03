@@ -17,7 +17,6 @@ public class SpinWords {
         StringBuilder newPhrase = new StringBuilder();
         String[] word = phrase.split(" ");
 
-
         for (String wordPart : word) {
             if (wordPart.length() < LIMIT_LETTER) {
                 newPhrase.append(" " + wordPart);
