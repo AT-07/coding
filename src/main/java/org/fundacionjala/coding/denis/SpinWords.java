@@ -14,7 +14,7 @@ public class SpinWords {
      * @param sentence OF STRING INVEST.
      * @return string.
      */
-    public String stopSpinWords(String sentence) {
+    public String stopSpinWords(final String sentence) {
 
         String[] wordsParts = sentence.split(" ");
         StringJoiner word = new StringJoiner(" ");
