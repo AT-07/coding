@@ -61,15 +61,16 @@ public class KataBankOCRTest {
     @Test
     public void convertNumber() {
         List<StringBuilder> listNumber = new ArrayList<>();
-        listNumber.add(new StringBuilder(" _ | ||_|"));
-        listNumber.add(new StringBuilder(" _ | ||_|"));
-        listNumber.add(new StringBuilder(" _ | ||_|"));
-        listNumber.add(new StringBuilder(" _ | ||_|"));
-        listNumber.add(new StringBuilder(" _ | ||_|"));
-        listNumber.add(new StringBuilder(" _ | ||_|"));
-        listNumber.add(new StringBuilder(" _ | ||_|"));
-        listNumber.add(new StringBuilder(" _ | ||_|"));
-        listNumber.add(new StringBuilder(" _ | ||_|"));
+        String numberZero = " _ | ||_|";
+        listNumber.add(new StringBuilder(numberZero));
+        listNumber.add(new StringBuilder(numberZero));
+        listNumber.add(new StringBuilder(numberZero));
+        listNumber.add(new StringBuilder(numberZero));
+        listNumber.add(new StringBuilder(numberZero));
+        listNumber.add(new StringBuilder(numberZero));
+        listNumber.add(new StringBuilder(numberZero));
+        listNumber.add(new StringBuilder(numberZero));
+        listNumber.add(new StringBuilder(numberZero));
         assertEquals("000000000", kataBankOCR.convertNumber(listNumber));
     }
 
@@ -79,15 +80,17 @@ public class KataBankOCRTest {
     @Test
     public void convertNumberTwo() {
         List<StringBuilder> listNumber = new ArrayList<>();
-        listNumber.add(new StringBuilder(" _ | ||_|"));
-        listNumber.add(new StringBuilder(" _ | ||_|"));
-        listNumber.add(new StringBuilder(" _ | ||_|"));
-        listNumber.add(new StringBuilder(" _ | ||_|"));
-        listNumber.add(new StringBuilder(" _ | ||_|"));
-        listNumber.add(new StringBuilder(" _ | ||_|"));
-        listNumber.add(new StringBuilder(" _ | ||_|"));
-        listNumber.add(new StringBuilder(" _ | ||_|"));
-        listNumber.add(new StringBuilder(" _ |_| _ "));
+        String unknown = " _ |_| _ ";
+        String numberZero = " _ | ||_|";
+        listNumber.add(new StringBuilder(numberZero));
+        listNumber.add(new StringBuilder(numberZero));
+        listNumber.add(new StringBuilder(numberZero));
+        listNumber.add(new StringBuilder(numberZero));
+        listNumber.add(new StringBuilder(numberZero));
+        listNumber.add(new StringBuilder(numberZero));
+        listNumber.add(new StringBuilder(numberZero));
+        listNumber.add(new StringBuilder(numberZero));
+        listNumber.add(new StringBuilder(unknown));
         assertEquals("00000000?", kataBankOCR.convertNumber(listNumber));
     }
 

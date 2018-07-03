@@ -20,7 +20,7 @@ public class KataBankOCR {
      * @param number number pipes and underscores String.
      * @return number String convert.
      */
-    public String accountNumber(String number) {
+    public String accountNumber(final String number) {
         List<StringBuilder> listDigit = new ArrayList<>();
         int oneNumberCount = 0;
         while (oneNumberCount < NUMBER_TWENTYSEVEN) {
@@ -39,7 +39,7 @@ public class KataBankOCR {
      * @param number Number Pattern List.
      * @return number String.
      */
-    public String convertNumber(List<StringBuilder> number) {
+    public String convertNumber(final List<StringBuilder> number) {
         HashMap<String, String> map = new HashMap<>();
         StringBuilder numberString = new StringBuilder();
         map.put(" _ | ||_|", "0");
@@ -63,7 +63,7 @@ public class KataBankOCR {
      * @param number number in String.
      * @return String concat with value err o ill.
      */
-    public String checksumValidation(String number) {
+    public String checksumValidation(final String number) {
         String copyNumber = String.valueOf(number);
         try {
             int sum = 0;
