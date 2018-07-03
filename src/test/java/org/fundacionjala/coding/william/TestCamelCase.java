@@ -28,7 +28,7 @@ public class TestCamelCase {
     public void camelCaseTestCorrect() {
         final String actualValue = "Hola como estan";
         final String expectedResult = "HolaComoEstan";
-        assertEquals(expectedResult,camel.camelCase(actualValue));
+        assertEquals(expectedResult, camel.camelCase(actualValue));
     }
 
     /**
@@ -38,7 +38,7 @@ public class TestCamelCase {
     public void camelCaseTest2Correct() {
         final String actualValue = "Coding is funny";
         final String expectedResult = "CodingIsFunny";
-        assertEquals(expectedResult,camel.camelCase(actualValue));
+        assertEquals(expectedResult, camel.camelCase(actualValue));
     }
 
     /**
@@ -48,7 +48,7 @@ public class TestCamelCase {
     public void camelCaseTest3Correct() {
         final String actualValue = "Gladys da mucha tarea";
         final String expectedResult = "GladysDaMuchaTarea";
-        assertEquals(expectedResult,camel.camelCase(actualValue));
+        assertEquals(expectedResult, camel.camelCase(actualValue));
     }
 
     /**
@@ -58,6 +58,6 @@ public class TestCamelCase {
     public void camelCaseTestIncorrect() {
         final String actualValue = "La musica";
         final String expectedResultIncorrect = "La musica";
-        assertNotEquals(expectedResultIncorrect,camel.camelCase(actualValue));
+        assertNotEquals(expectedResultIncorrect, camel.camelCase(actualValue));
     }
 }
