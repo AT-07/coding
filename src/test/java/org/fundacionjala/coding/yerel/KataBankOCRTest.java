@@ -15,6 +15,7 @@ import static org.junit.Assert.assertTrue;
  */
 public class KataBankOCRTest {
     private KataBankOCR kataBankOCR;
+    private static final String ACCOUNT = "457508000";
 
     /**
      * instance of class KataBankORC.
@@ -109,8 +110,7 @@ public class KataBankOCRTest {
      */
     @Test
     public void checksumValidateTwo() {
-        String account = "457508000";
-        assertTrue(kataBankOCR.checksumValidate(account));
+        assertTrue(kataBankOCR.checksumValidate(ACCOUNT));
     }
 
     /**
@@ -119,8 +119,7 @@ public class KataBankOCRTest {
     @Test
     public void seeResultOne() {
         String expecteResult = "457508000";
-        String account = "457508000";
-        assertEquals(expecteResult, kataBankOCR.seeResult(account));
+        assertEquals(expecteResult, kataBankOCR.seeResult(ACCOUNT));
     }
 
     /**
