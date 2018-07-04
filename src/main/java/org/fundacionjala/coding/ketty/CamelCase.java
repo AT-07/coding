@@ -12,7 +12,7 @@ public class CamelCase {
      * @param phrase it is string :
      * @return count.
      */
-    public String camelCase(String phrase) {
+    public String camelCase(final String phrase) {
         StringJoiner union = new StringJoiner("");
         String[] word = phrase.split(" ");
         for (String chartLetter : word) {
