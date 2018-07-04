@@ -14,8 +14,7 @@ public class CountChar {
      * @param letra  character that we will compare.
      * @return returns the number of characters that exist in a string.
      */
-    public int countChar(final String cadena, char letra) {
-        int count = (int) IntStream.range(0, cadena.length()).filter(i -> cadena.toLowerCase().charAt(i) == letra).count();
-        return count;
+    public int countChar(final String cadena, final char letra) {
+         return (int) IntStream.range(0, cadena.length()).filter(i -> cadena.toLowerCase().charAt(i) == letra).count();
     }
 }
