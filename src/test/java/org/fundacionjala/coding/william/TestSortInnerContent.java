@@ -51,7 +51,9 @@ public class TestSortInnerContent {
         assertEquals(expectedResultCorrect, sort.sortInnerContent(actualValue));
     }
 
-
+    /**
+     * Method that verifies the correctness of my ordering method with an erroneous expected result.
+     */
     @Test
     public void sortInnerContentTestIncorrect() {
         final String actualValue = "Hi friend";
