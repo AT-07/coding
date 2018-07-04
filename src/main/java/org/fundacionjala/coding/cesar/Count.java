@@ -10,13 +10,11 @@ import java.util.List;
 public class Count {
     /**
      * @param cadena String precess for count character.
-     * @param chr    what Character that is counted.
+     * @param chr count the number of times that character appears in the string.
      * @return cont to return.
      */
     public int countChar(final String cadena, final String chr) {
-        List<String> lst = Arrays.asList(cadena.split(""));
-        int upper = Collections.frequency(lst, chr.toLowerCase());
-        int lower = Collections.frequency(lst, chr.toUpperCase());
-        return upper + lower;
+        List<String> lst = Arrays.asList(cadena.toLowerCase().split(""));
+        return Collections.frequency(lst, chr);
     }
 }
