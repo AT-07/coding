@@ -10,6 +10,7 @@ import java.util.StringJoiner;
 public class SortInnerContent {
 
     private static final int NUMBER = 1;
+    private static final int LIMIT = 3;
 
     /**
      * Method that removes the 1st and last letter of the word and all its content orders it descending.
@@ -23,7 +24,7 @@ public class SortInnerContent {
         StringJoiner result = new StringJoiner(" ");
         for (String arrayWord : arrayWords) {
             arrayLetters = arrayWord.split("");
-            if (arrayLetters.length > 3) {
+            if (arrayLetters.length > LIMIT) {
                 Arrays.sort(arrayLetters, NUMBER, arrayLetters.length - NUMBER, Collections.reverseOrder());
             }
             result.add(String.join("", arrayLetters));
