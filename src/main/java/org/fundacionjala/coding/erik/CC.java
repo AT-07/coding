@@ -10,7 +10,7 @@ public class CC {
      * @param c is a character.
      * @return cant.
      */
-    public int charCount(String str, char c) {
+    public int charCount(final String str, char c) {
        int cont = 0;
        char[] cad = str.toLowerCase().toCharArray();
         for (char aCad : cad) {
