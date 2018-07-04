@@ -12,7 +12,7 @@ public class CountChar {
      * @return la count of letter exist in phrase.
      */
 
-    public int countChar(final String phrase, String letter) {
+    public int countChar(final String phrase, final String letter) {
         int count = 0;
         for (int i = 0; i <= phrase.length() - 1; i++) {
             if (String.valueOf(phrase.charAt(i)).toUpperCase().equalsIgnoreCase(letter)) {
