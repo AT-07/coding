@@ -1,5 +1,7 @@
 package org.fundacionjala.coding.william;
 
+import java.util.stream.IntStream;
+
 /**
  * Class CountChar.
  */
@@ -13,12 +15,7 @@ public class CountChar {
      * @return returns the number of characters that exist in a string.
      */
     public int countChar(final String cadena, char letra) {
-        int count = 0;
-        for (int i = 0; i < cadena.length(); i++) {
-            if (cadena.toLowerCase().charAt(i) == letra) {
-                count++;
-            }
-        }
+        int count = (int) IntStream.range(0, cadena.length()).filter(i -> cadena.toLowerCase().charAt(i) == letra).count();
         return count;
     }
 }
