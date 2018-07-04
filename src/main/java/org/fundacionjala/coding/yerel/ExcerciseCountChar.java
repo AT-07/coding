@@ -13,7 +13,7 @@ public class ExcerciseCountChar {
     public int countChar(String sentence, String leter) {
         int count = 0;
         for (int i = 0; i < sentence.length(); i++) {
-            if (String.valueOf(sentence.charAt(i)).toLowerCase().equals(leter)) {
+            if (String.valueOf(sentence.charAt(i)).equalsIgnoreCase(leter)) {
                 count++;
             }
         }
