@@ -9,15 +9,15 @@ import java.util.stream.Collectors;
 public class CamelCase {
     /**
      * .
-     * @param str that is a uppercamel
+     * @param word that is a uppercamel
      * @return word
      */
-    public String camelCase(String str) {
-        if (str.isEmpty()) {
-            return str;
+    public String camelCase(final String word) {
+        if (word.isEmpty()) {
+            return word;
         }
 
-        return Arrays.stream(str.split(" "))
+        return Arrays.stream(word.split(" "))
                 .map(var -> var.length() > 1 ? var.replaceFirst(var.substring(0, 1), var.substring(0, 1).toUpperCase())
                         : var.toUpperCase()).collect(Collectors.joining());
     }
