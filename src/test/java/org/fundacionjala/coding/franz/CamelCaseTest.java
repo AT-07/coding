@@ -9,6 +9,7 @@ import static org.junit.Assert.assertEquals;
  * this is a test class.
  */
 public class CamelCaseTest {
+
     private CamelCase word;
 
     /**

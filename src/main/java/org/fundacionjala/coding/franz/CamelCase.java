@@ -16,6 +16,7 @@ public class CamelCase {
         if (str.isEmpty()) {
             return str;
         }
+
         return Arrays.stream(str.split(" "))
                 .map(var -> var.length() > 1 ? var.replaceFirst(var.substring(0, 1), var.substring(0, 1).toUpperCase())
                         : var.toUpperCase()).collect(Collectors.joining());
