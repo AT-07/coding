@@ -1,7 +1,5 @@
 package org.fundacionjala.coding.william;
 
-import java.util.StringJoiner;
-
 /**
  * Class that converts the first letter of a word into a capital letter.
  */
@@ -15,12 +13,9 @@ public class CamelCase {
      */
     public String camelCase(final String word) {
         String[] array = word.split(" ");
-        StringJoiner result = new StringJoiner("");
-        String[] auxiliary;
-        for (int i = 0; i < array.length; i++) {
-            auxiliary = array[i].split("");
-            auxiliary[0] = auxiliary[0].toUpperCase();
-            result.add(String.join("", auxiliary));
+        StringBuilder result = new StringBuilder();
+        for (String anArray : array) {
+            result.append(anArray.substring(0, 1).toUpperCase()).append(anArray.substring(1));
         }
         return result.toString();
     }
