@@ -28,7 +28,7 @@ public class CountCharTest {
     @Test
     public void countChartPass() {
         final String phrase = "fizzbuzz";
-        final String letter = "z";
+        final char letter = 'z';
         final int expectedResult = 4;
 
         assertEquals(expectedResult, countChar.countChar(phrase, letter));
@@ -41,7 +41,7 @@ public class CountCharTest {
     public void countChartPass2() {
 
         final String phrase = "Fancy fifth fly aloof";
-        final String letter1 = "f";
+        final char letter1 = 'f';
         final int expectedResult = 5;
 
         assertEquals(expectedResult, countChar.countChar(phrase, letter1));
@@ -53,7 +53,7 @@ public class CountCharTest {
     @Test
     public void countChartFailed() {
         final String phrase = "fizzbuzz";
-        final String letter = "f";
+        final char letter = 'f';
         final int expected = 6;
         assertNotEquals(expected, countChar.countChar(phrase, letter));
     }
@@ -64,7 +64,7 @@ public class CountCharTest {
     @Test
     public void countChartFailed1() {
         final String phrase = "Fancy fifth fly aloof";
-        final String letter = "f";
+        final char letter = 'f';
         final int expected = 9;
         assertNotEquals(expected, countChar.countChar(phrase, letter));
     }
