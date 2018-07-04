@@ -13,13 +13,12 @@ public class CountChar {
      */
 
     public int countChar(final String phrase, String letter) {
-        int cont = 0;
+        int count = 0;
         for (int i = 0; i <= phrase.length() - 1; i++) {
             if (String.valueOf(phrase.charAt(i)).toUpperCase().equalsIgnoreCase(letter)) {
-                cont++;
+                count++;
             }
-
         }
-        return cont;
+        return count;
     }
 }
