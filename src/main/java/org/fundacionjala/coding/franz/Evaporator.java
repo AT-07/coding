@@ -17,10 +17,8 @@ public class Evaporator {
     public int evaporator(double content, double evapDay, double threshold) {
         double limit = content * (threshold / HUNDRED);
         int days = 0;
-        double reduce;
         while (content > limit) {
-            reduce = content * (evapDay / HUNDRED);
-            content -= reduce;
+            content -= content * (evapDay / HUNDRED);
             days++;
         }
         return days;
