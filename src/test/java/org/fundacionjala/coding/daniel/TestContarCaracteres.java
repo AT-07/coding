@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
  * Test that verifies how many times a character is repeated in a string.
  */
 public class TestContarCaracteres {
-
+    private static final String CONTARCADENA = "fizzbuzz";
     private ContarCaracteres contar;
 
     /**
@@ -26,7 +26,7 @@ public class TestContarCaracteres {
     @Test
     public void testRepiteCaracteres() {
         final int expectedResult = 4;
-        int actualResult = contar.contarCaracter("fizzbuzz", 'z');
+        int actualResult = contar.contarCaracter(CONTARCADENA, 'z');
         assertEquals(expectedResult, actualResult);
     }
 
@@ -36,7 +36,7 @@ public class TestContarCaracteres {
     @Test
     public void testNingunCaracterIgual() {
         final int expectedResult = 0;
-        int actualResult = contar.contarCaracter("fizzbuzz", 'a');
+        int actualResult = contar.contarCaracter(CONTARCADENA, 'e');
         assertEquals(expectedResult, actualResult);
     }
 
@@ -46,7 +46,17 @@ public class TestContarCaracteres {
     @Test
     public void testRepiteUnCaracter() {
         final int expectedResult = 1;
-        int actualResult = contar.contarCaracter("fizzbuzz", 'u');
+        int actualResult = contar.contarCaracter(CONTARCADENA, 'i');
+        assertEquals(expectedResult, actualResult);
+    }
+
+    /**
+     * Check how many times charatcer empty ' ' with a string that contains a space.
+     */
+    @Test
+    public void testRepiteSpaceEmpty() {
+        final int expectedResult = 1;
+        int actualResult = contar.contarCaracter(" ", ' ');
         assertEquals(expectedResult, actualResult);
     }
 }
