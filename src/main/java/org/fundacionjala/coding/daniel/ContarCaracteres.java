@@ -17,7 +17,6 @@ public class ContarCaracteres {
      * @return a integer.
      */
     public int contarCaracter(final String cadena, char caracter) {
-        int count = (int) IntStream.range(0, cadena.length()).filter(i -> cadena.charAt(i) == caracter).count();
-        return count;
+        return (int) IntStream.range(0, cadena.length()).filter(i -> cadena.charAt(i) == caracter).count();
     }
 }
