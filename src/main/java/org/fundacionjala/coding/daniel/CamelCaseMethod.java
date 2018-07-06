@@ -1,7 +1,5 @@
 package org.fundacionjala.coding.daniel;
 
-import java.util.StringJoiner;
-
 /**
  * All words must have their first letter capitalized without spaces.
  */
@@ -13,11 +11,11 @@ public class CamelCaseMethod {
      * @param cadena string of words.
      * @return cadena unida con la primera palabra en mayuscula.
      */
-    public String camelCase(String cadena) {
-        StringJoiner joiner = new StringJoiner("");
+    public String camelCase(final String cadena) {
+        StringBuilder almacenar = new StringBuilder();
         for (String palabra : cadena.split(" ")) {
-            joiner.add(palabra.substring(0, 1).toUpperCase() + palabra.substring(1, palabra.length()).toLowerCase());
+            almacenar.append(palabra.substring(0, 1).toUpperCase()).append(palabra.substring(1, palabra.length()));
         }
-        return String.join("", joiner.toString());
+        return String.join("", almacenar.toString());
     }
 }
