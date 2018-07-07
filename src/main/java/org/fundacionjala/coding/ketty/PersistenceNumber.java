@@ -5,32 +5,28 @@ package org.fundacionjala.coding.ketty;
  */
 
 public class PersistenceNumber {
+    private static final int NINE = 9;
+    private static final int NUMBER_DIV_MOD = 10;
 
     /**
      * @param n is verify if number persistence.
      * @return cont or 0 because is cant digict.
      */
     public int persistence(int n) {
-        final int numberDivMod = 10;
-        final int limitNumber = 9;
-        int time = 1;
-        int cont = 1;
-        int cantDig = (int) (Math.log10(n) + 1);
-        if (cantDig != 1) {
-            while (n > 0) {
-                time = n % numberDivMod * time;
-                n = n / numberDivMod;
-                if (n == 0 && time > limitNumber) {
-                    n = time;
-                    time = 1;
-                    cont++;
-                }
-
+        int cont = 0;
+        while (n > NINE) {
+            int time = 1;
+            cont++;
+            while (n != 0) {
+                time = n % NUMBER_DIV_MOD * time;
+                n = n / NUMBER_DIV_MOD;
+                cont++;
             }
-            return cont;
+
         }
-        return 0;
-
+        return cont;
     }
-
 }
+
+
+
