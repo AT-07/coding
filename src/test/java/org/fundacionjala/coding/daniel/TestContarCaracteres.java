@@ -59,4 +59,14 @@ public class TestContarCaracteres {
         int actualResult = contar.contarCaracter(" ", ' ');
         assertEquals(expectedResult, actualResult);
     }
+
+    /**
+     * Check how many times the character 'f' is repeated in a string of several words.
+     */
+    @Test
+    public void testRepiteEnUnaCadena() {
+        final int expectedResult = 10;
+        int actualResult = contar.contarCaracter("Fancy fifth fly aloof Fancy fifth fly aloof", 'f');
+        assertEquals(expectedResult, actualResult);
+    }
 }
