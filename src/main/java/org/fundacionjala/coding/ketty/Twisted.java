@@ -9,7 +9,7 @@ import java.util.Map;
  */
 public class Twisted {
 
-    static final Map<Integer, Integer> TWISTED = new HashMap<>();
+    static final Map<Integer, Integer> REPLACE = new HashMap<>();
 
     /**
      * method twisted.
@@ -22,13 +22,13 @@ public class Twisted {
 
         final int numThree = 3;
         final int numSeven = 7;
-        TWISTED.put(numThree, numSeven);
-        TWISTED.put(numSeven, numThree);
+        REPLACE.put(numThree, numSeven);
+        REPLACE.put(numSeven, numThree);
 
         int[] arrayNew = new int[arrayInt.length];
         Arrays.sort(arrayInt);
         for (int i = 0; i <= arrayInt.length - 1; i++) {
-            arrayNew[i] = arrayInt[i] == numThree || arrayInt[i] == numSeven ? TWISTED.get(arrayInt[i]) : arrayInt[i];
+            arrayNew[i] = arrayInt[i] == numThree || arrayInt[i] == numSeven ? REPLACE.get(arrayInt[i]) : arrayInt[i];
 
         }
         return arrayNew;
