@@ -3,9 +3,6 @@ package org.fundacionjala.coding.yerel;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -53,8 +50,8 @@ public class KataBankOCRTest {
     @Test
     public void accountNumberThree() {
         String number = "    _  _     _  _  _  _  _ \n"
-                      + "  | _| _||_||_ |_   ||_||_|\n"
-                      + "  ||_  _|  | _||_|  ||_| _|\n";
+                + "  | _| _||_||_ |_   ||_||_|\n"
+                + "  ||_  _|  | _||_|  ||_| _|\n";
         assertEquals("123456789", kataBankOCR.accountNumber(number));
     }
 
@@ -63,42 +60,15 @@ public class KataBankOCRTest {
      */
     @Test
     public void convertNumber() {
-        List<StringBuilder> listNumber = new ArrayList<>();
-        String numberZero = " _ | ||_|";
-        listNumber.add(new StringBuilder(numberZero));
-        listNumber.add(new StringBuilder(numberZero));
-        listNumber.add(new StringBuilder(numberZero));
-        listNumber.add(new StringBuilder(numberZero));
-        listNumber.add(new StringBuilder(numberZero));
-        listNumber.add(new StringBuilder(numberZero));
-        listNumber.add(new StringBuilder(numberZero));
-        listNumber.add(new StringBuilder(numberZero));
-        listNumber.add(new StringBuilder(numberZero));
-        assertEquals("000000000", kataBankOCR.convertNumber(listNumber));
+        String number = "    _  _     _  _  _  _  _ \n"
+                + "  | _| _||_||_ |_   ||_||_|\n"
+                + "  ||_  _|  | _||_|  ||_| _ \n";
+
+        assertEquals("12345678?", kataBankOCR.accountNumber(number));
     }
 
     /**
-     * test validate a digit is no read.
-     */
-    @Test
-    public void convertNumberTwo() {
-        List<StringBuilder> listNumber = new ArrayList<>();
-        String unknown = " _ |_| _ ";
-        String numberZero = " _ | ||_|";
-        listNumber.add(new StringBuilder(numberZero));
-        listNumber.add(new StringBuilder(numberZero));
-        listNumber.add(new StringBuilder(numberZero));
-        listNumber.add(new StringBuilder(numberZero));
-        listNumber.add(new StringBuilder(numberZero));
-        listNumber.add(new StringBuilder(numberZero));
-        listNumber.add(new StringBuilder(numberZero));
-        listNumber.add(new StringBuilder(numberZero));
-        listNumber.add(new StringBuilder(unknown));
-        assertEquals("00000000?", kataBankOCR.convertNumber(listNumber));
-    }
-
-    /**
-     *
+     * test case validate checksum 664371495.
      */
     @Test
     public void checksumValidate() {

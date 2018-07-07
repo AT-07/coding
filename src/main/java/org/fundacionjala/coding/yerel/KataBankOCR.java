@@ -33,28 +33,20 @@ public class KataBankOCR {
      * @return number String convert.
      */
     public String accountNumber(final String number) {
-        List<StringBuilder> listDigit = new ArrayList<>();
+        List<String> listDigit = new ArrayList<>();
+        StringBuilder numberString = new StringBuilder();
         int oneNumberCount = 0;
         while (oneNumberCount < NUMBER_TWENTYSEVEN) {
             StringBuilder onlyNumberChar = new StringBuilder();
             String[] divNum = number.split("\n");
-            for (String partNumber: divNum) {
+            for (String partNumber : divNum) {
                 onlyNumberChar.append(partNumber, oneNumberCount, oneNumberCount + NUMBER_THREE);
             }
-            listDigit.add(onlyNumberChar);
+            listDigit.add(onlyNumberChar.toString());
             oneNumberCount += NUMBER_THREE;
         }
-        return convertNumber(listDigit);
-    }
-
-    /**
-     * @param number Number Pattern List.
-     * @return number String.
-     */
-    public String convertNumber(final List<StringBuilder> number) {
-        StringBuilder numberString = new StringBuilder();
-        for (StringBuilder list: number) {
-            numberString.append(MAP.get(list.toString()) == null ? "?" : MAP.get(list.toString()));
+        for (String list : listDigit) {
+            numberString.append(MAP.get(list) == null ? "?" : MAP.get(list));
         }
         return numberString.toString();
     }
