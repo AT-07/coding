@@ -1,9 +1,7 @@
 package org.fundacionjala.coding.ketty;
 
-import java.util.StringJoiner;
-
 /**
- * @author ketty
+ * @author ketty camacho Vasquez.
  * class CamlCase of a string.
  */
 
@@ -13,11 +11,13 @@ public class CamelCase {
      * @return count.
      */
     public String camelCase(final String phrase) {
-        StringJoiner union = new StringJoiner("");
+        StringBuilder union = new StringBuilder();
+        int count = 0;
         String[] word = phrase.split(" ");
-        for (String chartLetter : word) {
-            union.add(Character.toUpperCase(chartLetter.charAt(0)) + chartLetter.substring(1));
 
+        for (String chartLetter : word) {
+
+            union.append(chartLetter.toUpperCase().charAt(count)).append(chartLetter.substring(count + 1));
         }
         return union.toString().trim();
     }
