@@ -9,31 +9,26 @@ import java.util.Map;
  */
 public class Twisted {
 
+    static final Map<Integer, Integer> TWISTED = new HashMap<>();
 
     /**
      * method twisted.
      *
-     * @param arrayInteger is an array of integer.
+     * @param arrayInt is an array of integer.
      * @return int [] it is a array the return the solution.
      */
 
-    public int[] twisted(final int[] arrayInteger) {
+    public int[] twisted(final int[] arrayInt) {
 
+        final int numThree = 3;
+        final int numSeven = 7;
+        TWISTED.put(numThree, numSeven);
+        TWISTED.put(numSeven, numThree);
 
-        final Map<Integer, Integer> mapTwisted = new HashMap<>();
-        final int numberThree = 3;
-        final int numberSeven = 7;
-        mapTwisted.put(numberThree, numberSeven);
-        mapTwisted.put(numberSeven, numberThree);
-
-        int[] arrayNew = new int[arrayInteger.length];
-        Arrays.sort(arrayInteger);
-        for (int i = 0; i <= arrayInteger.length - 1; i++) {
-            if (arrayInteger[i] == numberThree || arrayInteger[i] == numberSeven) {
-                arrayNew[i] = mapTwisted.get(arrayInteger[i]);
-            } else {
-                arrayNew[i] = arrayInteger[i];
-            }
+        int[] arrayNew = new int[arrayInt.length];
+        Arrays.sort(arrayInt);
+        for (int i = 0; i <= arrayInt.length - 1; i++) {
+            arrayNew[i] = arrayInt[i] == numThree || arrayInt[i] == numSeven ? TWISTED.get(arrayInt[i]) : arrayInt[i];
 
         }
         return arrayNew;
