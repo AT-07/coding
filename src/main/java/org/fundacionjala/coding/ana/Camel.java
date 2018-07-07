@@ -1,6 +1,5 @@
 package org.fundacionjala.coding.ana;
 
-import java.util.StringJoiner;
 
 /**
  * word invert when the word is major that 5.
@@ -16,9 +15,9 @@ public class Camel {
      * @return the value String.
      */
     public String camelCase(final String str) {
-        StringJoiner word = new StringJoiner("");
+        StringBuilder word = new StringBuilder(str.length());
         for (String wordSeparate : str.split(" ")) {
-            word.add(Character.toUpperCase(wordSeparate.charAt(0)) + wordSeparate.substring(1));
+            word.append(Character.toUpperCase(wordSeparate.charAt(0))).append(wordSeparate.substring(1));
         }
         return word.toString();
     }
