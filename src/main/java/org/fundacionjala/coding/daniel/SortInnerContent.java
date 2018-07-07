@@ -18,12 +18,11 @@ public class SortInnerContent {
      * @return descending orderly string.
      */
     public String innerContent(final String cadena) {
-        String[] separarCadena = cadena.split(" ");
         StringJoiner orden = new StringJoiner(" ");
         String[] contenedor;
-        for (int i = 0; i < separarCadena.length; i++) {
-            contenedor = separarCadena[i].split("");
-            if (separarCadena[i].length() > 2) {
+        for (String aSepararCadena : cadena.split(" ")) {
+            contenedor = aSepararCadena.split("");
+            if (aSepararCadena.length() > 2) {
                 Arrays.sort(contenedor, 1, contenedor.length - 1, Collections.reverseOrder());
             }
             orden.add(String.join("", contenedor));
