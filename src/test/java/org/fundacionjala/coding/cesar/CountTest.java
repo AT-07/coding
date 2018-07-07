@@ -24,7 +24,7 @@ public class CountTest {
     @Test
     public void testCountValueFord() {
         final String cadena = "fizzbuzz";
-        final String elemento = "z";
+        final char elemento = 'z';
         final int esperado = 4;
         assertEquals(esperado, co.countChar(cadena, elemento));
     }
@@ -35,7 +35,7 @@ public class CountTest {
     @Test
     public void testCountValueFive() {
         final String cadena = "Fancy fifth fly aloof";
-        final String elemento = "f";
+        final char elemento = 'f';
         final int esperado = 5;
         assertEquals(esperado, co.countChar(cadena, elemento));
     }

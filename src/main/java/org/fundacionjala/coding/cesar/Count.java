@@ -1,8 +1,5 @@
 package org.fundacionjala.coding.cesar;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * @author admin-hp
@@ -13,8 +10,14 @@ public class Count {
      * @param chr count the number of times that character appears in the string.
      * @return cont to return.
      */
-    public int countChar(final String cadena, final String chr) {
-        List<String> lst = Arrays.asList(cadena.toLowerCase().split(""));
-        return Collections.frequency(lst, chr);
+    public int countChar(final String cadena, final char chr) {
+        char[] lst = cadena.toLowerCase().toCharArray();
+        int cont = 0;
+        for (char i : lst) {
+            if (i == chr) {
+                cont = cont + 1;
+            }
+        }
+        return cont;
     }
 }
