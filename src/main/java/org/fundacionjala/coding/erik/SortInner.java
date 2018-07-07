@@ -17,7 +17,7 @@ public class SortInner {
      * @return the string content in descending order.
      */
 
-    public String sortTheInnerContent(String words) {
+    public String sortTheInnerContent(final String words) {
         String[] word = words.split(" ");
 
         for (int i = 0; i < word.length; i++) {
