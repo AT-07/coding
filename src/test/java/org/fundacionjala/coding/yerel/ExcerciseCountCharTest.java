@@ -25,7 +25,7 @@ public class ExcerciseCountCharTest {
     @Test
     public void countChar() {
         final int expectedResult = 4;
-        assertEquals(expectedResult, excerciseCountChar.countChar("fizzbuzz", "z"));
+        assertEquals(expectedResult, excerciseCountChar.countChar("fizzbuzz", 'z'));
     }
 
     /**
@@ -34,6 +34,6 @@ public class ExcerciseCountCharTest {
     @Test
     public void countCharTwo() {
         final int expectedResult = 5;
-        assertEquals(expectedResult, excerciseCountChar.countChar("Fancy fifth fly aloof", "f"));
+        assertEquals(expectedResult, excerciseCountChar.countChar("Fancy fifth fly aloof", 'f'));
     }
 }

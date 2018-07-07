@@ -10,10 +10,10 @@ public class ExcerciseCountChar {
      * @param leter    it is a specific leter find.
      * @return a number cuantity.
      */
-    public int countChar(final String sentence, final String leter) {
+    public int countChar(final String sentence, final char leter) {
         int count = 0;
         for (int i = 0; i < sentence.length(); i++) {
-            if (String.valueOf(sentence.charAt(i)).equalsIgnoreCase(leter)) {
+            if (String.valueOf(sentence.charAt(i)).equalsIgnoreCase(String.valueOf(leter))) {
                 count++;
             }
         }
