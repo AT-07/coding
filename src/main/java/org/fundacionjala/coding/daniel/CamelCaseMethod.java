@@ -16,6 +16,6 @@ public class CamelCaseMethod {
         for (String palabra : cadena.split(" ")) {
             almacenar.append(palabra.substring(0, 1).toUpperCase()).append(palabra.substring(1, palabra.length()));
         }
-        return String.join("", almacenar.toString());
+        return almacenar.toString();
     }
 }
