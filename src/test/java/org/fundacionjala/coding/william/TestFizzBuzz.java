@@ -108,7 +108,7 @@ public class TestFizzBuzz {
     @Test
     public void verifyFizzBuzzTest3correct() {
         final int actualValue = 35;
-        final String expectedResult = "FizzBuzz";
+        final String expectedResult = "Buzz";
         assertEquals(expectedResult, number.verifyFizzBuzz(actualValue));
     }
 
