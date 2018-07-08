@@ -18,19 +18,19 @@ public class FizzBuzz {
 
         List<String> lst = range
                 .stream()
-                .map(i -> (Integer.toString(i)))
+                .map(i -> Integer.toString(i))
                 .collect(Collectors.toList());
         return lst.stream()
                 .map(i ->
-                        this.isStringNumber(i) == true && Integer.parseInt(i)
-                                % FIVE == 0 & Integer.parseInt(i) % THREE == 0 ? "fizzbuzz" : i
+                        this.isStringNumber(i) && Integer.parseInt(i)
+                                % FIVE == 0 && Integer.parseInt(i) % THREE == 0 ? "fizzbuzz" : i
                 )
                 .map(i ->
-                        this.isStringNumber(i) == true && Integer.parseInt(i)
+                        this.isStringNumber(i) && Integer.parseInt(i)
                                 % FIVE == 0 ? "buzz" : i
                 )
                 .map(i ->
-                        this.isStringNumber(i) == true && Integer.parseInt(i) % THREE == 0 ? "fizz" : i
+                        this.isStringNumber(i) && Integer.parseInt(i) % THREE == 0 ? "fizz" : i
                 )
                 .collect(Collectors.toList());
     }
@@ -42,9 +42,9 @@ public class FizzBuzz {
      */
     public boolean isStringNumber(final String e) {
         try {
-            int i = Integer.parseInt(e);
+            Integer.parseInt(e);
             return true;
-        } catch (Exception ex) {
+        } catch (NumberFormatException ex) {
             return false;
         }
     }
