@@ -1,7 +1,7 @@
 package org.fundacionjala.coding.franz.movies;
 
 /**
- *  class abstrac Movie.
+ * class abstrac Movie.
  */
 public abstract class AMovie {
 
@@ -13,7 +13,7 @@ public abstract class AMovie {
      *
      * @param title movie.
      */
-    public AMovie(String title) {
+    public AMovie(final String title) {
         this.title = title;
     }
 

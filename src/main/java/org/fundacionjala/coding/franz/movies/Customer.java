@@ -16,7 +16,7 @@ public class Customer {
      *
      * @param name customer.
      */
-    public Customer(String name) {
+    public Customer(final String name) {
         this.name = name;
     }
 
@@ -25,7 +25,7 @@ public class Customer {
      *
      * @param rental is a rental.
      */
-    public void addRental(Rental rental) {
+    public void addRental(final Rental rental) {
         listRental.add(rental);
     }
 
@@ -48,7 +48,6 @@ public class Customer {
                 .append(" frequent points");
         return result1.toString();
     }
-
 
 
     /**

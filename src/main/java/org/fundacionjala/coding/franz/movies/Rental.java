@@ -13,7 +13,7 @@ public class Rental {
      * @param movie      is an Movie .
      * @param daysRented is days rented.
      */
-    public Rental(AMovie movie, int daysRented) {
+    public Rental(final AMovie movie, final int daysRented) {
         this.movie = movie;
         this.daysRented = daysRented;
     }
@@ -28,7 +28,7 @@ public class Rental {
     }
 
     /**
-     *   .
+     * .
      *
      * @return determineRentalAmount of days rented.
      */
@@ -37,7 +37,7 @@ public class Rental {
     }
 
     /**
-     *   .
+     * .
      *
      * @return renter points.
      */

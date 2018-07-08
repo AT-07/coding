@@ -12,7 +12,7 @@ public class MovieChildren extends AMovie {
      *
      * @param title of movie
      */
-    public MovieChildren(String title) {
+    public MovieChildren(final String title) {
         super(title);
     }
 
@@ -20,7 +20,7 @@ public class MovieChildren extends AMovie {
      * .
      */
     @Override
-    public double rentalAmount(int days) {
+    public double rentalAmount(final int days) {
 
         return days > THREE ? (days - THREE) * ONE_PIRIOT_FIVE : ONE_PIRIOT_FIVE;
     }
@@ -29,7 +29,7 @@ public class MovieChildren extends AMovie {
      * .
      */
     @Override
-    public int frequentRenterPoints(int days) {
+    public int frequentRenterPoints(final int days) {
         return POINT;
     }
 

@@ -11,7 +11,7 @@ public class MovieRegular extends AMovie {
      *
      * @param title of the Movie.
      */
-    public MovieRegular(String title) {
+    public MovieRegular(final String title) {
         super(title);
     }
 
@@ -19,7 +19,7 @@ public class MovieRegular extends AMovie {
      * .
      */
     @Override
-    public double rentalAmount(int days) {
+    public double rentalAmount(final int days) {
         return days > 2 ? (days - 2.0) * ONE_POINT_FIVE : 2;
     }
 
@@ -27,7 +27,7 @@ public class MovieRegular extends AMovie {
      * .
      */
     @Override
-    public int frequentRenterPoints(int days) {
+    public int frequentRenterPoints(final int days) {
         return POINT;
     }
 
