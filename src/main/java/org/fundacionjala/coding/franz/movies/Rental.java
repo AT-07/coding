@@ -33,7 +33,7 @@ public class Rental {
      * @return determineRentalAmount of days rented.
      */
     public double getRentalAmount() {
-        return movie.rentalAmount(getDaysRented());
+        return movie.rentalAmount(daysRented);
     }
 
     /**
@@ -42,7 +42,7 @@ public class Rental {
      * @return renter points.
      */
     public int frequentRenterPoints() {
-        return movie.frequentRenterPoints(getDaysRented());
+        return movie.frequentRenterPoints(daysRented);
     }
 
     /**

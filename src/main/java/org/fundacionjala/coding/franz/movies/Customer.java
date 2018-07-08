@@ -9,7 +9,6 @@ import java.util.List;
 public class Customer {
     private String name;
     private List<Rental> listRental = new ArrayList<>();
-    private static final int MAX_CAPACITY = 80;
 
     /**
      * This is the constructor.
@@ -35,7 +34,7 @@ public class Customer {
      * @return summary of rentals.
      */
     public String statement() {
-        StringBuilder result1 = new StringBuilder(MAX_CAPACITY);
+        StringBuilder result1 = new StringBuilder();
         result1.append("Rental for ").append(name).append("\n");
         for (Rental rental : listRental) {
             result1.append(rental.getMovieTitle())

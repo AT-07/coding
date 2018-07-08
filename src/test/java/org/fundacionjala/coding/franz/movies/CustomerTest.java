@@ -12,7 +12,6 @@ public class CustomerTest {
     private static final String SHAPES = "50 Sombras";
     private static final String AVENGERS = "Avengers 3 Infinity War";
     private static final String ANTMAN = "Antman and Wisp";
-    private static final int MAX_CAPACITY = 80;
     private Customer customer;
 
     /**
@@ -73,7 +72,7 @@ public class CustomerTest {
         customer.addRental(new Rental(new MovieRegular(ANTMAN), days1));
 
         final String actual = customer.statement();
-        final StringBuilder expected = new StringBuilder(MAX_CAPACITY);
+        final StringBuilder expected = new StringBuilder();
         expected.append("Rental for Agapito pepito\n50 Sombras 1.5"
                 + "\nAvengers 3 Infinity War 3.0"
                 + "\nAntman and Wisp 2.0"

@@ -5,7 +5,7 @@ package org.fundacionjala.coding.franz.movies;
  */
 public class MovieChildren extends AMovie {
     private static final double THREE = 3.0;
-    private static final double ONE_PIRIOT_FIVE = 1.5;
+    private static final double DISCOUNT_PRICE = 1.5;
 
     /**
      * Constructor.
@@ -22,7 +22,7 @@ public class MovieChildren extends AMovie {
     @Override
     public double rentalAmount(final int days) {
 
-        return days > THREE ? (days - THREE) * ONE_PIRIOT_FIVE : ONE_PIRIOT_FIVE;
+        return days > THREE ? (days - THREE) * DISCOUNT_PRICE : DISCOUNT_PRICE;
     }
 
     /**
