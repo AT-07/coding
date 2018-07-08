@@ -1,6 +1,7 @@
 package org.fundacionjala.coding.william;
 
 import java.util.StringJoiner;
+import java.util.stream.IntStream;
 
 /**
  * FizzBuzz class that exchanges the values of digits 3 and 5.
@@ -20,7 +21,7 @@ public class FizzBuzz {
      */
     public String fizzBuzz(int number) {
         StringJoiner result = new StringJoiner(" ");
-        for (int i = 1; i <= number; i++) {
+        IntStream.rangeClosed(1, number).forEach(i -> {
             StringBuilder variable = new StringBuilder(String.valueOf(i));
             if (i % NUMBERTHREE != NUMBERZERO && i % NUMBERFIVE != NUMBERZERO && !variable.toString().contains("3")
                     && !variable.toString().contains("5")) {
@@ -32,7 +33,7 @@ public class FizzBuzz {
             if (i % NUMBERFIVE == NUMBERZERO || i / NUMBERTEN == NUMBERFIVE || variable.toString().contains("5")) {
                 result.add("BUZZ");
             }
-        }
+        });
         return result.toString();
     }
 }

@@ -61,4 +61,24 @@ public class TestFizzBuzz {
         final String expectedResult = "1 2 FIZZ 4 BUZZ 6";
         assertNotEquals(expectedResult, number.fizzBuzz(actualValue));
     }
+
+    /**
+     * Test to validate the correctness of my fizzBuzz method test with an erroneous expected result.
+     */
+    @Test
+    public void fizzBuzzTest2Incorrect() {
+        final int actualValue = 12;
+        final String expectedResult = "1 2 FIZZ 4 BUZZ FIZZ 7 8 FIZZ BUZZ 11 FIZZ BUZZ";
+        assertNotEquals(expectedResult, number.fizzBuzz(actualValue));
+    }
+
+    /**
+     * Test to validate the correctness of my fizzBuzz method test with an erroneous expected result.
+     */
+    @Test
+    public void fizzBuzzTest3Incorrect() {
+        final int actualValue = 1;
+        final String expectedResult = "1 2";
+        assertNotEquals(expectedResult, number.fizzBuzz(actualValue));
+    }
 }
