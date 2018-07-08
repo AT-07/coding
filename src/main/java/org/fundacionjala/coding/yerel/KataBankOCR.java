@@ -3,6 +3,7 @@ package org.fundacionjala.coding.yerel;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * this class convert a String pipes and underscores
@@ -13,7 +14,7 @@ public class KataBankOCR {
     private static final int NUMBER_ZERO = 0;
     private static final int NUMBER_ELEVEN = 11;
     private static final int NUMBER_THREE = 3;
-    private static final HashMap<String, String> MAP = new HashMap<>();
+    private static final Map<String, String> MAP = new HashMap<>();
 
     static {
         MAP.put(" _ | ||_|", "0");
@@ -46,7 +47,7 @@ public class KataBankOCR {
             oneNumberCount += NUMBER_THREE;
         }
         for (String list : listDigit) {
-            numberString.append(MAP.get(list) == null ? "?" : MAP.get(list));
+            numberString.append(MAP.getOrDefault(list, "?"));
         }
         return numberString.toString();
     }
@@ -69,7 +70,7 @@ public class KataBankOCR {
     public boolean checksumValidate(final String number) {
         int sum = 0;
         for (int i = 0; i < number.length(); i++) {
-            sum += Integer.parseInt(String.valueOf(number.charAt(i))) * (number.length() - i);
+            sum += Character.getNumericValue(number.charAt(i)) * (number.length() - i);
         }
         return sum % NUMBER_ELEVEN == NUMBER_ZERO;
     }
