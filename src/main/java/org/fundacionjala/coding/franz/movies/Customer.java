@@ -8,7 +8,8 @@ import java.util.List;
  */
 public class Customer {
     private String name;
-    private List<Rental> listRental = new ArrayList<>();
+    private List<Rental> listRental;
+
 
     /**
      * This is the constructor.
@@ -17,6 +18,7 @@ public class Customer {
      */
     public Customer(final String name) {
         this.name = name;
+        listRental = new ArrayList<Rental>();
     }
 
     /**

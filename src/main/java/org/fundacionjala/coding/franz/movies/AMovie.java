@@ -25,12 +25,14 @@ public abstract class AMovie {
     }
 
     /**
+     * this method is calculate rental Amount.
      * @param days of rental days.
      * @return the total amount .
      */
     abstract double rentalAmount(int days);
 
     /**
+     * this mwthod calculate frequentRenterPonits.
      * @param days of rented.
      * @return frequent renter points.
      */

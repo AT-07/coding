@@ -5,7 +5,7 @@ package org.fundacionjala.coding.franz.movies;
  */
 public class MovieRegular extends AMovie {
     private static final double DISCOUNT_PRICE = 1.5;
-    private static final int TWO = 2;
+    private static final int DAT_TWO = 2;
 
     /**
      * Constructor.
@@ -17,15 +17,15 @@ public class MovieRegular extends AMovie {
     }
 
     /**
-     * .
+     * {@inheritDoc}.
      */
     @Override
     public double rentalAmount(final int days) {
-        return days > TWO ? (days - 2.0) * DISCOUNT_PRICE : TWO;
+        return days > DAT_TWO ? (days - 2.0) * DISCOUNT_PRICE : DAT_TWO;
     }
 
     /**
-     * .
+     * {@inheritDoc}.
      */
     @Override
     public int frequentRenterPoints(final int days) {

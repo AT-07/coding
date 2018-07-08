@@ -4,9 +4,9 @@ package org.fundacionjala.coding.franz.movies;
  * class MovieNew.
  */
 public class MovieNew extends AMovie {
-    private static final double PRICE_FOR_DAY = 3.0;
-    private static final int ONE = 1;
-    private static final int TWO = 2;
+    private static final double DISCOUNT_PRICE = 3.0;
+    private static final int DAY_ONE = 1;
+    private static final int DAY_TWO = 2;
 
     /**
      * Constructor .
@@ -18,19 +18,19 @@ public class MovieNew extends AMovie {
     }
 
     /**
-     * .
+     * {@inheritDoc}.
      */
     @Override
     public double rentalAmount(final int days) {
-        return days * PRICE_FOR_DAY;
+        return days * DISCOUNT_PRICE;
     }
 
     /**
-     * .
+     * {@inheritDoc}.
      */
     @Override
     public int frequentRenterPoints(final int days) {
-        return days > ONE ? TWO : ONE;
+        return days > DAY_ONE ? DAY_TWO : DAY_ONE;
     }
 
 }
