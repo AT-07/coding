@@ -10,29 +10,38 @@ public class FizzBuzz {
     private static final int FIVE = 5;
 
     /**
+     * this method run fizzBuzz.
+     *
+     * @param num is limit number.
+     * @return words with Fizz,Buzz or FizzBuzz.
+     */
+    public String fizzBuzzcount(int num) {
+        StringJoiner joiner = new StringJoiner(" ");
+        for (int i = 1; i <= num; i++) {
+            joiner.add(fizzBuzz(i));
+        }
+        return joiner.toString();
+    }
+
+    /**
      * this is method for the numbers Fizz, Buzz or FizzBuzz.
      *
      * @param number is number limit.
      * @return Numbers Fizz, Buzz or FizzBuzz.
      */
     public String fizzBuzz(int number) {
-        String numb;
-        StringJoiner joiner = new StringJoiner(" ");
-        for (int i = 1; i <= number; i++) {
-            numb = String.valueOf(i);
-            if (i % THREE == 0 && i % FIVE == 0) {
-                numb = "FizzBuzz";
+        String numb = String.valueOf(number);
+        if (number % THREE == 0 && number % FIVE == 0) {
+            return "FizzBuzz";
+        } else {
+            if (number % THREE == 0 || numb.contains("3")) {
+                return "Fizz";
             } else {
-                if (i % THREE == 0 || numb.contains("3")) {
-                    numb = "Fizz";
-                } else {
-                    if (i % FIVE == 0 || numb.contains("5")) {
-                        numb = "Buzz";
-                    }
+                if (number % FIVE == 0 || numb.contains("5")) {
+                    return "Buzz";
                 }
             }
-            joiner.add(numb);
         }
-        return joiner.toString();
+        return numb;
     }
 }

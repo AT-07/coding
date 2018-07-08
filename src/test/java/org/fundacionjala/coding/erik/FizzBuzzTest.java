@@ -27,7 +27,7 @@ public class FizzBuzzTest {
     public void fizzBuzzTestFirst() {
         final int number = 15;
         final String expected = "1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz Fizz 14 FizzBuzz";
-        assertEquals(expected, test.fizzBuzz(number));
+        assertEquals(expected, test.fizzBuzzcount(number));
     }
 
     /**
@@ -37,7 +37,7 @@ public class FizzBuzzTest {
     public void fizzBuzzTestSecond() {
         final int number = 10;
         final String expected = "1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz";
-        assertEquals(expected, test.fizzBuzz(number));
+        assertEquals(expected, test.fizzBuzzcount(number));
     }
 
     /**
@@ -47,6 +47,6 @@ public class FizzBuzzTest {
     public void fizzBuzzTestThird() {
         final int number = 5;
         final String expected = "1 2 Fizz 4 Buzz";
-        assertEquals(expected, test.fizzBuzz(number));
+        assertEquals(expected, test.fizzBuzzcount(number));
     }
 }
