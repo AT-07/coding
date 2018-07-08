@@ -107,7 +107,7 @@ public class TestFizzBuzz {
      */
     @Test
     public void verifyFizzBuzzTest3correct() {
-        final int actualValue = 15;
+        final int actualValue = 35;
         final String expectedResult = "FizzBuzz";
         assertEquals(expectedResult, number.verifyFizzBuzz(actualValue));
     }
@@ -119,6 +119,16 @@ public class TestFizzBuzz {
     public void verifyFizzBuzzTest4Correct() {
         final int actualValue = 45;
         final String expectedResult = "FizzBuzz";
+        assertEquals(expectedResult, number.verifyFizzBuzz(actualValue));
+    }
+
+    /**
+     * Test to validate the correctness of my test method verifyFizzBuzz.
+     */
+    @Test
+    public void verifyFizzBuzzTest5Correct() {
+        final int actualValue = 52;
+        final String expectedResult = "Buzz";
         assertEquals(expectedResult, number.verifyFizzBuzz(actualValue));
     }
 
