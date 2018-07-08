@@ -36,7 +36,6 @@ public class Twisted {
 
         }
         return arrayNew;
-
     }
 
 }
