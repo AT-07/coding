@@ -1,5 +1,8 @@
 package org.fundacionjala.coding.franz.movies;
 
+/**
+ *  class abstrac Movie.
+ */
 public abstract class AMovie {
 
     private final String title;

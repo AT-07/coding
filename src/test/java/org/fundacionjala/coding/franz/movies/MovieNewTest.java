@@ -3,16 +3,16 @@ package org.fundacionjala.coding.franz.movies;
 import org.junit.Test;
 import org.junit.Before;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
- * class test.
+ * This class is to test Movie New methods.
  */
 public class MovieNewTest {
     private MovieNew movieNew;
 
     /**
-     * .
+     * This method tests initiality.
      */
     @Before
     public void ini() {
@@ -20,7 +20,7 @@ public class MovieNewTest {
     }
 
     /**
-     * .
+     * test rental amount .
      */
     @Test
     public void testRentalAmount() {
@@ -31,7 +31,7 @@ public class MovieNewTest {
     }
 
     /**
-     * .
+     * testFrequentRenterPoints .
      */
     @Test
     public void testFrequentRenterPoints() {

@@ -1,5 +1,8 @@
 package org.fundacionjala.coding.franz.movies;
 
+/**
+ * class of Movie Regular.
+ */
 public class MovieRegular extends AMovie {
     private static final double ONE_POINT_FIVE = 1.5;
 

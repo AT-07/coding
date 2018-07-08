@@ -3,15 +3,18 @@ package org.fundacionjala.coding.franz.movies;
 import java.util.ArrayList;
 import java.util.List;
 
-class Customer {
+/**
+ * class of custumer.
+ */
+public class Customer {
     private String name;
     private List<Rental> listRental = new ArrayList<>();
     private static final int MAX_CAPACITY = 80;
 
     /**
-     * This is the constructor of Customer Class.
+     * This is the constructor.
      *
-     * @param name person who rent a movie.
+     * @param name customer.
      */
     public Customer(String name) {
         this.name = name;

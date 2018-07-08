@@ -3,8 +3,11 @@ package org.fundacionjala.coding.franz.movies;
 import org.junit.Test;
 import org.junit.Before;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
+/**
+ * This class is to test Customer methods.
+ */
 public class CustomerTest {
     private static final String SHAPES = "50 Sombras";
     private static final String AVENGERS = "Avengers 3 Infinity War";
@@ -21,14 +24,14 @@ public class CustomerTest {
     }
 
     /**
-     * method test.
+     * testTotalAmount.
      */
     @Test
     public void testTotalAmount() {
         final int daysRented = 4;
         customer.addRental(new Rental(new MovieChildren(SHAPES), daysRented));
         final int daysRented1 = 2;
-        customer.addRental(new Rental(new MovieNew( AVENGERS), daysRented1));
+        customer.addRental(new Rental(new MovieNew(AVENGERS), daysRented1));
         final int daysRented2 = 1;
         customer.addRental(new Rental(new MovieRegular(ANTMAN), daysRented2));
 
@@ -39,7 +42,7 @@ public class CustomerTest {
     }
 
     /**
-     * metgod test.
+     * testFrequentPointsNewMovie.
      */
     @Test
     public void testFrequentPointsNewMovie() {
@@ -57,9 +60,8 @@ public class CustomerTest {
     }
 
 
-
     /**
-     * Method test.
+     * testStatement.
      */
     @Test
     public void testStatement() {
@@ -73,12 +75,9 @@ public class CustomerTest {
         final String actual = customer.statement();
         final StringBuilder expected = new StringBuilder(MAX_CAPACITY);
         expected.append("Rental for Agapito pepito\n50 Sombras 1.5"
-                + "\nAvengers 3 Infinity War 3.0" +
-                "\nAntman and Wisp 2.0" +
-                "\nAmount is 6.5\nYou have 3 frequent points");
-
+                + "\nAvengers 3 Infinity War 3.0"
+                + "\nAntman and Wisp 2.0"
+                + "\nAmount is 6.5\nYou have 3 frequent points");
         assertEquals(expected.toString(), actual);
     }
-
-
 }

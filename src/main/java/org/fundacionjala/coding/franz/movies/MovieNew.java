@@ -1,7 +1,7 @@
 package org.fundacionjala.coding.franz.movies;
 
 /**
- * class MovieNew
+ * class MovieNew.
  */
 public class MovieNew extends AMovie {
     private static final double THREE_POINT_ZERO = 3.0;

@@ -1,5 +1,8 @@
 package org.fundacionjala.coding.franz.movies;
 
+/**
+ * calss of movie Children.
+ */
 public class MovieChildren extends AMovie {
     private static final double THREE = 3.0;
     private static final double ONE_PIRIOT_FIVE = 1.5;

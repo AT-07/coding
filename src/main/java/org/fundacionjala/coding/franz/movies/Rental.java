@@ -1,11 +1,14 @@
 package org.fundacionjala.coding.franz.movies;
 
-class Rental {
+/**
+ * class of rental.
+ */
+public class Rental {
     private AMovie movie;
     private int daysRented;
 
     /**
-     * This is the constructor of Rental.
+     * This is the constructor.
      *
      * @param movie      is an Movie .
      * @param daysRented is days rented.
@@ -25,7 +28,7 @@ class Rental {
     }
 
     /**
-     * DetermineRentalAmount.
+     *   .
      *
      * @return determineRentalAmount of days rented.
      */
@@ -34,7 +37,7 @@ class Rental {
     }
 
     /**
-     * the frequent renter points of the Movie.
+     *   .
      *
      * @return renter points.
      */
@@ -48,5 +51,4 @@ class Rental {
     public String getMovieTitle() {
         return movie.getTitle();
     }
-
 }

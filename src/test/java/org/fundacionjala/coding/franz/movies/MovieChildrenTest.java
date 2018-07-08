@@ -3,20 +3,26 @@ package org.fundacionjala.coding.franz.movies;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
+/**
+ * This class is to test Movie children methods.
+ */
 public class MovieChildrenTest {
 
 
     private MovieChildren movieChildren;
 
+    /**
+     * This method tests initiality.
+     */
     @Before
     public void ini() {
         movieChildren = new MovieChildren("capitan");
     }
 
     /**
-     * .
+     * testRentalAmount.
      */
     @Test
     public void testRentalAmount() {
@@ -30,7 +36,7 @@ public class MovieChildrenTest {
     }
 
     /**
-     * .
+     * testFrequentRenterPoints.
      */
     @Test
     public void testFrequentRenterPoints() {
@@ -40,5 +46,4 @@ public class MovieChildrenTest {
         assertEquals(expected, movieChildren.frequentRenterPoints(actual));
         assertEquals(expected, movieChildren.frequentRenterPoints(actual1));
     }
-
 }
