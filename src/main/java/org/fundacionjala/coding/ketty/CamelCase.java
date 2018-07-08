@@ -19,6 +19,6 @@ public class CamelCase {
 
             union.append(chartLetter.toUpperCase().charAt(count)).append(chartLetter.substring(count + 1));
         }
-        return union.toString().trim();
+        return union.toString();
     }
 }
