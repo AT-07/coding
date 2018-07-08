@@ -35,4 +35,13 @@ public class EanTest {
         final String entrada = "4003301018392";
         Assert.assertFalse(ean.validar(entrada));
     }
+
+    /**
+     * Strinf sum is cero.
+     */
+    @Test
+    public void testValidarCero() {
+        final String entrada = "0149600000000";
+        Assert.assertTrue(ean.validar(entrada));
+    }
 }
