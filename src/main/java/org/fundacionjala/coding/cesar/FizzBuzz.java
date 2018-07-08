@@ -1,5 +1,6 @@
 package org.fundacionjala.coding.cesar;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,19 +21,16 @@ public class FizzBuzz {
                 .stream()
                 .map(i -> Integer.toString(i))
                 .collect(Collectors.toList());
-        return lst.stream()
-                .map(i ->
-                        this.isStringNumber(i) && Integer.parseInt(i)
-                                % FIVE == 0 && Integer.parseInt(i) % THREE == 0 ? "fizzbuzz" : i
-                )
-                .map(i ->
-                        this.isStringNumber(i) && Integer.parseInt(i)
-                                % FIVE == 0 ? "buzz" : i
-                )
-                .map(i ->
-                        this.isStringNumber(i) && Integer.parseInt(i) % THREE == 0 ? "fizz" : i
-                )
-                .collect(Collectors.toList());
+        List<String> list = new ArrayList<>();
+        for (String i : lst) {
+            String s = this.isStringNumber(i) && Integer.parseInt(i)
+                    % FIVE == 0 && Integer.parseInt(i) % THREE == 0 ? "fizzbuzz" : i;
+            String i1 = this.isStringNumber(s) && Integer.parseInt(s)
+                    % FIVE == 0 ? "buzz" : s;
+            String s1 = this.isStringNumber(i1) && Integer.parseInt(i1) % THREE == 0 ? "fizz" : i1;
+            list.add(s1);
+        }
+        return list;
     }
 
     /**
