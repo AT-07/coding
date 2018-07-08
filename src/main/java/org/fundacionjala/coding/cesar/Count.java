@@ -15,7 +15,7 @@ public class Count {
         int cont = 0;
         for (char i : lst) {
             if (i == chr) {
-                cont = cont + 1;
+                cont++;
             }
         }
         return cont;
