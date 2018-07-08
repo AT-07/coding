@@ -19,15 +19,6 @@ public class Rental {
     }
 
     /**
-     * getDaysRented.
-     *
-     * @return daysRented.
-     */
-    public int getDaysRented() {
-        return daysRented;
-    }
-
-    /**
      * .
      *
      * @return determineRentalAmount of days rented.
