@@ -10,12 +10,6 @@ import static org.junit.Assert.assertEquals;
  */
 public class SortInnerTest {
     private SortInner words;
-    private String actual = "sort the inner content in descending order";
-    private String expected = "srot the inner ctonnet in dsnnieedcg oredr";
-    private String actual1 = "wait for me";
-    private String expected1 = "wiat for me";
-    private String actual2 = "this kata is easy";
-    private String expected2 = "tihs ktaa is esay";
 
     /**
      * this method init.
@@ -30,8 +24,28 @@ public class SortInnerTest {
      */
     @Test
     public void exampleTests() {
+        final String actual = "sort the inner content in descending order";
+        final String expected = "srot the inner ctonnet in dsnnieedcg oredr";
         assertEquals(expected, words.sortTheInnerContent(actual));
+
+    }
+
+    /**
+     *
+     */
+    @Test
+    public void exampleTests1() {
+        final String actual1 = "wait for me";
+        final String expected1 = "wiat for me";
         assertEquals(expected1, words.sortTheInnerContent(actual1));
+    }
+    /**
+     *
+     */
+    @Test
+    public void exampleTests2() {
+        final String actual2 = "this kata is easy";
+        final String expected2 = "tihs ktaa is esay";
         assertEquals(expected2, words.sortTheInnerContent(actual2));
     }
 }

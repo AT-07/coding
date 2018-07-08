@@ -1,6 +1,7 @@
 package org.fundacionjala.coding.erik;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * this is class for sort inner.
@@ -18,17 +19,17 @@ public class SortInner {
      */
 
     public String sortTheInnerContent(final String words) {
-        String[] word = words.split(" ");
+        String[] wordArray = words.split(" ");
 
-        for (int i = 0; i < word.length; i++) {
-            if (word[i].length() > LENGTH) {
-                char[] contentWord = word[i].substring(NUMBER, word[i].length() - NUMBER).toCharArray();
-                Arrays.sort(contentWord);
-                String ini = word[i].substring(NUMBER_CIRO, NUMBER);
-                String fin = word[i].substring(word[i].length() - NUMBER);
-                word[i] = ini.concat(new StringBuilder(new String(contentWord)).reverse().toString().concat(fin));
+        for (int i = 0; i < wordArray.length; i++) {
+            if (wordArray[i].length() > LENGTH) {
+                String[] contentWord = wordArray[i].substring(NUMBER, wordArray[i].length() - NUMBER).split("");
+                Arrays.sort(contentWord, Collections.reverseOrder());
+                wordArray[i] = wordArray[i].substring(NUMBER_CIRO, NUMBER)
+                        .concat(String.join("", contentWord))
+                        .concat(wordArray[i].substring(wordArray[i].length() - NUMBER));
             }
         }
-        return String.join(" ", word);
+        return String.join(" ", wordArray);
     }
 }
