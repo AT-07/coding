@@ -1,7 +1,6 @@
 package org.fundacionjala.coding.william;
 
 import java.util.StringJoiner;
-import java.util.stream.IntStream;
 
 /**
  * FizzBuzz class that exchanges the values of digits 3 and 5.
@@ -10,8 +9,8 @@ public class FizzBuzz {
 
     private static final int NUMBERTHREE = 3;
     private static final int NUMBERFIVE = 5;
-    private static final int NUMBERTEN = 10;
     private static final int NUMBERZERO = 0;
+    private static final int NUMBERFIFTEEN = 15;
 
     /**
      * Method that replaces the values 3 and 5 in a chain.
@@ -21,19 +20,39 @@ public class FizzBuzz {
      */
     public String fizzBuzz(int number) {
         StringJoiner result = new StringJoiner(" ");
-        IntStream.rangeClosed(1, number).forEach(i -> {
-            StringBuilder variable = new StringBuilder(String.valueOf(i));
-            if (i % NUMBERTHREE != NUMBERZERO && i % NUMBERFIVE != NUMBERZERO && !variable.toString().contains("3")
-                    && !variable.toString().contains("5")) {
-                result.add(String.valueOf(i));
-            }
-            if (i % NUMBERTHREE == NUMBERZERO || i / NUMBERTEN == NUMBERTHREE || variable.toString().contains("3")) {
-                result.add("FIZZ");
-            }
-            if (i % NUMBERFIVE == NUMBERZERO || i / NUMBERTEN == NUMBERFIVE || variable.toString().contains("5")) {
-                result.add("BUZZ");
-            }
-        });
+        for (int i = 1; i <= number; i++) {
+            result.add(verifyFizzBuzz(i));
+        }
         return result.toString();
+    }
+
+    /**
+     * Intermediate method that helps us to classify a number.
+     *
+     * @param number number that we send to verify what classification belongs.
+     * @return result which is a string that tells us what type it is.
+     */
+    public String verifyFizzBuzz(int number) {
+        String result = String.valueOf(number);
+
+        if (number % NUMBERTHREE != NUMBERZERO && number % NUMBERFIVE != NUMBERZERO && !result.contains("3")
+                && !result.contains("5")) {
+            return result;
+        }
+
+        if (number % NUMBERFIFTEEN == NUMBERZERO || result.contains("3") && result.contains("5")) {
+            return "FizzBuzz";
+        } else {
+
+            if (number % NUMBERTHREE == NUMBERZERO || result.contains("3")) {
+                return "Fizz";
+            } else {
+
+                if (number % NUMBERFIVE == NUMBERZERO || result.contains("5")) {
+                    return "Buzz";
+                }
+            }
+        }
+        return result;
     }
 }
