@@ -2,8 +2,8 @@ package org.fundacionjala.coding.cesar;
 
 import org.junit.Before;
 import org.junit.Test;
+
 import java.util.ArrayList;
-import java.util.List;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.CoreMatchers.is;
 
@@ -34,13 +34,13 @@ public class FizzBuzzTest {
         final int five = 5;
         final int fifteen = 15;
 
-        final List<Integer> range = new ArrayList<>();
+        final ArrayList<Integer> range = new ArrayList<>();
         range.add(one);
         range.add(three);
         range.add(four);
         range.add(five);
         range.add(fifteen);
-        final List<String> rangeres = new ArrayList<>();
+        final ArrayList<String> rangeres = new ArrayList<>();
         rangeres.add("1");
         rangeres.add("fizz");
         rangeres.add("4");
