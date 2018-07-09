@@ -1,7 +1,6 @@
 package org.fundacionjala.coding.ana;
 
 import java.util.Arrays;
-import java.util.StringJoiner;
 
 /**
  * There is a planet.
@@ -10,8 +9,6 @@ import java.util.StringJoiner;
  * @author Ana Maria Mamani Zenteno.
  */
 public class Twisted {
-    private static final int SIZE = 9;
-
     /**
      * Method of the number of Twisted.
      *
@@ -20,18 +17,13 @@ public class Twisted {
      */
     public int[] sortTwisted37(final int[] number) {
         Arrays.sort(number);
-        int[] result = new int[SIZE];
-        StringJoiner word = new StringJoiner(",");
-        for (int travelNumber : number) {
-            String strNumber = Integer.toString(travelNumber);
-            String supersede = strNumber.replace("3", "x").replace("7", "3").replace("x", "7");
-            String[] newNumber = word.add(supersede).toString().split("\\D+");
-            result = new int[newNumber.length];
-            for (int j = 0; j < result.length; j++) {
-                result[j] = Integer.parseInt(newNumber[j].trim());
-            }
+        int[] result = new int[number.length];
+        for (int i = 0; i < number.length; i++) {
+            result[i] = Integer.parseInt(Integer.toString(number[i])
+                    .replace("3", "x")
+                    .replace("7", "3")
+                    .replace("x", "7"));
         }
-
         return result;
     }
 }
