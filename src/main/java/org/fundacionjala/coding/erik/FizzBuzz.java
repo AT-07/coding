@@ -34,11 +34,11 @@ public class FizzBuzz {
         if (number % THREE == 0 && number % FIVE == 0) {
             return "FizzBuzz";
         }
-        if (number % THREE == 0 || numb.contains("3")) {
-            return "Fizz";
-        }
         if (number % FIVE == 0 || numb.contains("5")) {
             return "Buzz";
+        }
+        if (number % THREE == 0 || numb.contains("3")) {
+            return "Fizz";
         }
         return numb;
     }
