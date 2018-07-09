@@ -20,24 +20,30 @@ public class FizzBuzz {
     public String numberHundred(int number) {
         StringJoiner numberStr = new StringJoiner("-");
         for (int i = 1; i <= number; i++) {
-
-            String numberTurned = String.valueOf(i);
-
-            if (i % THREE == 0 || numberTurned.contains("3")) {
-                numberTurned = "Fizz";
-            }
-            if (i % FIVE == 0 || numberTurned.contains("5")) {
-                numberTurned = "Buzz";
-            }
-            if (i % THREE == 0 && i % FIVE == 0) {
-                numberTurned = "FizzBuzz";
-            }
-            if (numberTurned.contains("3") && numberTurned.contains("5")) {
-                numberTurned = "FizzBuzz";
-            }
-            numberStr.add(numberTurned);
+            numberStr.add(valueNumber(i));
         }
         return numberStr.toString();
+    }
+
+    /**
+     * @param value send.
+     * @return a String.
+     */
+    public String valueNumber(int value) {
+        String numberTurned = String.valueOf(value);
+        if (value % THREE == 0 || numberTurned.contains("3")) {
+            numberTurned = "Fizz";
+        }
+        if (value % FIVE == 0 || numberTurned.contains("5")) {
+            numberTurned = "Buzz";
+        }
+        if (value % THREE == 0 && value % FIVE == 0) {
+            numberTurned = "FizzBuzz";
+        }
+        if (numberTurned.contains("3") && numberTurned.contains("5")) {
+            numberTurned = "FizzBuzz";
+        }
+        return numberTurned;
     }
 }
 
