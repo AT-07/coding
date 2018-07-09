@@ -23,24 +23,24 @@ public class FizzBuzz {
     }
 
     /**
-     *
      * @param res is the date with the work.
      * @return of the string res.
      */
     private String verifyFizzBuzz(int res) {
-        boolean dataFizz = String.valueOf(res).contains("3");
-        boolean dataBuzz = String.valueOf(res).contains("5");
-        if (res % FIZZCONT == 0 && res % BUZZCONT == 0 || dataFizz && dataBuzz
-                || res % FIZZCONT == 0 && dataBuzz || res % BUZZCONT == 0 && dataFizz) {
+        final String data = String.valueOf(res);
+        boolean dataFizz = data.contains("3");
+        boolean dataBuzz = data.contains("5");
+
+        if (res % FIZZCONT == 0 && res % BUZZCONT == 0 || dataFizz && dataBuzz) {
             return "FizzBuzz";
         }
-        if (res % FIZZCONT == 0 || String.valueOf(res).contains("3")) {
+        if (res % BUZZCONT == 0 || data.contains("5")) {
+            return "Buzz";
+        }
+        if (res % FIZZCONT == 0 || data.contains("3")) {
             return "Fizz";
         }
 
-        if (res % BUZZCONT == 0 || String.valueOf(res).contains("5")) {
-            return "Buzz";
-        }
-        return String.valueOf(res);
+        return data;
     }
 }
