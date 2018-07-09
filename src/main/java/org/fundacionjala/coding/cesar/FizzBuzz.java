@@ -1,7 +1,7 @@
 package org.fundacionjala.coding.cesar;
 
-import java.util.ArrayList;
 
+import java.util.List;
 import java.util.stream.Collectors;
 
 /**
@@ -15,12 +15,13 @@ public class FizzBuzz {
      * @param range List from int.
      * @return list String replace.
      */
-    public ArrayList<String> doBuzzFizz(final ArrayList<Integer> range) {
+    public List<String> doBuzzFizz(final List<Integer> range) {
         return range
                 .stream()
-                .map(i -> this.getRespectiveFizzBuzz(i))
-                .collect(Collectors.toCollection(ArrayList::new));
+                .map(this::getRespectiveFizzBuzz)
+                .collect(Collectors.toList());
     }
+
 
     /**
      *
