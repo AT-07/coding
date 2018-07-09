@@ -28,10 +28,11 @@ public class TestFizzBuzz {
      */
     @Test
     public void testFizzBuzzCheckPass() {
-        final List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5,
-                6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 350, 35, 51, 52, 310);
-        final String espectedResult = "1,2,Fizz,4,Buzz,Fizz,7,8,Fizz,Buzz,11," +
-                "Fizz,Fizz,14,FizzBuzz,16,FizzBuzz,FizzBuzz,FizzBuzz,Buzz,FizzBuzz";
+        final List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+        final List<Integer> numbers1 = Arrays.asList(13, 14, 15, 16, 350, 35, 51, 52, 310);
+        final String espectedResult = "1,2,Fizz,4,Buzz,Fizz,7,8,Fizz,Buzz,11,Fizz";
+        final String espectedResult1 = "Fizz,14,FizzBuzz,16,FizzBuzz,FizzBuzz,FizzBuzz,Buzz,FizzBuzz";
         assertEquals(espectedResult, data.fizzBuzzCheck(numbers));
+        assertEquals(espectedResult1, data.fizzBuzzCheck(numbers1));
     }
 }

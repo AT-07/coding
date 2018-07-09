@@ -17,24 +17,30 @@ public class FizzBuzz {
     public String fizzBuzzCheck(final List<Integer> numbers) {
         StringJoiner espectedResult = new StringJoiner(",");
         for (int res : numbers) {
-            boolean dataFizz = String.valueOf(res).contains("3");
-            boolean dataBuzz = String.valueOf(res).contains("5");
-            if (res % FIZZCONT == 0 && res % BUZZCONT == 0 || dataFizz && dataBuzz
-                    || res % FIZZCONT == 0 && dataBuzz || res % BUZZCONT == 0 && dataFizz) {
-                espectedResult.add("FizzBuzz");
-            } else {
-                if (res % FIZZCONT == 0 || String.valueOf(res).contains("3")) {
-                    espectedResult.add("Fizz");
-                } else {
-                    if (res % BUZZCONT == 0 || String.valueOf(res).contains("5")) {
-                        espectedResult.add("Buzz");
-                    } else {
-                        espectedResult.add(String.valueOf(res));
-                    }
-                }
-            }
+            espectedResult.add(verifyFizzBuzz(res));
+        }
+        return espectedResult.toString();
+    }
+
+    /**
+     *
+     * @param res is the date with the work.
+     * @return of the string res.
+     */
+    private String verifyFizzBuzz(int res) {
+        boolean dataFizz = String.valueOf(res).contains("3");
+        boolean dataBuzz = String.valueOf(res).contains("5");
+        if (res % FIZZCONT == 0 && res % BUZZCONT == 0 || dataFizz && dataBuzz
+                || res % FIZZCONT == 0 && dataBuzz || res % BUZZCONT == 0 && dataFizz) {
+            return "FizzBuzz";
+        }
+        if (res % FIZZCONT == 0 || String.valueOf(res).contains("3")) {
+            return "Fizz";
         }
 
-        return espectedResult.toString();
+        if (res % BUZZCONT == 0 || String.valueOf(res).contains("5")) {
+            return "Buzz";
+        }
+        return String.valueOf(res);
     }
 }
