@@ -24,7 +24,7 @@ public class DeodorantEvaporator {
         int dia = 0;
         final int porsentaje = 100;
         while (umbral < contenido) {
-            contenido = contenido - ((contenido * gasPerdido) / porsentaje);
+            contenido -= (contenido * gasPerdido) / porsentaje;
             dia++;
         }
         return dia;
