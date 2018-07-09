@@ -33,14 +33,12 @@ public class FizzBuzz {
         String numb = String.valueOf(number);
         if (number % THREE == 0 && number % FIVE == 0) {
             return "FizzBuzz";
-        } else {
-            if (number % THREE == 0 || numb.contains("3")) {
-                return "Fizz";
-            } else {
-                if (number % FIVE == 0 || numb.contains("5")) {
-                    return "Buzz";
-                }
-            }
+        }
+        if (number % THREE == 0 || numb.contains("3")) {
+            return "Fizz";
+        }
+        if (number % FIVE == 0 || numb.contains("5")) {
+            return "Buzz";
         }
         return numb;
     }
