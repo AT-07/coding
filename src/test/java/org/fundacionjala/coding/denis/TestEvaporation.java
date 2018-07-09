@@ -1,11 +1,13 @@
 package org.fundacionjala.coding.denis;
 
-
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * this is the class test principal.
+ */
 public class TestEvaporation {
 
     private Evaporation evaporator;
@@ -23,8 +25,8 @@ public class TestEvaporation {
      */
     @Test
     public void testEvaporationPass() {
-        final double ten = 10;
+        final double data = 10;
         final int expected = 22;
-        assertEquals(expected, evaporator.evaporation(ten, ten, ten));
+        assertEquals(expected, evaporator.evaporation(data, data, data));
     }
 }
