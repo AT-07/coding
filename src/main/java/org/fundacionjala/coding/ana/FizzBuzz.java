@@ -40,9 +40,6 @@ public class FizzBuzz {
         if (value % THREE == 0 && value % FIVE == 0) {
             numberTurned = "FizzBuzz";
         }
-        if (numberTurned.contains("3") && numberTurned.contains("5")) {
-            numberTurned = "FizzBuzz";
-        }
         return numberTurned;
     }
 }
