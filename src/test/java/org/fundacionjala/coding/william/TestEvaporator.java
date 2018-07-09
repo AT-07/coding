@@ -11,7 +11,7 @@ import static org.junit.Assert.assertNotEquals;
  */
 public class TestEvaporator {
 
-    private Evaporator evaporator = new Evaporator();
+    private Evaporator evaporator;
 
     /**
      * Test para inicializar mi objeto.
