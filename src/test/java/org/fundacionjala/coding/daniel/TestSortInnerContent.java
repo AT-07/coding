@@ -63,7 +63,6 @@ public class TestSortInnerContent {
     @Test
     public void testInvDescPalabrasCombinadas() {
         String invDesc = inner.innerContent("go to settings to activate windows");
-        System.out.println(invDesc);
         assertEquals("go to sttniges to avtticae wwonids", invDesc);
     }
 }
