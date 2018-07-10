@@ -31,13 +31,13 @@ public class FizzBuzz {
         boolean dataFizz = data.contains("3");
         boolean dataBuzz = data.contains("5");
 
-        if (res % FIZZCONT == 0 && res % BUZZCONT == 0 || dataFizz && dataBuzz) {
+        if (res % FIZZCONT == 0 && res % BUZZCONT == 0) {
             return "FizzBuzz";
         }
-        if (res % BUZZCONT == 0 || data.contains("5")) {
+        if (res % BUZZCONT == 0 || dataBuzz) {
             return "Buzz";
         }
-        if (res % FIZZCONT == 0 || data.contains("3")) {
+        if (res % FIZZCONT == 0 || dataFizz) {
             return "Fizz";
         }
 
