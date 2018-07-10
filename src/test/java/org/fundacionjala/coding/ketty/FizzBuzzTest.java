@@ -29,8 +29,8 @@ public class FizzBuzzTest {
     @Test
     public void fizzBuzzMethodTestPass() {
         final int number = 15;
-        assertEquals("1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 Fizz Buzz",
-                fibu.fizzBuzzMethod(number));
+        assertEquals("1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz",
+                fibu.getFizzBuzz(number));
     }
 
     /**
@@ -39,8 +39,8 @@ public class FizzBuzzTest {
     @Test
     public void fizzBuzzMethodTestFailed() {
         final int number = 15;
-        assertNotEquals("1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz Fuzz 14 Fizz Buzz",
-                fibu.fizzBuzzMethod(number));
+        assertNotEquals("1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz Fuzz 14 FizzBuzz",
+                fibu.getFizzBuzz(number));
     }
 
 }
