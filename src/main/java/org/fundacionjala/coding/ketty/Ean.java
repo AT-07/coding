@@ -31,7 +31,9 @@ public class Ean {
 
         int x = Integer.parseInt(newNumber[newNumber.length - 1]);
 
+        int answere = sum % ten == 0 ? 0 : ten - (sum % ten);
 
-        return x == ten - (sum % ten);
+
+        return x == answere;
     }
 }
