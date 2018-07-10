@@ -13,7 +13,7 @@ public class TestDroot {
     private Droot data;
 
     /**
-     * init of objet.
+     * init of object.
      */
     @Before
     public void before() {
