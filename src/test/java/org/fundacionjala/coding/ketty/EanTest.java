@@ -19,6 +19,7 @@ public class EanTest {
     @Test
     public void eanOperationPass() {
         String num = "4003301018398";
+
         assertTrue(ean.eanOperation(num));
 
     }

@@ -34,7 +34,7 @@ public class Ean {
 
     /**
      * @param number it is  String number.
-     * @param index  value.
+     * @param index  value of sum.
      * @return a value int.
      */
 
